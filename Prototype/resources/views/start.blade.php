@@ -1,12 +1,21 @@
 <!doctype html>
 <html>
     <head>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <title>Startseite</title>
+        <style type="text/css">
+            div {
+                text-align:center;
+				font-family:'Roboto', sans-serif;
+            }
+        </style>
     </head>
     <body>
-        <h1>Startseite!</h1>
-        <input type"textfield" value="Text eingeben!..">
-        <input type"textfield" value="Text eingeben!..">
-        <input type="submit">
+        <div>
+            <h1>Startseite!</h1>
+            <input type"textfield" placeholder="Text eingeben!..">
+            <input type"textfield" placeholder="Text eingeben!..">
+            <input type="submit" value="Submit!">
+        </div>
     </body>
 </html>
