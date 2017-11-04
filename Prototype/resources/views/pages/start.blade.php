@@ -8,7 +8,7 @@
             }
 
             .field {
-                padding: 20px;
+                padding: 6px;
                 box-sizing: border-box;
             }
 
