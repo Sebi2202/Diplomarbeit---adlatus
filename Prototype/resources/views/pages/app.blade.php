@@ -7,30 +7,25 @@
 				font-family: 'Roboto', sans-serif;
             }
 			
-			textarea {
-				height:100px;
-				width:300px;
-				resize:none;
-			}
-			
 			.agree {
-				position:relative;
 				bottom:50px;
 				background-color:lightgreen;
 			}
 			
 			.disagree {
-				position:relative;
 				bottom:50px;
 				background-color:red;
 			}
+			
         </style>
     </head>
     <body>
         <div>
-            <h1>{{$title}}!</h1>
-            <textarea disabled> </textarea>
-			<button class="agree">Agree</button>
-			<button class="disagree">Disagree</button> 
+            <h1>Willkommen zur Appseite</h1>
+			@if(count($tasks) > 0)
+				@foreach($tasks as $task)
+					<p>{{$task}} <button class="agree">Agree</button><button class="disagree">Disagree</button></p>
+				@endforeach
+			@endif
         </div>
 @endsection

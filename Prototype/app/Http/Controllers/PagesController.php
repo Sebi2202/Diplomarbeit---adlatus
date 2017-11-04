@@ -12,7 +12,10 @@ class PagesController extends Controller
     }
 
     public function app() {
-        $title = 'Willkommen zur Appseite';
-        return view('pages/app', compact('title'));
+        $tasks = array(
+            'title' => 'task',
+            'tasks' => ['Task 1', 'Task 2', 'Task 3']
+        );
+        return view('pages/app')->with( $tasks);
     }
 }
