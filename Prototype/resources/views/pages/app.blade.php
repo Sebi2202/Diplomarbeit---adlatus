@@ -9,12 +9,30 @@
 			
 			.agree {
 				bottom:50px;
-				background-color:lightgreen;
+				background-color: #4CAF50;
+    			border:none;
+    			color:white;
+    			padding:6px 12px;
+    			text-align:center;
+    			text-decoration: none;
+    			display:inline-block;
+    			font-size:14px;
+				width:80.3px;
+				margin-left:10px;
 			}
 			
 			.disagree {
 				bottom:50px;
 				background-color:red;
+				border:none;
+    			color:white;
+    			padding:6px 12px;
+    			text-align:center;
+    			text-decoration:none;
+    			display:inline-block;
+    			font-size:14px;
+				width:auto;
+				margin-left:10px;
 			}
 			
         </style>
