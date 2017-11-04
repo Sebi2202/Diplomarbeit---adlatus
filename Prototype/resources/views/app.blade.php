@@ -2,7 +2,7 @@
 <html>
     <head>
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <title>Appseite</title>
+        <title>{{config('app.name', 'Prototype')}}</title>
         <style type="text/css">
             div {
                 text-align:center;
