@@ -15,11 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/start', function () {
-    return view('start');
-});
+Route::get('/start', 'PagesController@start');
 
-Route::get('/app', function () {
-    return view('app');
-});
+Route::get('/app', 'PagesController@app');
 
