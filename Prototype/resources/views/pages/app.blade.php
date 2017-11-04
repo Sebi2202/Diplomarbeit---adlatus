@@ -2,7 +2,7 @@
 
 @section('content')
         <style type="text/css">
-            div {
+            #box {
                 text-align:center;
 				font-family: 'Roboto', sans-serif;
             }
@@ -38,7 +38,7 @@
         </style>
     </head>
     <body>
-        <div>
+        <div id="box">
             <h1>Willkommen zur Appseite</h1>
 			@if(count($tasks) > 0)
 				@foreach($tasks as $task)
