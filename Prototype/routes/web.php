@@ -19,3 +19,7 @@ Route::get('/start', function () {
     return view('start');
 });
 
+Route::get('/app', function () {
+    return view('app');
+});
+
