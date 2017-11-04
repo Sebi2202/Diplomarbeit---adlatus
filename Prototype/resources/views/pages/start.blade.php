@@ -16,12 +16,12 @@
 				background-color:#aaa;
     			border:1px solid;
     			color:white;
-    			padding:6px 12px;
+    			padding:5px 10px;
     			text-align:center;
     			text-decoration: none;
     			display:inline-block;
-    			font-size:14px;
-				width:100px;
+    			font-size:13px;
+				width:90px;
 				margin-left:10px;
                 border-radius:5px;
             }
