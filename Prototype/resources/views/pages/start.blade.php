@@ -24,8 +24,8 @@
     			font-size:14px;
 				width:80.3px;
 				margin-left:10px;
-			
             }
+            
         </style>
     </head>
     <body>
