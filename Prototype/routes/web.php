@@ -16,6 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/start', 'PagesController@start');
-
 Route::get('/app', 'PagesController@app');
 

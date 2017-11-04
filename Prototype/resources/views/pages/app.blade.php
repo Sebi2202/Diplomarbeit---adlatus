@@ -1,8 +1,6 @@
-<!doctype html>
-<html>
-    <head>
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <title>{{config('app.name', 'Prototype')}}</title>
+@extends('layout/layout')
+
+@section('content')
         <style type="text/css">
             div {
                 text-align:center;
@@ -18,7 +16,7 @@
 			.agree {
 				position:relative;
 				bottom:50px;
-				background-color:green;
+				background-color:lightgreen;
 			}
 			
 			.disagree {
@@ -30,10 +28,9 @@
     </head>
     <body>
         <div>
-            <h1>Appseite!</h1>
+            <h1>{{$title}}!</h1>
             <textarea disabled> </textarea>
 			<button class="agree">Agree</button>
 			<button class="disagree">Disagree</button> 
         </div>
-    </body>
-</html>
+@endsection

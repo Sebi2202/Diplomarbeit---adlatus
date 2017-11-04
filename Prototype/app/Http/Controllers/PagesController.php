@@ -7,10 +7,12 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function start() {
-        return view('start');
+        $title = 'Willkommen zur Startseite';
+        return view('pages/start', compact('title'));
     }
 
     public function app() {
-        return view('app');
+        $title = 'Willkommen zur Appseite';
+        return view('pages/app', compact('title'));
     }
 }
