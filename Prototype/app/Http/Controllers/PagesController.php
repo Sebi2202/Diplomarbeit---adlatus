@@ -16,6 +16,6 @@ class PagesController extends Controller
             'title' => 'task',
             'tasks' => ['Task 1', 'Task 2', 'Task 3']
         );
-        return view('pages/app')->with( $tasks);
+        return view('pages/app')->with($tasks);
     }
 }

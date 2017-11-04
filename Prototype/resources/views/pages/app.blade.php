@@ -38,12 +38,15 @@
         </style>
     </head>
     <body>
+	
         <div id="box">
             <h1>Willkommen zur Appseite</h1>
 			@if(count($tasks) > 0)
 				@foreach($tasks as $task)
-					<p>{{$task}} <button class="agree">Agree</button><button class="disagree">Disagree</button></p>
+					<p>{{$task->body}} <button class="agree">Agree</button><button class="disagree">Disagree</button></p>
 				@endforeach
+				@else
+					<p>No Posts found</p>
 			@endif
         </div>
 @endsection
