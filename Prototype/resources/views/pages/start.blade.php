@@ -13,19 +13,19 @@
             }
 
             .sbm {
-               
-				background-color:#ccc;
-    			border:none;
+				background-color:#aaa;
+    			border:1px solid;
     			color:white;
     			padding:6px 12px;
     			text-align:center;
     			text-decoration: none;
     			display:inline-block;
     			font-size:14px;
-				width:80.3px;
+				width:100px;
 				margin-left:10px;
+                border-radius:5px;
             }
-            
+
         </style>
     </head>
     <body>
