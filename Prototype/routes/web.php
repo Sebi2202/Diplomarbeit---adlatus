@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('/pages/welcome');
 });
 
-Route::get('/start', 'PagesController@start');
+Route::get('/start', 'TasksController@create');
 Route::get('/app', 'TasksController@index');
 Route::get('/show', 'TasksController@secIndex');

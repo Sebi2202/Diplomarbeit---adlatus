@@ -30,7 +30,7 @@
     </head>
     <body>
         <div>
-            <h1>{{$title}}!</h1>
+            <h1>Willkommen zur Startseite!</h1>
             <input type="text" class="field" size="40">
             <input type="submit" class="sbm" value="Submit!">
         </div>
