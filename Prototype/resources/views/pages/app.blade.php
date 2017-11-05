@@ -43,7 +43,12 @@
             <h1>Willkommen zur Appseite</h1>
 			@if(count($tasks) > 0)
 				@foreach($tasks as $task)
-					<p>{{$task->body}} <button class="agree">Agree</button><button class="disagree">Disagree</button></p>
+					<p>{{$task->body}}
+					{!! Form::open(['action' => 'TasksController@update', 'method' => 'PUT']) !!}
+                    	{{Form::submit('Submit', ['class' => 'agree'])}}
+						{{Form::submit('Submit', ['class' => 'disagree'])}}
+           			{!! Form::close() !!}</p>
+					<!-- <button class="agree">Agree</button><button class="disagree">Disagree</button>-->
 				@endforeach
 				@else
 					<p>No Posts found</p>

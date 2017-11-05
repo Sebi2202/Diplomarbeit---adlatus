@@ -20,3 +20,5 @@ Route::get('/app', 'TasksController@index');
 Route::get('/show', 'TasksController@secIndex');
 
 Route::post('/start', 'TasksController@store');
+
+Route::put('/app', 'TasksController@update');
