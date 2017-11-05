@@ -65,6 +65,7 @@
         </style>
     </head>
     <body>
+        @include('include/messages')
         <div style="margin: 20%">
             <h2>Das ist die Welcome-Page!</h2>
             <button><a href="/start">Start</a></button>

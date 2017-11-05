@@ -38,7 +38,7 @@
         </style>
     </head>
     <body>
-	
+		@include('include/messages')
         <div id="box">
             <h1>Willkommen zur Appseite</h1>
 			@if(count($tasks) > 0)

@@ -29,6 +29,7 @@
         </style>
     </head>
     <body>
+        @include('include/messages')
         <div>
             <h1>Willkommen zur Startseite!</h1>
             
