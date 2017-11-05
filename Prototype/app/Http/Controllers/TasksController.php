@@ -19,6 +19,17 @@ class TasksController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function secIndex()
+    {
+        $tasks = Task::all();
+        return view('pages/show')->with('tasks', $tasks);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -47,7 +58,7 @@ class TasksController extends Controller
      */
     public function show($id)
     {
-        //
+        return Task::find($id);
     }
 
     /**
