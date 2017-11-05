@@ -23,4 +23,4 @@ Route::post('/start', 'TasksController@store');
 
 Route::put('/app/{id}', 'TasksController@update');
 
-Route::delete('/app', 'TasksController@destroy');
+Route::delete('/app/{id}', 'TasksController@destroy');
