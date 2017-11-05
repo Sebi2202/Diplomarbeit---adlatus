@@ -21,4 +21,6 @@ Route::get('/show', 'TasksController@secIndex');
 
 Route::post('/start', 'TasksController@store');
 
-Route::put('/app', 'TasksController@update');
+Route::put('/app/{id}', 'TasksController@update');
+
+Route::delete('/app', 'TasksController@destroy');

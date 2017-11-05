@@ -90,7 +90,12 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //Create a Task
+        $task = Task::find($id);
+        $task->confirmed = 1;
+        $task->save();
+
+        return redirect('/app')->with('Success', 'Task updated');
     }
 
     /**

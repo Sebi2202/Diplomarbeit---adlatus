@@ -18,10 +18,9 @@
     			display:inline-block;
     			font-size:14px;
 				width:80.3px;
-				margin-left:10px;
 			}
 			
-			.disagree {
+			.delete {
 				bottom:50px;
 				background-color:red;
 				border:none;
@@ -31,8 +30,8 @@
     			text-decoration:none;
     			display:inline-block;
     			font-size:14px;
-				width:auto;
-				margin-left:10px;
+				width:80.3px;
+				margin-top: 1%;
 			}
 			
         </style>
@@ -44,10 +43,16 @@
 			@if(count($tasks) > 0)
 				@foreach($tasks as $task)
 					<p>{{$task->body}}
-					{!! Form::open(['action' => 'TasksController@update', 'method' => 'PUT']) !!}
-                    	{{Form::submit('Submit', ['class' => 'agree'])}}
-						{{Form::submit('Submit', ['class' => 'disagree'])}}
-           			{!! Form::close() !!}</p>
+					{!! Form::open(['action' => ['TasksController@update', $task->id], 'method' => 'POST']) !!}
+                    	{{Form::submit('Agree', ['class' => 'agree'])}}
+						{{Form::hidden('_method', 'PUT')}}
+           			{!! Form::close() !!}
+
+					{!! Form::open(['action' => ['TasksController@destroy', $task->id], 'method' => 'POST']) !!}
+                    	{{Form::submit('Delete', ['class' => 'delete'])}}
+						{{Form::hidden('_method', 'DELETE')}}
+           			{!! Form::close() !!}
+					</p>
 					<!-- <button class="agree">Agree</button><button class="disagree">Disagree</button>-->
 				@endforeach
 				@else
