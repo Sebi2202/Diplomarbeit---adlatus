@@ -53,7 +53,7 @@
 						<div id="containers">
 							<p>{{$task->body}}
 							{!! Form::open(['action' => ['TasksController@update', $task->id], 'method' => 'POST']) !!}
-                    			{{Form::submit('Agree', ['class' => 'agree'])}}
+                    			{{Form::submit('Accept', ['class' => 'agree'])}}
 								{{Form::hidden('_method', 'PUT')}}
            					{!! Form::close() !!}
 
