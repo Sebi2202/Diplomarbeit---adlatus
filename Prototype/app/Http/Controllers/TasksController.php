@@ -48,7 +48,7 @@ class TasksController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'body' => 'required'
+            'body' => 'required|max:50|min:5'
         ]);
         
         //Create a Task
