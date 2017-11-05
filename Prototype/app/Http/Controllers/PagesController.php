@@ -12,6 +12,7 @@ class PagesController extends Controller
     }
 
     public function app() {
+        //Das war ein Testarray
         $tasks = array(
             'title' => 'task',
             'tasks' => ['Task 1', 'Task 2', 'Task 3']
