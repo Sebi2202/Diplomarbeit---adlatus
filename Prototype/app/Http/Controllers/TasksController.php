@@ -26,7 +26,7 @@ class TasksController extends Controller
     public function secIndex()
     {
         $tasks = Task::all();
-        return view('pages/show')->with('tasks', $tasks);
+        return $tasks;
     }
 
     /**
@@ -52,7 +52,11 @@ class TasksController extends Controller
         ]);
         
         //Create a Task
-        
+        $task = new Task;
+        $task->body = $request->input('body');
+        $task->save();
+
+        return redirect('/start')->with('Success', 'Task created');
     }
 
     /**
