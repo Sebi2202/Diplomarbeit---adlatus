@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('/start', 'TasksController@create');
 Route::get('/app', 'TasksController@index');
 Route::get('/show', 'TasksController@secIndex');
+
+Route::post('/start', 'TasksController@store');

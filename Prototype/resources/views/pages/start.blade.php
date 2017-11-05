@@ -30,11 +30,14 @@
     </head>
     <body>
         <div>
-            {!! Form::open(['action' => 'TasksController@store', 'method' => 'POST']) !!}
-            
-            {!! Form::close() !!}
             <h1>Willkommen zur Startseite!</h1>
-            <input type="text" class="field" size="40">
-            <input type="submit" class="sbm" value="Submit!">
+            
+            {!! Form::open(['action' => 'TasksController@store', 'method' => 'POST']) !!}
+                <div>
+                    {{Form::text('body', '', ['class' => 'field', 'placeholder' => 'Titel eingeben'])}}
+                    {{Form::submit('Submit', ['class' => 'sbm'])}}
+                </div>
+            {!! Form::close() !!}
         </div>
+        
 @endsection

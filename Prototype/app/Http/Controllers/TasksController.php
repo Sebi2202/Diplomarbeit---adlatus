@@ -47,7 +47,10 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'body' => 'required'
+        ]);
+        return "test";
     }
 
     /**
