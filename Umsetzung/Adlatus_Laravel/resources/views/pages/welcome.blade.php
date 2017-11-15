@@ -86,6 +86,12 @@
         th {
             text-align:left;
         }
+
+        @media screen and (max-width:768px) {
+            footer {
+                background-color:white;
+            }
+        }
     </style>
     <title>Startseite</title>
     </head>
