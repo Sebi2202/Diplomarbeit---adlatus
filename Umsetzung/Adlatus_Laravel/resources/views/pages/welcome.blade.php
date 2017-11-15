@@ -15,16 +15,17 @@
 
         .links {
             text-align:right;
-            margin-left:15%;
+            margin-left:10%;
             margin-right:15%;
             white-space:nowrap;
         }
 
         .links_header {
             position:relative;
-            top:60px;
+            top:30px;
             font-weight:bold;
             color:white;
+            text-decoration:none;
         }
 
         section {
@@ -86,11 +87,11 @@
     </head>
     <body>
         <header>
-            <!-- <img class="logo" src=""> -->
+            <img class="logo" src="../imgs/logo.png">
             <div class="links">
-                <a class="links_header">Registrieren |</a>
-                <a class="links_header">Login |</a>
-                <a class="links_header">Hilfe</a>
+                <a class="links_header" href="/registrierung">Registrieren |</a>
+                <a class="links_header" href="/login">Login |</a>
+                <a class="links_header" href="/help">Hilfe</a>
             </div>
         </header>
         <section>
