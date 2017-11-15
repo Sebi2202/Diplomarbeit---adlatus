@@ -15,4 +15,9 @@ class PagesController extends Controller
     {
         return view('pages/registrierung');
     }
+
+    public function showLogin()
+    {
+        return view('pages/login');
+    }
 }
