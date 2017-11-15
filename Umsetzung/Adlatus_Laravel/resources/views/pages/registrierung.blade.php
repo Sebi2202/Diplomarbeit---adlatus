@@ -47,12 +47,14 @@
         table {
             width:30%;
             font-size:12px;
-            padding-top:50px;
+            padding-top:30px;
             margin-left:15%;
             color:white;
         }
 
         th {
+            height:40px;
+            font-size:14px;
             text-align:left;
         }
     </style>
