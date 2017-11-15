@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'PagesController@showStart');
+Route::get('/registrierung', 'PagesController@showReg');
+

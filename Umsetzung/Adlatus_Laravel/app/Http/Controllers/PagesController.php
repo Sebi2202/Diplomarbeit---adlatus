@@ -10,4 +10,9 @@ class PagesController extends Controller
     {
         return view('pages/welcome');
     }
+
+    public function showReg() 
+    {
+        return view('pages/registrierung');
+    }
 }
