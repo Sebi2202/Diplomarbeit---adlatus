@@ -13,6 +13,11 @@
             height:100px;
         }
 
+        a {
+            text-decoration:none;
+            color:white;
+        }
+
         .links {
             text-align:right;
             margin-left:10%;
@@ -25,7 +30,6 @@
             top:30px;
             font-weight:bold;
             color:white;
-            text-decoration:none;
         }
 
         section {
@@ -116,18 +120,21 @@
                     <th>Links</th>
                 </tr>
                 <tr>
-                    <td>www.project-adlatus.at</td>
-                    <td>Registrieren</td>
+                    <td><a href="http://www.project-adlatus.at">www.project-adlatus.at</a></td>
+                    <td><a href="/">Home</a></td>
                 </tr>
                 <tr>
                     <td>Diplomarbeitsprojekt HTL3R</td>
-                    <td>Login</td>
+                    <td><a href="/registrierung">Registrieren</a></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td>Hilfe</td>
+                    <td><a href="/login">Login</a></td>
                 </tr>
-
+                <tr>
+                    <td></td>
+                    <td><a href="/help">Hilfe</a></td>
+                </tr>
             </table>
         </footer>
 
