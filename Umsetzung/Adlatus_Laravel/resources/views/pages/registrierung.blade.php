@@ -184,10 +184,7 @@
                 <a class="links_header" href="/help">Hilfe</a>
             </div>
         </header>
-
-        <div>
-            @include('include/messages')
-        </div>
+        
 
         <section>
             <div class="main">
@@ -199,6 +196,7 @@
                         {{ Form::text('nachname', '', ['class' => 'fm', 'placeholder' => 'Nachname'])}}
                         <br>
                         {{ Form::email('email', '', ['class' => 'fm', 'placeholder' => 'E-Mail'])}}
+                        
                         <br>
                         {{ Form::text('sozNummer', '', ['class' => 'fm', 'placeholder' => 'Soz. Versicherungsnummer'])}}
                         <br>
@@ -210,11 +208,15 @@
                     {{ Form::close() }}
                 </div>
 
+                
+
                 <p class="text_link">Ich habe bereits einen Account - <a class="to_login" href="/login">Login</a></p>
             </div>
-
-            
         </section>
+
+        <div class="msgs">          
+            @include('include/messages')
+        </div>
 
         <footer>
             <table>
