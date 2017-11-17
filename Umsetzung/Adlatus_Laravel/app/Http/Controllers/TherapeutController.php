@@ -60,6 +60,12 @@ class TherapeutController extends Controller
             'again' => 'required'
         ]);
         
+        $therapeuts = Therapeut::all();
+        foreach($therapeuts as $theras) {
+            if($theras->sozNr == $request->input('sozNummer')) {
+                return 'Sozialversicherungsnummer ist bereits aktiv';
+            }
+        }
         if($request->input('password') == $request->input('again')) {
             $therapeut = new Therapeut();
             $therapeut->sozNr = $request->input('sozNummer');
