@@ -195,11 +195,11 @@
                         {{ Form::text('vorname', '', ['class' => 'fm', 'placeholder' => 'Vorname'])}}
                         {{ Form::text('nachname', '', ['class' => 'fm', 'placeholder' => 'Nachname'])}}
                         <br>
-                        {{ Form::text('email', '', ['class' => 'fm', 'placeholder' => 'E-Mail'])}}
+                        {{ Form::email('email', '', ['class' => 'fm', 'placeholder' => 'E-Mail'])}}
                         <br>
                         {{ Form::text('sozNummer', '', ['class' => 'fm', 'placeholder' => 'Soz. Versicherungsnummer'])}}
                         <br>
-                        {{ Form::text('password', '', ['class' => 'fm', 'placeholder' => 'Passwort'])}}
+                        {{ Form::password('password', ['class' => 'fm', 'placeholder' => 'Passwort'])}}
 
                         {{ Form::submit('Registrieren', ['class' => 'rg'])}}
                     {{ Form::close() }}
