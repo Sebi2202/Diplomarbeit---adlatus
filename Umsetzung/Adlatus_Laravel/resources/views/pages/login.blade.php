@@ -57,6 +57,19 @@
             font-size:14px;
             text-align:left;
         }
+
+        /* @media - Responsive Design */
+        @media screen and (max-width:768px) {
+            footer { display:none; }
+        }
+
+        @media screen and (max-height:1000px) {
+            footer { height:200px; }
+        }
+
+        @media screen and (max-height:660px) {
+            footer { opacity:0.4; }
+        }
     </style>
 
     <title>Login</title>

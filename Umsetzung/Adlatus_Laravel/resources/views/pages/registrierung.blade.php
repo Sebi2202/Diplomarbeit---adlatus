@@ -5,6 +5,7 @@
         body {
             margin:0px;
             font-family:Verdana;
+            /* Hintergrund-Bild */
         }
 
         a {
@@ -32,7 +33,24 @@
             color:white;
         }
 
+        section {
+            border:1px solid;
+            margin-left:15%;
+            margin-right:15%;
+        }
 
+        .main {
+            margin-left:5%;
+        }
+
+        h2 {
+            font-weight:normal;
+        }
+
+        .to_login {
+            text-decoration:none;
+            color:lightblue;
+        }
 
         footer {
             position:absolute;
@@ -57,6 +75,19 @@
             font-size:14px;
             text-align:left;
         }
+
+        /* @media - Responsive Design */
+        @media screen and (max-width:768px) {
+            footer { display:none; }
+        }
+
+        @media screen and (max-height:1000px) {
+            footer { height:200px; }
+        }
+
+        @media screen and (max-height:660px) {
+            footer { opacity:0.4; }
+        }
     </style>
 
     <title>Registrieren</title>
@@ -71,6 +102,18 @@
                 <a class="links_header" href="/help">Hilfe</a>
             </div>
         </header>
+
+        <section>
+            <div class="main">
+                <h2>Registrierung</h2>
+
+                <div class="forms">
+                    
+                </div>
+
+                <p>Ich habe bereits einen Account - <a class="to_login" href="/login">Login</a></p>
+            </div>
+        </section>
 
 
 

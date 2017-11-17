@@ -46,7 +46,7 @@
         .video {
             border:1px solid;
             width:100%;
-            
+            text-align:center;
         }
 
         .text {
@@ -62,16 +62,16 @@
         .main > div {
             justify-content:space-between;
             margin-top:50px;
-            text-align:center;
         }
 
         footer {
-            position:absolute;
+            position:fixed;
             left:0;
-            right:0;
+            width:100%;
             bottom:0;
             background-color:gray;
             height:250px;
+            margin-top:100px;
             z-index:-9999;
         }
 
@@ -89,11 +89,23 @@
             text-align:left;
         }
 
+        /* @media - Responsive Design */
         @media screen and (max-width:768px) {
-            footer {
-                background-color:white;
-            }
+            .main { flex-direction:column; }
+
+            footer { display:none; }
         }
+
+        @media screen and (max-height:1000px) {
+            .bild { height:100px; }
+
+            footer { height:200px; }
+        }
+
+        @media screen and (max-height:660px;) {
+            footer { opacity:0.4; }
+        }
+
     </style>
     <title>Startseite</title>
     </head>
