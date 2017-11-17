@@ -113,9 +113,20 @@
 
                 <p>Ich habe bereits einen Account - <a class="to_login" href="/login">Login</a></p>
             </div>
+
+            
         </section>
 
-
+        <div class="main">
+                {{ Form::open(['action' => 'TherapeutController@store', 'method' => 'POST']) }}
+                    {{ Form::text('sozNummer', '', ['class' => '', 'placeholder' => 'Sozialversicherungsnummer'])}}
+                    {{ Form::text('vorname', '', ['class' => '', 'placeholder' => 'Vorname'])}}
+                    {{ Form::text('nachname', '', ['class' => '', 'placeholder' => 'Nachname'])}} <br>
+                    {{ Form::text('email', '', ['class' => '', 'placeholder' => 'E-Mail (Optional)'])}}
+                    {{ Form::text('password', '', ['class' => '', 'placeholder' => 'Passwort'])}}
+                    {{ Form::submit('Erstellen', ['class' => ''])}}
+                {{ Form::close() }}
+            </div>
 
         <footer>
             <table>

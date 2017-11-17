@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'PagesController@showStart');
-Route::get('/registrierung', 'PagesController@showReg');
 Route::get('/login', 'PagesController@showLogin');
+Route::get('/registrierung', 'TherapeutController@create');
+
+Route::post('/registrierung', 'TherapeutController@store');
 

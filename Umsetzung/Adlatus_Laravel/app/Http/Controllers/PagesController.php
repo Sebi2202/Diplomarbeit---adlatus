@@ -13,7 +13,7 @@ class PagesController extends Controller
 
     public function showReg() 
     {
-        return view('pages/registrierung');
+        //return view('pages/registrierung');
     }
 
     public function showLogin()
