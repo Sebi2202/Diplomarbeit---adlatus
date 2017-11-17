@@ -20,4 +20,8 @@ class PagesController extends Controller
     {
         return view('pages/login');
     }
+
+    public function error() {
+        return view('pages/error');
+    }
 }
