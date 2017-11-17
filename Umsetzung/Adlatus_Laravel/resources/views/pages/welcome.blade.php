@@ -90,15 +90,10 @@
         }
 
         /* @media - Responsive Design */
-        @media screen and (max-width:768px) {
-            .main { flex-direction:column; }
-
-            
-        }
+        @media screen and (max-width:768px) { .main { flex-direction:column; } }
 
         @media screen and (max-height:1000px) {
             .bild { height:100px; }
-
             footer { height:200px; }
         }
 
@@ -155,6 +150,7 @@
                 footer { display:none; }
             }
         }
+        
     </style>
     <title>Startseite</title>
     </head>
