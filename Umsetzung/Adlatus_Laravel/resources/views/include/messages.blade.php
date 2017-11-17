@@ -11,10 +11,6 @@
     @media screen and (max-width:1400px) {.err {margin-left:49%;} }
     @media screen and (max-width:1040px) {.err {margin-left:50%;} }
     @media screen and (max-width:795px) {.err {display:none;} }
-
-    .suc {
-        
-    }
 </style>
 
 @if(count($errors) > 0)

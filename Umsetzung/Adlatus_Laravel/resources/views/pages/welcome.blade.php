@@ -202,5 +202,4 @@
                 </tr>
             </table>
         </footer>
-
 @endsection

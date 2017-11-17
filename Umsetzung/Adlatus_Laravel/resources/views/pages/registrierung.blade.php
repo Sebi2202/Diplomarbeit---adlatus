@@ -126,8 +126,6 @@
             text-align:left;
         }
 
-        
-
         /* @media - Responsive Design */
 
         @media screen and (max-width:870px) { .rg { float:none; } }
