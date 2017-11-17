@@ -34,9 +34,13 @@
         }
 
         section {
-            border:1px solid;
+            position:relative;
+            top:100px;
+
+            padding-left:15px;
             margin-left:15%;
             margin-right:15%;
+            border:1px solid;
         }
 
         .main {
@@ -44,12 +48,58 @@
         }
 
         h2 {
+            padding-top:50px;
             font-weight:normal;
         }
 
+        .text_link {
+            position:relative;
+            left:1px;
+            font-style:italic;
+            font-size:14px;
+            padding-bottom:50px;
+        }
+
         .to_login {
+            font-style:italic;
+            font-size:14px;
             text-decoration:none;
             color:lightblue;
+        }
+
+        .fm {
+            font-family:Verdana;
+            font-size:16px;
+            font-style:italic;
+
+            padding-top:5px;
+            padding-bottom:5px;
+            padding-left:5px;
+
+            margin-bottom:20px;
+            margin-right:3%;
+
+            box-shadow:1px 1px 1px gray;
+            width:40%;
+        }
+
+        .rg {
+            font-family:Verdana;
+            font-weight:bold;
+            font-size:16px;
+
+            padding-top:8px;
+            padding-bottom:8px;
+            padding-right:20px;
+            padding-left:20px;
+
+            float:right;
+            margin-right:15%;
+
+            color:white;
+            background-color:lightgray;
+            border:none;
+            box-shadow: 3px 5px 5px gray;
         }
 
         footer {
@@ -76,25 +126,58 @@
             text-align:left;
         }
 
+        
+
         /* @media - Responsive Design */
-        @media screen and (max-width:768px) {
-            footer { display:none; }
+
+        @media screen and (max-width:870px) {
+            .rg {
+                float:none;
+            }
+        }
+
+        @media screen and (max-width:430px) { .fm { width:80%; } }
+
+        @media screen and (max-width:360px) { section { width:250px; } }
+
+        /* Responsive Design: Footer */
+        @media screen and (max-width:300px) {
+            @media screen and (max-height:935px) {
+                footer {
+                    display:none;
+                }
+            }
+        }
+
+        @media screen and (max-width:615px) {
+            @media screen and (max-height:863px) {
+                footer {
+                    display:none;
+                }
+            }
+        }
+
+        @media screen and (max-width:430px) {
+            @media screen and (max-height:935px) {
+                footer {
+                    display:none;
+                }
+            }
         }
 
         @media screen and (max-height:1000px) {
             footer { height:200px; }
         }
 
-        @media screen and (max-height:660px) {
-            footer { opacity:0.4; }
-        }
+        @media screen and (max-height:830px) { footer { display:none; } }
+
     </style>
 
     <title>Registrieren</title>
     
     </head>
     <body>
-    <header>
+        <header>
             <img class="logo" src="../imgs/logo.png">
             <div class="links">
                 <a class="links_header" href="/">Home |</a>
@@ -108,25 +191,25 @@
                 <h2>Registrierung</h2>
 
                 <div class="forms">
-                    
+                    {{ Form::open(['action' => 'TherapeutController@store', 'method' => 'POST']) }}
+                        {{ Form::text('vorname', '', ['class' => 'fm', 'placeholder' => 'Vorname'])}}
+                        {{ Form::text('nachname', '', ['class' => 'fm', 'placeholder' => 'Nachname'])}}
+                        <br>
+                        {{ Form::text('email', '', ['class' => 'fm', 'placeholder' => 'E-Mail'])}}
+                        <br>
+                        {{ Form::text('sozNummer', '', ['class' => 'fm', 'placeholder' => 'Soz. Versicherungsnummer'])}}
+                        <br>
+                        {{ Form::text('password', '', ['class' => 'fm', 'placeholder' => 'Passwort'])}}
+
+                        {{ Form::submit('Registrieren', ['class' => 'rg'])}}
+                    {{ Form::close() }}
                 </div>
 
-                <p>Ich habe bereits einen Account - <a class="to_login" href="/login">Login</a></p>
+                <p class="text_link">Ich habe bereits einen Account - <a class="to_login" href="/login">Login</a></p>
             </div>
 
             
         </section>
-
-        <div class="main">
-                {{ Form::open(['action' => 'TherapeutController@store', 'method' => 'POST']) }}
-                    {{ Form::text('sozNummer', '', ['class' => '', 'placeholder' => 'Sozialversicherungsnummer'])}}
-                    {{ Form::text('vorname', '', ['class' => '', 'placeholder' => 'Vorname'])}}
-                    {{ Form::text('nachname', '', ['class' => '', 'placeholder' => 'Nachname'])}} <br>
-                    {{ Form::text('email', '', ['class' => '', 'placeholder' => 'E-Mail (Optional)'])}}
-                    {{ Form::text('password', '', ['class' => '', 'placeholder' => 'Passwort'])}}
-                    {{ Form::submit('Erstellen', ['class' => ''])}}
-                {{ Form::close() }}
-            </div>
 
         <footer>
             <table>
