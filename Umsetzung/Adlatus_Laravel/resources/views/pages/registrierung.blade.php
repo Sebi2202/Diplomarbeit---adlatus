@@ -181,10 +181,14 @@
             </div>
         </header>
 
+        <div>
+            @include('include/messages')
+        </div>
+
         <section>
             <div class="main">
                 <h2>Registrierung</h2>
-
+                
                 <div class="forms">
                     {{ Form::open(['action' => 'TherapeutController@store', 'method' => 'POST']) }}
                         {{ Form::text('vorname', '', ['class' => 'fm', 'placeholder' => 'Vorname'])}}
