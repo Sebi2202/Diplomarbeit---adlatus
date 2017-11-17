@@ -35,7 +35,7 @@
 
         section {
             position:relative;
-            top:100px;
+            top:50px;
 
             padding-left:15px;
             margin-left:15%;
@@ -132,7 +132,9 @@
 
         @media screen and (max-width:870px) { .rg { float:none; } }
 
-        @media screen and (max-width:360px) { section { width:250px; } }
+        @media screen and (max-width:360px) { 
+            section { width:250px;}     
+        }
 
         /* Responsive Design: Footer */
         @media screen and (max-width:300px) {
@@ -144,7 +146,7 @@
         }
 
         @media screen and (max-width:615px) {
-            @media screen and (max-height:863px) {
+            @media screen and (max-height:865px) {
                 footer {
                     display:none;
                 }
@@ -160,11 +162,13 @@
             }
         }
 
+        @media screen and (max-height:830px) { footer { display:none; } }
+
         @media screen and (max-height:1000px) {
             footer { height:200px; }
         }
 
-        @media screen and (max-height:830px) { footer { display:none; } }
+        
 
     </style>
 
