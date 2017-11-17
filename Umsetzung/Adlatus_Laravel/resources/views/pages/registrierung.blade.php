@@ -78,7 +78,8 @@
 
             margin-bottom:20px;
             margin-right:3%;
-
+            
+            border:1px solid;
             box-shadow:1px 1px 1px gray;
             width:40%;
         }
