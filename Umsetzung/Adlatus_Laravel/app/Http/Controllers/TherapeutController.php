@@ -43,23 +43,38 @@ class TherapeutController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'sozNummer' => 'required',
+            'sozNummer' => array(
+                'required',
+                'regex:/\d...([0][1-9]|[1,2]\d|[3][0,1])([0][1-9]|[1][0-2])\d\d/u',
+                'min:10',
+                'max:10'
+            ),
             'vorname' => 'required',
             'nachname' => 'required',
-            'email' => '',
-            'password' => 'required'
+            'email' => 'nullable',
+            'password' => array(
+                'required',
+                'min:6',
+                'max:20'
+            ),
+            'again' => 'required'
         ]);
         
-        $therapeut = new Therapeut();
-        $therapeut->sozNr = $request->input('sozNummer');
-        $therapeut->vorname = $request->input('vorname');
-        $therapeut->nachname = $request->input('nachname');
-        $therapeut->email = $request->input('email');
-        $therapeut->password = $request->input('password');
-
-        $therapeut->save();
-
-        return $therapeut;
+        if($request->input('password') == $request->input('again')) {
+            $therapeut = new Therapeut();
+            $therapeut->sozNr = $request->input('sozNummer');
+            $therapeut->vorname = $request->input('vorname');
+            $therapeut->nachname = $request->input('nachname');
+            $therapeut->email = $request->input('email');
+            $therapeut->password = $request->input('password');
+    
+            $therapeut->save();
+            return redirect('/login')->with('Success', 'Therapeut created');
+        }
+        else {
+            return redirect('/registrierung')->with('Error', 'Therapeut could not be created');
+        }
+        return redirect('/')-with('Error', 'Something went horribly wrong');
     }
 
     /**

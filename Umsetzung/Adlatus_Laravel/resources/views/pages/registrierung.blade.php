@@ -200,6 +200,8 @@
                         {{ Form::text('sozNummer', '', ['class' => 'fm', 'placeholder' => 'Soz. Versicherungsnummer'])}}
                         <br>
                         {{ Form::password('password', ['class' => 'fm', 'placeholder' => 'Passwort'])}}
+                        <br>
+                        {{ Form::password('again', ['class' => 'fm', 'placeholder' => 'Passwort wiederholen'])}}
 
                         {{ Form::submit('Registrieren', ['class' => 'rg'])}}
                     {{ Form::close() }}
