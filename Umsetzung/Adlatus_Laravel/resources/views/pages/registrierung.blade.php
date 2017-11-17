@@ -130,13 +130,7 @@
 
         /* @media - Responsive Design */
 
-        @media screen and (max-width:870px) {
-            .rg {
-                float:none;
-            }
-        }
-
-        @media screen and (max-width:430px) { .fm { width:80%; } }
+        @media screen and (max-width:870px) { .rg { float:none; } }
 
         @media screen and (max-width:360px) { section { width:250px; } }
 
@@ -158,6 +152,7 @@
         }
 
         @media screen and (max-width:430px) {
+            .fm { width:80%; }
             @media screen and (max-height:935px) {
                 footer {
                     display:none;
@@ -238,4 +233,3 @@
             </table>
         </footer>
 @endsection
-

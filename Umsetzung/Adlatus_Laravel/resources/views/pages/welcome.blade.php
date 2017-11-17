@@ -90,22 +90,67 @@
         }
 
         /* @media - Responsive Design */
-        @media screen and (max-width:768px) {
-            .main { flex-direction:column; }
-
-            footer { display:none; }
-        }
+        @media screen and (max-width:768px) { .main { flex-direction:column; } }
 
         @media screen and (max-height:1000px) {
             .bild { height:100px; }
-
             footer { height:200px; }
         }
 
-        @media screen and (max-height:660px;) {
-            footer { opacity:0.4; }
+        /* Responsive: Footer */
+        @media screen and (max-height:640px) {
+            footer { display: none; }
         }
 
+        @media screen and (max-width:1307px) {
+            @media screen and (max-height:660px) {
+                footer { display:none; }
+            }
+        }
+
+        @media screen and (max-width:1122px) {
+            @media screen and (max-height:680px) {
+                footer { display:none; }
+            }
+        }
+
+        @media screen and (max-width:899px) {
+            @media screen and (max-height:700px) {
+                footer { display:none; }
+            }
+        }
+
+        @media screen and (max-width:768px) {
+            @media screen and (max-height:745px) {
+                footer { display:none; }
+            }
+        }
+
+        @media screen and (max-width:664px) {
+            @media screen and (max-height:765px) {
+                footer { display:none; }
+            }
+        }
+
+        @media screen and (max-width:540px) {
+            @media screen and (max-height:780px) {
+                footer { display:none; }
+            }
+        }
+
+        @media screen and (max-width:512px) {
+            @media screen and (max-height:790px) {
+                footer { display:none; }
+            }
+        }
+
+        @media screen and (max-width:470px) {
+            section { width:330px; }
+            @media screen and (max-height:820px) {
+                footer { display:none; }
+            }
+        }
+        
     </style>
     <title>Startseite</title>
     </head>
