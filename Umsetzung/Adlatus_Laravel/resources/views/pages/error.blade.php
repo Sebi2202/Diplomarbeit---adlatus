@@ -5,6 +5,7 @@
         body {
             margin:0px;
             font-family:Verdana;
+            font-size:14px;
         }
 
         a {
@@ -12,7 +13,12 @@
             color:white;
         }
 
+        h2 { 
+            font-size:18px;
+        }
+
         .back {
+            font-size:12px;
             font-style:italic;
             color:lightblue;
         }
@@ -20,7 +26,7 @@
         header {
             background-color: lightblue;
             width:100%;
-            height:100px;
+            height:60px;
         }
 
         .links {
@@ -32,7 +38,7 @@
 
         .links_header {
             position:relative;
-            top:30px;
+            top:20px;
             font-weight:bold;
             color:white;
         }
@@ -50,36 +56,34 @@
             right:0;
             bottom:0;
             background-color:gray;
-            height:250px;
+            height:150px;
             z-index:-9999;
         }
 
         table {
             width:30%;
             font-size:12px;
-            padding-top:30px;
+            padding-top:10px;
+            white-space:nowrap;
             margin-left:15%;
             color:white;
         }
 
         th {
             height:40px;
-            font-size:14px;
+            font-size:12px;
             text-align:left;
         }
 
         /* @media - Responsive Design */
-        @media screen and (max-width:768px) {
-            footer { display:none; }
+        @media screen and (max-height:320px) { footer { display:none; } }
+        @media screen and (max-width:680px) { 
+            @media screen and (max-height:340px) { footer { display:none; } }
         }
-
-        @media screen and (max-height:1000px) {
-            footer { height:200px; }
+        @media screen and (max-width:497px) { 
+            @media screen and (max-height:352px) { footer { display:none; } }
         }
-
-        @media screen and (max-height:660px) {
-            footer { opacity:0.4; }
-        }
+        
     </style>
 
     <title>Login</title>
