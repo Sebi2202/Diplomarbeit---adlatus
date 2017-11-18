@@ -65,10 +65,9 @@
         }
 
         footer {
-            position:fixed;
-            left:0;
+            position:relative;
             width:100%;
-            bottom:0;
+            top:10px;
             background-color:gray;
             height:250px;
             margin-top:100px;
@@ -90,7 +89,9 @@
         }
 
         /* @media - Responsive Design */ 
+        /* -- Ausgegraut ist Responsive Design - Footer, sollte er position:fixed sein -- */
 
+        /*
         @media screen and (min-width:1285px) { 
             @media screen and (max-height:840px) { footer { display:none; } }
             @media screen and (max-height:860px) { 
@@ -126,7 +127,7 @@
             @media screen and (max-width:360px) { footer { display:none; } } 
 
         }
-
+        */
         @media screen and (max-width:768px) { .main { flex-direction:column; } }
         
         @media screen and (max-height:900px) {
@@ -139,6 +140,7 @@
                 table { padding-top:10px; white-space:nowrap; }
                 th { font-size:12px; }
                 .bild { height:100px; }
+                /*
                 @media screen and (max-height:530px) { footer { display:none; } }
                 @media screen and (max-width:1150px) { 
                     @media screen and (max-height: 548px) { footer { display:none; } }
@@ -159,6 +161,7 @@
                     @media screen and (max-height: 618px) { footer { display:none; } }
                 }
                 @media screen and (max-width:680px) { footer { display:none; } }
+                */
             }
         }
         

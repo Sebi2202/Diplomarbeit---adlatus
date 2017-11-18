@@ -76,6 +76,7 @@
         }
 
         /* @media - Responsive Design */
+        
         @media screen and (max-height:320px) { footer { display:none; } }
         @media screen and (max-width:680px) { 
             @media screen and (max-height:340px) { footer { display:none; } }
