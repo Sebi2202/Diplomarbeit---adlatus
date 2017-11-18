@@ -109,7 +109,6 @@
             width:100%;
             background-color:gray;
             height:250px;
-            z-index:-9999;
             
         }
 

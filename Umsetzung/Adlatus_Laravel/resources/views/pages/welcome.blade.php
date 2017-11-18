@@ -71,7 +71,6 @@
             background-color:gray;
             height:250px;
             margin-top:100px;
-            z-index:-9999;
         }
 
         table {
