@@ -104,8 +104,10 @@
         }
 
         footer {
-            position:relative;
-            top:30px;
+            position:absolute;
+            left:0;
+            bottom:0;
+            right:0;
             width:100%;
             background-color:gray;
             height:250px;
@@ -127,24 +129,28 @@
         }
 
         /* @media - Responsive Design */
-        /* -- Ausgegraut ist Responsive Design - Footer, sollte er position:fixed sein -- */
+        /* -- Ausgegraut ist Responsive Design - Footer, sollte er position:relative sein -- */       
+        /*
+        @media screen and (max-width:1280px) and (max-height:800px) { footer { top:200px; } }
+        @media screen and (max-width:1280px) and (max-height:720px) { footer { top:110px; } }
+        @media screen and (max-width:1280px) and (max-height:640px) { footer { top:30px; } }
+        */
 
-        
         @media screen and (max-width:870px) { .rg { float:none; } }
-        
+
         @media screen and (max-width:450px) { 
             .fm { width:80%; }
             section { width:250px;}
-            /* @media screen and (max-height:697px) { footer {display:none;} } */
+            @media screen and (max-height:697px) { footer {display:none;} }
         }
         
-        /*
+        
         @media screen and (min-width:1285px) { 
             @media screen and (max-height:875px) { footer { display:none; } }
         }
-        */
+        
 
-        /*
+        
         @media screen and (min-height:900px) {
             @media screen and (max-width:612px) {
                 @media screen and (max-height:905px) { footer { display:none; } }
@@ -154,9 +160,8 @@
             }
         }
 
-        */
-        @media screen and (max-height:900px) {
-            @media screen and (max-width:1285px) {
+        
+        @media screen and (max-height:900px) and (max-width:1285px) {
                 body { font-size:14px; }
                 header { height: 60px; }
                 .links_header { top:20px; }
@@ -166,17 +171,10 @@
                 h2 { font-size:18px; padding-top:20px; }
                 table { padding-top:10px; white-space:nowrap; }
                 th { font-size:12px; }
-                /*
-                @media screen and (max-height:620px) {
-                    footer { display:none; }
-                }
-                @media screen and (max-width:500px) {
-                    @media screen and (max-height:660px) {
-                        footer { display:none; }
-                    }
-                }
-                */
-            }
+                
+                @media screen and (max-height:620px) { footer { display:none; } }
+                @media screen and (max-width:500px) and (max-height:660px) { footer { display:none; } }
+                
         }
         
         
