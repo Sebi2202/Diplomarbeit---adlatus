@@ -127,7 +127,7 @@
 
         /* @media - Responsive Design */
         @media screen and (min-width:1285px) { 
-            section { top:300px; }
+            section { top:200px; }
             @media screen and (max-height:775px) { footer { display:none; } }
         }
 
