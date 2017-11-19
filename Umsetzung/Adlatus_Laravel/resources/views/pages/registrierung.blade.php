@@ -174,7 +174,6 @@
                 
                 @media screen and (max-height:620px) { footer { display:none; } }
                 @media screen and (max-width:500px) and (max-height:660px) { footer { display:none; } }
-                
         }
         
         
