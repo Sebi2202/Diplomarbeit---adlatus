@@ -14,7 +14,7 @@ class CreateTableTherapeuts extends Migration
     public function up()
     {
         Schema::create('therapeuts', function(Blueprint $table) {
-            $table->integer('sozNr')->primary();
+            $table->bigInteger('sozNr')->primary();
             $table->string('vorname');
             $table->string('nachname');
             $table->string('email')->nullable();

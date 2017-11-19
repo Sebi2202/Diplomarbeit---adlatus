@@ -11,15 +11,20 @@ class LoginController extends Controller
         $sozialNumber = $required->input('sozialNr');
         $pw = $required->input('password');
 
+        $checkLogin = false;
+
         $therapeuts = Therapeut::all();
         foreach($therapeuts as $therapeut) {
-            $checkLogin = $therapeut->sozNr == $sozialNumber and $therapeut->password == $pw;
+            
+            if($therapeut->sozNr == $sozialNumber and $therapeut->password == $pw) {
+                $checkLogin = true;
+            }
             if($checkLogin == true) {
                 return view('pages/dashboard');
             }
-            else {
-                return redirect('/login');
-            }
+        }
+        if($checkLogin == false) {
+            return redirect('/login');
         }
     }
 }
