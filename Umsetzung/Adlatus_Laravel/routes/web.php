@@ -17,6 +17,6 @@ Route::get('/registrierung', 'TherapeutController@create');
 Route::get('/error', 'PagesController@error');
 //Route::get('/forgot_password', 'PagesController@forgot');
 
-Route::post('/dashboard', 'LoginController@login');
+Route::post('/dashboard', 'LoginController@loginTherapeut');
 Route::post('/registrierung', 'TherapeutController@store');
 
