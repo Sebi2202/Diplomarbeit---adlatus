@@ -78,7 +78,15 @@
             </div>
         </header>
 
-
+        <section>
+            <form action="/dashboard" method="POST">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="text" name="sozialNr" placeholder="Soz. Versicherungsnummer" class="">
+                <br>
+                <input type="password" name="password" placeholder="Passwort" class="">
+                <input type="submit" name="login" value="Login" class="">
+            </form>
+        </section>
 
         <footer>
             <table>
