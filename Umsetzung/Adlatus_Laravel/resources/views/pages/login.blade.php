@@ -33,6 +33,70 @@
             color:white;
         }
 
+        section {
+            position:relative;
+            top:50px;
+            border:1px solid;
+            margin-left:25%;
+            margin-right:25%;
+            padding-left:40px;
+        }
+
+        h2 {
+            padding-top:20px;
+            
+            font-weight:normal;
+        }
+
+        .fm {
+            font-family:Verdana;
+            font-size:12px;
+            font-style:italic;
+
+            padding-top:5px;
+            padding-bottom:5px;
+            padding-left:5px;
+
+            margin-bottom:20px;
+            margin-right:3%;
+            
+            border:1px solid;
+            box-shadow:1px 1px 1px gray;
+            width:40%;
+        }
+
+        .lg {
+            font-family:Verdana;
+            font-weight:bold;
+            font-size:12px;
+
+            padding-top:8px;
+            padding-bottom:8px;
+            padding-right:50px;
+            padding-left:50px;
+
+            float:right;
+            margin-right:15%;
+
+            color:white;
+            background-color:lightgray;
+            border:none;
+            box-shadow: 3px 5px 5px gray;
+        }
+
+        .text_link {
+            font-style:italic;
+            font-size:12px;
+            padding-bottom:20px;
+        }
+
+        .forgot_reg {
+            font-style:italic;
+            font-size:12px;
+            text-decoration:none;
+            color:lightblue;
+        }
+
         footer {
             /* position:relative;
             width:100%; */
@@ -62,6 +126,15 @@
         }
 
         /* @media - Responsive Design */
+        @media screen and (min-width:1285px) { 
+            section { top:300px; }
+            @media screen and (max-height:775px) { footer { display:none; } }
+        }
+
+        @media screen and (max-height:525px) { footer { display:none; } }
+        @media screen and (max-width:770px) and (max-height:582px) { footer { display:none; } }
+
+        @media screen and (max-width:770px) {.fm {width:80%;} .lg { float:left; } .last_text { float:left; } section { height:320px; } }
         
     </style>
 
@@ -79,13 +152,18 @@
         </header>
 
         <section>
+            <h2>Login</h2>
             <form action="/dashboard" method="POST">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="text" name="sozialNr" placeholder="Soz. Versicherungsnummer" class="">
+                <input class="fm" type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input class="fm" type="text" name="sozialNr" placeholder="Soz. Versicherungsnummer" class="">
                 <br>
-                <input type="password" name="password" placeholder="Passwort" class="">
-                <input type="submit" name="login" value="Login" class="">
+                <input class="fm" type="password" name="password" placeholder="Passwort" class="">
+                <input class="lg" type="submit" name="login" value="Login" class="">
             </form>
+            <div class="last_text">
+                <p class="text_link">Ich habe noch keinen Account - <a class="forgot_reg" href="/registrierung">Registrierung</a><br><br>
+                <a class="forgot_reg" href="">Passwort vergessen?</a></p>
+            </div>
         </section>
 
         <footer>
