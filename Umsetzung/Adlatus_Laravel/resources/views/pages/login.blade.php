@@ -155,10 +155,10 @@
             <h2>Login</h2>
             <form action="/dashboard" method="POST">
                 <input class="fm" type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input class="fm" type="text" name="sozialNr" placeholder="Soz. Versicherungsnummer" class="">
+                <input class="fm" type="text" name="sozialNr" placeholder="Soz. Versicherungsnummer">
                 <br>
-                <input class="fm" type="password" name="password" placeholder="Passwort" class="">
-                <input class="lg" type="submit" name="login" value="Login" class="">
+                <input class="fm" type="password" name="password" placeholder="Passwort">
+                <input class="lg" type="submit" name="login" value="Login">
             </form>
             <div class="last_text">
                 <p class="text_link">Ich habe noch keinen Account - <a class="forgot_reg" href="/registrierung">Registrierung</a><br><br>
