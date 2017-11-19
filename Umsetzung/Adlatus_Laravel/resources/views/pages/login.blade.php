@@ -133,8 +133,11 @@
 
         @media screen and (max-height:525px) { footer { display:none; } }
         @media screen and (max-width:770px) and (max-height:582px) { footer { display:none; } }
+        @media screen and (max-width:508px) {
+            section { width:210px; }
+        }
 
-        @media screen and (max-width:770px) {.fm {width:80%;} .lg { float:left; } .last_text { float:left; } section { height:320px; } }
+        @media screen and (max-width:960px) {.fm {width:80%;} .lg { float:left; } .last_text { float:left; } section { height:320px; } }
         
     </style>
 
