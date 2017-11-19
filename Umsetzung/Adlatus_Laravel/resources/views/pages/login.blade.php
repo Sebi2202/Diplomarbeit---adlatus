@@ -21,8 +21,8 @@
 
         .links {
             text-align:right;
-            margin-left:10%;
-            margin-right:15%;
+            margin-left:25%;
+            margin-right:25%;
             white-space:nowrap;
         }
 
@@ -145,7 +145,7 @@
     
     </head>
     <body>
-    <header>
+        <header>
             <img class="logo" src="../imgs/logo.png">
             <div class="links">
                 <a class="links_header" href="/">Home |</a>
