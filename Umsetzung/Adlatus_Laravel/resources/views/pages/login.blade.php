@@ -165,7 +165,7 @@
             </form>
             <div class="last_text">
                 <p class="text_link">Ich habe noch keinen Account - <a class="forgot_reg" href="/registrierung">Registrierung</a><br><br>
-                <a class="forgot_reg" href="">Passwort vergessen?</a></p>
+                <a class="forgot_reg" href="/forgot_password">Passwort vergessen?</a></p>
             </div>
         </section>
 

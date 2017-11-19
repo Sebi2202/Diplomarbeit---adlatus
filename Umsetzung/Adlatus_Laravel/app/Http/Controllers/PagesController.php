@@ -28,4 +28,8 @@ class PagesController extends Controller
     public function showDash() {
         return view('pages/dashboard');
     }
+
+    public function forgot() {
+        return view('pages/forgot_password');
+    }
 }
