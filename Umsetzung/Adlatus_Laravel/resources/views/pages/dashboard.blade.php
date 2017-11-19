@@ -71,7 +71,8 @@
             <img class="logo" src="../imgs/logo.png">
             <div class="links">
                 <a class="links_header" href="/">Home |</a>
-                <a class="links_header" href="/registrierung">Registrieren |</a>
+                <a class="links_header" href="">Kontenverwaltung |</a>
+                <a class="links_header" href="">Kontenbearbeitung |</a>
                 <a class="links_header" href="/help">Hilfe</a>
             </div>
         </header>
@@ -84,23 +85,12 @@
             <table>
                 <tr>
                     <th>Kontakt</th>
-                    <th>Links</th>
                 </tr>
                 <tr>
                     <td><a href="http://www.project-adlatus.at">www.project-adlatus.at</a></td>
-                    <td><a href="/">Home</a></td>
                 </tr>
                 <tr>
                     <td>Diplomarbeitsprojekt HTL3R</td>
-                    <td><a href="/registrierung">Registrieren</a></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><a href="/login">Login</a></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><a href="/help">Hilfe</a></td>
                 </tr>
             </table>
         </footer>
