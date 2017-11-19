@@ -7,7 +7,7 @@ use App\Therapeut;
 
 class LoginController extends Controller
 {
-    public function login(Request $required) {
+    public function loginTherapeut(Request $required) {
         $sozialNumber = $required->input('sozialNr');
         $pw = $required->input('password');
 
