@@ -45,7 +45,7 @@ class TherapeutController extends Controller
         $this->validate($request, [
             'sozNummer' => array(
                 'required',
-                'regex:/\d\d\d\d([0][1-9]|[1,2]\d|[3][0,1])([0][1-9]|[1][0,1,2])\d\d/u',
+                'regex:/\d\d\d\d([0][1-9]|[1,2]\d|[3][0,1])([0][1-9]|[1][0-3])\d\d/u',
                 'min:10',
                 'max:10'
             ),
