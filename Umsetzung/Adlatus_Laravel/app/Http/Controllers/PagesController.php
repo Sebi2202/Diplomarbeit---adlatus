@@ -24,4 +24,8 @@ class PagesController extends Controller
     public function error() {
         return view('pages/error');
     }
+
+    public function showDash() {
+        return view('pages/dashboard');
+    }
 }
