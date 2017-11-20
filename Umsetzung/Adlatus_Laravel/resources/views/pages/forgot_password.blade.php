@@ -140,7 +140,7 @@
         </header>
     
         <section>
-            <h2>Passwortzurücksetzung</h2>
+            <h2>Passwortrücksetzung</h2>
             {{ Form::open(['action' => 'TherapeutController@continue', 'method' => 'POST']) }}
                 {{ Form::text('sozNummer', '', ['class' => 'fm', 'placeholder' => 'Soz. Versicherungsnummer'])}}
                 <br>
