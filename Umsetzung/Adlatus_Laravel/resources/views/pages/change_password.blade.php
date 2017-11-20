@@ -139,7 +139,7 @@
         </header>
 
         <section>
-            <h2>Passwortrücksetzung</h2>
+            <h2>Neues Passwort eingeben</h2>
             {!! Form::open(['action' => ['TherapeutController@update', $therapeut->sozNr], 'method' => 'POST']) !!}
                 {{ Form::password('password', ['class' => 'fm', 'placeholder' => 'Passwort'])}}
                 <br>
