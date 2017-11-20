@@ -19,10 +19,13 @@ class CreateTablePatients extends Migration
             $table->string('nachname');
             $table->string('email')->nullable();
             $table->string('password');
-            $table->foreign('therapeut_sozNr')->references('sozNr')->on('therapeuts')->onDelete('cascade');
+            $table->char('therapeut_sozNr', 20);
             $table->rememberToken();
             $table->timestamps();
+            $table->foreign('therapeut_sozNr')->references('sozNr')->on('therapeuts');
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
