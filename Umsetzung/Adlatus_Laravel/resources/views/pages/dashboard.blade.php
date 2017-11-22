@@ -78,6 +78,11 @@
         </header>
 
         <h1>You are now logged in!</h1>
+        <section>
+            @foreach($patients as $patient)
+                <p>{{$patient->vorname}}, {{$patient->nachname}}</p>
+            @endforeach
+        </section>
         <button> <a href="/dashboard/create_patient">Patient erstellen</a></button>
 
 

@@ -29,6 +29,8 @@ class LoginController extends Controller
 
         $checkLogin = false;
 
+        $patients = Patient::all();
+
         $therapeuts = Therapeut::all();
         foreach($therapeuts as $therapeut) {
             
@@ -36,7 +38,7 @@ class LoginController extends Controller
                 $checkLogin = true;
             }
             if($checkLogin == true) {
-                return view('pages/dashboard');
+                return view('pages/dashboard')->with('patients', $patients);
             }
         }
         if($checkLogin == false) {
