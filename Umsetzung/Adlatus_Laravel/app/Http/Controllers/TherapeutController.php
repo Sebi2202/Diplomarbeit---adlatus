@@ -92,7 +92,6 @@ class TherapeutController extends Controller
         else {
             return redirect('/registrierung')->with('Error', 'Therapeut could not be created');
         }
-        return redirect('/')-with('Error', 'Something went horribly wrong');
     }
 
     /**

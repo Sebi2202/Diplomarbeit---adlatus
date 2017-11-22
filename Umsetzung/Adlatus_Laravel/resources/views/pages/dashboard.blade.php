@@ -78,7 +78,7 @@
         </header>
 
         <h1>You are now logged in!</h1>
-
+        <button> <a href="/dashboard/create_patient">Patient erstellen</a></button>
 
 
         <footer>
