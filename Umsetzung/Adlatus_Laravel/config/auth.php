@@ -50,6 +50,11 @@ return [
             'driver' => 'session',
             'provider' => 'therapeut',
         ],
+
+        'patient' => [
+            'driver' => 'token',
+            'provider' => 'patient',
+        ],
     ],
 
     /*
@@ -78,6 +83,11 @@ return [
         'therapeut' => [
             'driver' => 'eloquent',
             'model' => App\Therapeut::class,
+        ],
+
+        'patient' => [
+            'driver' => 'eloquent',
+            'model' => App\Patient::class,
         ],
 
         // 'users' => [

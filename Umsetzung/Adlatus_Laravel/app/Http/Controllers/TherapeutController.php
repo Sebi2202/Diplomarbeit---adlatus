@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Therapeut;
+use App\Patient;
 use DB;
 
 class TherapeutController extends Controller
@@ -73,8 +74,19 @@ class TherapeutController extends Controller
             $therapeut->nachname = $request->input('nachname');
             $therapeut->email = $request->input('email');
             $therapeut->password = $request->input('password');
-    
+
             $therapeut->save();
+
+            $patient = new Patient();
+            $patient->sozNr = $request->input('sozNummer');
+            $patient->vorname = $request->input('vorname');
+            $patient->nachname = $request->input('nachname');
+            $patient->email = $request->input('email');
+            $patient->password = $request->input('password');
+            $patient->therapeut_sozNr = $request->input('sozNummer');
+
+            $patient->save();
+            
             return redirect('/login')->with('Success', 'Therapeut created');
         }
         else {
