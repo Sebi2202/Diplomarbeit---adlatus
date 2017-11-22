@@ -115,14 +115,14 @@
         /* @media - Responsive Design */
         @media screen and (min-width:1285px) { 
             section { top:200px; }
-            @media screen and (max-height:606px) { footer { display:none; } }
+            @media screen and (max-height:760px) { footer { position:relative; top:355px; } }
         }
-        @media screen and (min-width:937px) and (max-height:456px) { footer { display:none; } }
+        @media screen and (min-width:937px) and (max-height:505px) { footer { position:relative; top:100px; } }
         @media screen and (max-width:937px) { 
             .fm { width:80%; } 
             .sb { float:left; } 
             section { height:225px; } 
-            @media screen and (max-height:505px) { footer { display:none; } }
+            @media screen and (max-height:560px) { footer { position:relative; top:103px; } }
         }
         @media screen and (max-width:615px) { section { width:265px; } }
 

@@ -116,14 +116,14 @@
         /* @media - Responsive Design */
         @media screen and (min-width:1285px) { 
             section { top:200px; }
-            @media screen and (max-height:652px) { footer { display:none; } }
+            @media screen and (max-height:790px) { footer { position:relative; top:335px; } }
         }
-        @media screen and (min-width:965px) and (max-height:503px) { footer { display:none; } }
+        @media screen and (min-width:965px) and (max-height:550px) { footer { position:relative; top:100px; } }
         @media screen and (max-width:965px) { 
             .fm { width:80%; } 
             .sb { float:left; } 
             section { height:260px; } 
-            @media screen and (max-height:541px) { footer { display:none; } }
+            @media screen and (max-height:590px) { footer { position:relative; top:100px; } }
         }
         @media screen and (max-width:640px) { section { width:280px; } }
 

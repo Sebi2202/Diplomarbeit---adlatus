@@ -128,11 +128,11 @@
         /* @media - Responsive Design */
         @media screen and (min-width:1285px) { 
             section { top:200px; }
-            @media screen and (max-height:775px) { footer { display:none; } }
+            @media screen and (max-height:775px) { footer { position:relative; top:300px; } }
         }
 
-        @media screen and (max-height:525px) { footer { display:none; } }
-        @media screen and (max-width:770px) and (max-height:582px) { footer { display:none; } }
+        @media screen and (max-height:580px) { footer { position:relative; top:100px; } }
+        @media screen and (max-width:770px) and (max-height:640px) { footer { position:relative; top:100px; } }
         @media screen and (max-width:508px) {
             section { width:210px; }
         }

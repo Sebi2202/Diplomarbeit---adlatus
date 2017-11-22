@@ -77,9 +77,9 @@
 
         /* @media - Responsive Design */
         
-        @media screen and (max-height:320px) { footer { display:none; } }
-        @media screen and (max-width:680px) and (max-height:340px) { footer { display:none; } }
-        @media screen and (max-width:497px) and (max-height:352px) { footer { display:none; } }
+        @media screen and (min-width:681px) and (max-height:350px) { footer { position:relative; top:32px; } }
+        @media screen and (max-width:680px) and (max-height:375px) { footer { position:relative; top:42px; } }
+        @media screen and (max-width:497px) and (max-height:370px) { footer { position:relative; top:22px; } }
         
     </style>
 

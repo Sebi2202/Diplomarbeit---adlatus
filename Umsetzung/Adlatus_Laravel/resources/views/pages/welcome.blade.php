@@ -94,38 +94,38 @@
 
         
         @media screen and (min-width:1285px) { 
-            @media screen and (max-height:840px) { footer { display:none; } }
+            @media screen and (max-height:890px) { footer { position:relative; bottom:70px; } }
             @media screen and (max-height:860px) { 
-                @media screen and (max-width:1307px) { footer { display:none; } }
+                @media screen and (max-width:1307px) { footer {  } }
             }
         }
 
         @media screen and (min-height:900px) {
             @media screen and (max-width:768px) { 
-                @media screen and (max-height:940px) { footer { display:none; } }
+                @media screen and (max-height:1000px) { footer { position:relative; bottom:50px; } }
             }
             @media screen and (max-width:664px) { 
-                @media screen and (max-height:960px) { footer { display:none; } }
+                @media screen and (max-height:985px) { footer { position:relative; bottom:50px; } }
             }
             @media screen and (max-width:540px) { 
-                @media screen and (max-height:973px) { footer { display:none; } }
+                @media screen and (max-height:1020px) { footer { position:relative; bottom:90px; } }
             }
             @media screen and (max-width:511px) { 
-                @media screen and (max-height:990px) { footer { display:none; } }
+                @media screen and (max-height:990px) { footer { position:relative; bottom:90px; } }
             }
             @media screen and (max-width:468px) { 
-                @media screen and (max-height:1010px) { footer { display:none; } }
+                @media screen and (max-height:1040px) { footer { position:relative; bottom:90px; } }
             }
             @media screen and (max-width:438px) { 
-                @media screen and (max-height:1030px) { footer { display:none; } }
+                @media screen and (max-height:1070px) { footer { position:relative; bottom:79px; } }
             }
             @media screen and (max-width:408px) { 
-                @media screen and (max-height:1050px) { footer { display:none; } }
+                @media screen and (max-height:1090px) { footer { position:relative; bottom:75px; } }
             }
             @media screen and (max-width:379px) { 
-                @media screen and (max-height:1066px) { footer { display:none; } }
+                @media screen and (max-height:1100px) { footer { position:relative; bottom:80px; } }
             }
-            @media screen and (max-width:360px) { footer { display:none; } } 
+            @media screen and (max-width:360px) { footer { position:relative; bottom:90px; } } 
 
         }
         
