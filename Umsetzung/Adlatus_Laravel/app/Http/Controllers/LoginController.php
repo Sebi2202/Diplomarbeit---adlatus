@@ -24,25 +24,35 @@ class LoginController extends Controller
     */
 
     public function loginTherapeut(Request $required) {
-        $sozialNumber = $required->input('sozialNr');
-        $pw = $required->input('password');
+        // $sozialNumber = $required->input('sozialNr');
+        // $pw = $required->input('password');
 
-        $checkLogin = false;
+        // $checkLogin = false;
 
-        $patients = Patient::all();
+        // $patients = Patient::all();
 
-        $therapeuts = Therapeut::all();
-        foreach($therapeuts as $therapeut) {
+        // $therapeuts = Therapeut::all();
+        // foreach($therapeuts as $therapeut) {
             
-            if($therapeut->sozNr == $sozialNumber and $therapeut->password == $pw) {
-                $checkLogin = true;
-            }
-            if($checkLogin == true) {
-                return view('pages/dashboard')->with('patients', $patients);
-            }
-        }
-        if($checkLogin == false) {
-            return redirect('/login');
+        //     if($therapeut->sozNr == $sozialNumber and $therapeut->password == $pw) {
+        //         $checkLogin = true;
+        //     }
+        //     if($checkLogin == true) {
+        //         return view('pages/dashboard')->with('patients', $patients);
+        //     }
+        // }
+        // if($checkLogin == false) {
+        //     return redirect('/login');
+        // }
+
+        if(Auth::attempt([
+            'sozNr' => $required->input('sozialNr'), 
+            'password' => $required->input('password')
+        ])
+        {
+            dd("success");
+        } else {
+            dd("fail");
         }
     }
 
