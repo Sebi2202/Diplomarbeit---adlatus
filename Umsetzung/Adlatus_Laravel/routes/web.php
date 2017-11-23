@@ -24,3 +24,6 @@ Route::post('/dashboard', 'LoginController@loginTherapeut');
 Route::post('/registrierung', 'TherapeutController@store');
 Route::post('/forgot_password', 'TherapeutController@continue');
 Route::post('/dashboard/create_patient', ['before' => 'csrf', 'uses' => 'PatientController@store']);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

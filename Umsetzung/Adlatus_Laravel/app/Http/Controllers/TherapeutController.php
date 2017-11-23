@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Therapeut;
 use App\Patient;
 use DB;
+use Illuminate\Support\Facades\Hash;
 
 class TherapeutController extends Controller
 {
@@ -73,7 +74,7 @@ class TherapeutController extends Controller
             $therapeut->vorname = $request->input('vorname');
             $therapeut->nachname = $request->input('nachname');
             $therapeut->email = $request->input('email');
-            $therapeut->password = $request->input('password');
+            $therapeut->password = Hash::make($request->input('password'));
 
             $therapeut->save();
 
