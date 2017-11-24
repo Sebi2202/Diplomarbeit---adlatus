@@ -1,157 +1,158 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< HEAD
 <style>
-body {
-    margin:0px;
-    font-family:Verdana;
-    font-size:14px;
-    /* Hintergrund-Bild */
-}
+    body {
+        margin:0px;
+        font-family:Verdana;
+        font-size:14px;
+        /* Hintergrund-Bild */
+    }
 
-a {
-    text-decoration:none;
-    color:white;
-}
+    a {
+        text-decoration:none;
+        color:white;
+    }
 
-header {
-    background-color: lightblue;
-    width:100%;
-    height:60px;
-}
+    header {
+        background-color: lightblue;
+        width:100%;
+        height:60px;
+    }
 
-.links {
-    text-align:right;
-    margin-left:15%;
-    margin-right:15%;
-    white-space:nowrap;
-}
+    .links {
+        text-align:right;
+        margin-left:15%;
+        margin-right:15%;
+        white-space:nowrap;
+    }
 
-.links_header {
-    position:relative;
-    top:20px;
-    font-weight:bold;
-    color:white;
-}
+    .links_header {
+        position:relative;
+        top:20px;
+        font-weight:bold;
+        color:white;
+    }
 
-.panel {
-    position:relative;
-    top:50px;
-    border:1px solid;
-    margin-left:15%;
-    margin-right:15%;
-    padding-left:40px;
-}
+    .panel {
+        position:relative;
+        top:50px;
+        border:1px solid;
+        margin-left:15%;
+        margin-right:15%;
+        padding-left:40px;
+    }
 
-h2 {
-    padding-top:20px;
-    font-size:18px;
-    font-weight:normal;
-}
+    h2 {
+        padding-top:20px;
+        font-size:18px;
+        font-weight:normal;
+    }
 
-.text_link {
-    position:relative;
-    left:1px;
-    font-style:italic;
-    font-size:12px;
-    padding-bottom:50px;
-}
+    .text_link {
+        position:relative;
+        left:1px;
+        font-style:italic;
+        font-size:12px;
+        padding-bottom:50px;
+    }
 
-.to_login {
-    font-style:italic;
-    font-size:12px;
-    text-decoration:none;
-    color:lightblue;
-}
+    .to_login {
+        font-style:italic;
+        font-size:12px;
+        text-decoration:none;
+        color:lightblue;
+    }
 
-.fm {
-    font-family:Verdana;
-    font-size:12px;
-    font-style:italic;
+    .fm {
+        font-family:Verdana;
+        font-size:12px;
+        font-style:italic;
 
-    padding-top:5px;
-    padding-bottom:5px;
-    padding-left:5px;
+        padding-top:5px;
+        padding-bottom:5px;
+        padding-left:5px;
 
-    margin-bottom:20px;
-    margin-right:3%;
-    
-    border:1px solid;
-    box-shadow:1px 1px 1px gray;
-    width:40%;
-}
+        margin-bottom:20px;
+        margin-right:3%;
+        
+        border:1px solid;
+        box-shadow:1px 1px 1px gray;
+        width:40%;
+    }
 
-.rg {
-    font-family:Verdana;
-    font-weight:bold;
-    font-size:12px;
+    .rg {
+        font-family:Verdana;
+        font-weight:bold;
+        font-size:12px;
 
-    padding-top:8px;
-    padding-bottom:8px;
-    padding-right:20px;
-    padding-left:20px;
+        padding-top:8px;
+        padding-bottom:8px;
+        padding-right:20px;
+        padding-left:20px;
 
-    float:right;
-    margin-right:15%;
+        float:right;
+        margin-right:15%;
 
-    color:white;
-    background-color:lightgray;
-    border:none;
-    box-shadow: 3px 5px 5px gray;
-}
+        color:white;
+        background-color:lightgray;
+        border:none;
+        box-shadow: 3px 5px 5px gray;
+    }
 
-footer {
-    /* position:relative;
-    width:100%; */
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    background-color:gray;
-    height:150px;
-    z-index:-9999;
-}
+    footer {
+        /* position:relative;
+        width:100%; */
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        background-color:gray;
+        height:150px;
+        z-index:-9999;
+    }
 
-table {
-    width:30%;
-    font-size:12px;
-    padding-top:10px;
-    margin-left:15%;
-    white-space:nowrap;
-    color:white;
-    
-}
+    table {
+        width:30%;
+        font-size:12px;
+        padding-top:10px;
+        margin-left:15%;
+        white-space:nowrap;
+        color:white;
+        
+    }
 
-th {
-    height:40px;
-    font-size:12px;
-    text-align:left;
-    padding-right:10px;
-}
+    th {
+        height:40px;
+        font-size:12px;
+        text-align:left;
+        padding-right:10px;
+    }
 
-td { padding-right:10px; }
+    td { padding-right:10px; }
 
-.text_link {
-    font-style:italic;
-    font-size:12px;
-    padding-bottom:20px;
-}
+    .text_link {
+        font-style:italic;
+        font-size:12px;
+        padding-bottom:20px;
+    }
 
-.forgot_reg {
-    font-style:italic;
-    font-size:12px;
-    text-decoration:none;
-    color:lightblue;
-}
+    .forgot_reg {
+        font-style:italic;
+        font-size:12px;
+        text-decoration:none;
+        color:lightblue;
+    }
 
-@media screen and (max-height:580px) { footer { position:relative; top:100px; } }
-@media screen and (max-width:770px) and (max-height:640px) { footer { position:relative; top:100px; } }
-@media screen and (max-width:508px) {
-    section { width:210px; }
-}
+    @media screen and (max-height:570px) { footer { position:relative; top:103px; } }
+    @media screen and (max-width:770px) and (max-height:640px) { footer { position:relative; top:100px; } }
+    @media screen and (max-width:508px) {
+        section { width:315px; }
+    }
 
-@media screen and (max-width:960px) {.fm {width:80%;} .lg { float:left; } .last_text { float:left; } section { height:320px; } }
+    @media screen and (max-width:960px) {.fm {width:80%;} .rg { float:left; } .last_text { float:left; } section { height:320px; } 
+        @media screen and (max-height:620px) { footer { position:relative; top:88px; } }
+    }
 
 </style>
 </head>
