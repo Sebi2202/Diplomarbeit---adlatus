@@ -158,7 +158,7 @@
             </div>
         </header>
 
-        <div class="">
+        <div class="panel">
             <h2>Registrierung</h2>
 
             <div class="">
