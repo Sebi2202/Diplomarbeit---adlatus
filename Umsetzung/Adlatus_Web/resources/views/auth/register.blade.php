@@ -8,6 +8,21 @@
                 <div class="panel-heading">Register</div>
 
                 <div class="panel-body">
+                {!! Form::open(['action' => 'Auth\RegisterController@register', 'method' => 'POST']) !!}
+                    {{ Form::text('vorname', '', ['class' => '', 'placeholder' => 'Vorname'])}}
+                    {{ Form::text('nachname', '', ['class' => '', 'placeholder' => 'Nachname'])}}
+                    <br>
+                    {{ Form::email('email', '', ['class' => '', 'placeholder' => 'E-Mail'])}}
+                    <br>
+                    {{ Form::text('sozNummer', '', ['class' => '', 'placeholder' => 'Soz. Versicherungsnummer'])}}
+                    <br>
+                    {{ Form::password('password', ['class' => '', 'placeholder' => 'Passwort'])}}
+                    <br>
+                    {{ Form::password('again', ['class' => '', 'placeholder' => 'Passwort wiederholen'])}}
+                    <br>
+                	{{Form::submit('Registrieren', ['class' => ''])}}
+           		{!! Form::close() !!}
+                <!--
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
@@ -69,6 +84,7 @@
                             </div>
                         </div>
                     </form>
+                    -->
                 </div>
             </div>
         </div>

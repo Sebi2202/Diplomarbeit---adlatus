@@ -8,6 +8,15 @@
                 <div class="panel-heading">Login</div>
 
                 <div class="panel-body">
+                    {!! Form::open(['action' => 'Auth\LoginController@login', 'method' => 'POST']) !!}
+                        {{Form::token()}}
+                        {{ Form::text('sozNummer', '', ['class' => '', 'placeholder' => 'Soz. Versicherungsnummer'])}}
+                        <br>
+                        {{Form::password('password', ['class' => '', 'placeholder' => 'Passwort'])}}
+                        <br>
+                    	{{Form::submit('Submit', ['class' => ''])}}
+           			{!! Form::close() !!}
+                    <!--
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
@@ -61,6 +70,7 @@
                             </div>
                         </div>
                     </form>
+                    -->
                 </div>
             </div>
         </div>
