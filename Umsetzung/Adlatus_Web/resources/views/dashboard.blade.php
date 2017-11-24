@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+@if(Auth::guest())
+    <?php
+        return redirect('/login');
+    ?>
+@endif
+@if(Auth::check())
+    <h2>You're logged in!</h2>
+@endif
+
+<!--
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -20,4 +30,5 @@
         </div>
     </div>
 </div>
+-->
 @endsection
