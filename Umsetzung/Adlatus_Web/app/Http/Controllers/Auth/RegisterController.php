@@ -123,6 +123,17 @@ class RegisterController extends Controller
 
             $patient->save();
             */
+
+            $pat = new User();
+            $pat->sozNr = $request->input('sozNummer');
+            $pat->vorname = $request->input('vorname');
+            $pat->nachname = $request->input('nachname');
+            $pat->email = $request->input('email');
+            $pat->password = Hash::make($request->input('password'));
+            $pat->role_id = 2;
+            $pat->therapeut_sozNr = $request->input('sozNummer');
+
+            $pat->save();
             return redirect('/login')->with('Success', 'Therapeut created');
         }
         else {

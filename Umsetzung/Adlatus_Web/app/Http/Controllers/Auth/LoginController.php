@@ -47,15 +47,17 @@ class LoginController extends Controller
 
     public function login(Request $request) {
         $users = User::all();
-        foreach($users as $user) {
-            if(Auth::attempt([
-                'sozNr' => $request->input('sozNummer'), 
-                'password' => $request->input('password')
-            ]) and $user->role_id = 1) {
-                return redirect('/dashboard');
-            }
+        if(Auth::attempt([
+            'sozNr' => $request->input('sozNummer'), 
+            'password' => $request->input('password'),
+            'role_id' => 1
+        ])) {
+            return redirect('/dashboard');
+        } else {
+            return redirect('/login');
         }
     }
+    
 
     public function logout() {
         Auth::logout();
