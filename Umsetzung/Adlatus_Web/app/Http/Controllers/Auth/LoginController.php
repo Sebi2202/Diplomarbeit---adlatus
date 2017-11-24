@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -45,13 +46,13 @@ class LoginController extends Controller
 
     public function login(Request $request) {
         if(Auth::attempt([
-            'sozNr' => $request->input('email'), 
+            'sozNr' => $request->input('sozNummer'), 
             'password' => $request->input('password')
         ]))
         {
-            dd("success");
+            return redirect('/dashboard');
         } else {
-            dd("fail");
+            return redirect('/login');
         }
     }
 

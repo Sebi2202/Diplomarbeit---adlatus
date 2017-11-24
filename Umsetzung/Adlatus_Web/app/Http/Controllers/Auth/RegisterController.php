@@ -6,6 +6,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -74,5 +76,57 @@ class RegisterController extends Controller
 
     public function showRegistrationForm() {
         return view('auth/register');
+    }
+
+    public function register(Request $request) {
+        $this->validate($request, [
+            'sozNummer' => array(
+                'required',
+                'min:10',
+                'max:10',
+                'regex:/\d\d\d\d([0][1-9]|[1,2]\d|[3][0,1])([0][1-9]|[1][0-3])\d\d/u'
+            ),
+            'vorname' => 'required',
+            'nachname' => 'required',
+            'email' => 'required',
+            'password' => array(
+                'required',
+                'min:6'
+            ),
+            'again' => 'required'
+        ]);
+        
+        $users = User::all();
+        foreach($users as $user) {
+            if($user->sozNr == $request->input('sozNummer')) {
+                return view('pages/error');
+            }
+        }
+        if($request->input('password') == $request->input('again')) {
+            $user = new User();
+            $user->sozNr = $request->input('sozNummer');
+            $user->vorname = $request->input('vorname');
+            $user->nachname = $request->input('nachname');
+            $user->email = $request->input('email');
+            $user->password = Hash::make($request->input('password'));
+            $user->role_id = 1;
+
+            $user->save();
+            /*
+            $patient = new Patient();
+            $patient->sozNr = $request->input('sozNummer');
+            $patient->vorname = $request->input('vorname');
+            $patient->nachname = $request->input('nachname');
+            $patient->email = $request->input('email');
+            $patient->password = $request->input('password');
+            $patient->therapeut_sozNr = $request->input('sozNummer');
+
+            $patient->save();
+            */
+            return redirect('/login')->with('Success', 'Therapeut created');
+        }
+        else {
+            return redirect('/register')->with('Error', 'Therapeut could not be created');
+        }
     }
 }
