@@ -99,7 +99,7 @@ class RegisterController extends Controller
         $users = User::all();
         foreach($users as $user) {
             if($user->sozNr == $request->input('sozNummer')) {
-                return view('pages/error');
+                return view('error');
             }
         }
         if($request->input('password') == $request->input('again')) {
