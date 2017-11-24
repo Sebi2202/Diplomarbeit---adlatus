@@ -5,12 +5,13 @@
         body {
             margin:0px;
             font-family:Verdana;
+            font-size:14px;
         }
 
         header {
             background-color: lightblue;
             width:100%;
-            height:100px;
+            height:60px;
         }
 
         a {
@@ -27,12 +28,13 @@
 
         .links_header {
             position:relative;
-            top:30px;
+            top:20px;
             font-weight:bold;
             color:white;
         }
 
         section {
+            top:10px;
             margin-left:15%;
             margin-right:15%;
         }
@@ -40,7 +42,7 @@
         .bild {
             text-align:center;
             border:1px solid;
-            height:250px;
+            height:100px;
         }
 
         .video {
@@ -71,26 +73,44 @@
             right:0;
             width:100%;
             background-color:gray;
-            height:250px;
+            height:150px;
             margin-top:100px;
         }
 
         table {
             width:30%;
             font-size:12px;
-            padding-top:30px;
+            padding-top:10px;
+            white-space:nowrap;
             margin-left:15%;
             color:white;
         }
 
         th {
             height:40px;
-            font-size:14px;
+            font-size:12px;
             text-align:left;
+            padding-right:10px;
         }
 
+        td { padding-right:10px; }
+
+    
+
         /* @media - Responsive Design */ 
-        /* -- Ausgegraut ist Responsive Design - Footer, sollte er position:relative sein -- */
+        @media screen and (max-height:629px) { footer { position:relative; } }
+        @media screen and (max-width:1150px) and (max-height:646px) { footer { position:relative; } }
+        @media screen and (max-width:988px) and (max-height:663px) { footer { position:relative; } }
+        @media screen and (max-width:792px) and (max-height:680px) { footer { position:relative; } }
+        @media screen and (max-width:605px) and (max-height:697px) { footer { position:relative; } }
+        @media screen and (max-width:564px) and (max-height:714px) { footer { position:relative; } }
+        @media screen and (max-width:506px) and (max-height:731px) { footer { position:relative; } }
+        @media screen and (max-width:467px) and (max-height:748px) { footer { position:relative; } }
+        @media screen and (max-width:430px) and (max-height:766px) { footer { position:relative; } }
+
+        @media screen and (max-width:400px) { section { width:280px; } }
+
+        /*
 
         
         @media screen and (min-width:1285px) { 
@@ -129,11 +149,11 @@
 
         }
         
-        /*
+        
         @media screen and (max-width:1280px) and (max-height:800px) { footer { top:170px; } }
         @media screen and (max-width:1280px) and (max-height:720px) { footer { top:90px; } }
         @media screen and (max-width:1280px) and (max-height:640px) { footer { top:20px; } }
-        */
+        
 
         @media screen and (max-width:768px) { .main { flex-direction:column; } }
         
@@ -167,7 +187,7 @@
                 @media screen and (max-height: 618px) { footer { display:none; } }
             }
             @media screen and (max-width:680px) { footer { display:none; } }
-        }
+        }*/
         
     </style>
     <title>Startseite</title>
@@ -177,7 +197,7 @@
         <header>
             <img class="logo" src="../imgs/logo.png">
             <div class="links">
-                <a class="links_header" href="/register">Registrieren |</a>
+                <a class="links_header" href="/register">Registrierung |</a>
                 <a class="links_header" href="/login">Login |</a>
                 <a class="links_header" href="/help">Hilfe</a>
             </div>
