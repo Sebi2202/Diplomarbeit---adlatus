@@ -1,95 +1,228 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layout/layout')
 
-        <title>Laravel</title>
+ @section('content')
+    <style>
+        body {
+            margin:0px;
+            font-family:Verdana;
+        }
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        header {
+            background-color: lightblue;
+            width:100%;
+            height:100px;
+        }
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
+        a {
+            text-decoration:none;
+            color:white;
+        }
+
+        .links {
+            text-align:right;
+            margin-left:10%;
+            margin-right:15%;
+            white-space:nowrap;
+        }
+
+        .links_header {
+            position:relative;
+            top:30px;
+            font-weight:bold;
+            color:white;
+        }
+
+        section {
+            margin-left:15%;
+            margin-right:15%;
+        }
+
+        .bild {
+            text-align:center;
+            border:1px solid;
+            height:250px;
+        }
+
+        .video {
+            border:1px solid;
+            width:100%;
+            text-align:center;
+        }
+
+        .text {
+            margin-left:20px;
+        }
+
+        .main {
+            display:flex;
+            flex-direction:row;
+           
+        }
+
+        .main > div {
+            justify-content:space-between;
+            margin-top:50px;
+        }
+
+        footer {
+            position:absolute;
+            left:0;
+            bottom:0;
+            right:0;
+            width:100%;
+            background-color:gray;
+            height:250px;
+            margin-top:100px;
+        }
+
+        table {
+            width:30%;
+            font-size:12px;
+            padding-top:30px;
+            margin-left:15%;
+            color:white;
+        }
+
+        th {
+            height:40px;
+            font-size:14px;
+            text-align:left;
+        }
+
+        /* @media - Responsive Design */ 
+        /* -- Ausgegraut ist Responsive Design - Footer, sollte er position:relative sein -- */
+
+        
+        @media screen and (min-width:1285px) { 
+            @media screen and (max-height:890px) { footer { position:relative; bottom:70px; } }
+            @media screen and (max-height:860px) { 
+                @media screen and (max-width:1307px) { footer {  } }
             }
+        }
 
-            .full-height {
-                height: 100vh;
+        @media screen and (min-height:900px) {
+            @media screen and (max-width:768px) { 
+                @media screen and (max-height:1000px) { footer { position:relative; bottom:50px; } }
             }
+            @media screen and (max-width:664px) { 
+                @media screen and (max-height:985px) { footer { position:relative; bottom:50px; } }
+            }
+            @media screen and (max-width:540px) { 
+                @media screen and (max-height:1020px) { footer { position:relative; bottom:90px; } }
+            }
+            @media screen and (max-width:511px) { 
+                @media screen and (max-height:990px) { footer { position:relative; bottom:90px; } }
+            }
+            @media screen and (max-width:468px) { 
+                @media screen and (max-height:1040px) { footer { position:relative; bottom:90px; } }
+            }
+            @media screen and (max-width:438px) { 
+                @media screen and (max-height:1070px) { footer { position:relative; bottom:79px; } }
+            }
+            @media screen and (max-width:408px) { 
+                @media screen and (max-height:1090px) { footer { position:relative; bottom:75px; } }
+            }
+            @media screen and (max-width:379px) { 
+                @media screen and (max-height:1100px) { footer { position:relative; bottom:80px; } }
+            }
+            @media screen and (max-width:360px) { footer { position:relative; bottom:90px; } } 
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+        }
+        
+        /*
+        @media screen and (max-width:1280px) and (max-height:800px) { footer { top:170px; } }
+        @media screen and (max-width:1280px) and (max-height:720px) { footer { top:90px; } }
+        @media screen and (max-width:1280px) and (max-height:640px) { footer { top:20px; } }
+        */
 
-            .position-ref {
-                position: relative;
+        @media screen and (max-width:768px) { .main { flex-direction:column; } }
+        
+        @media screen and (max-height:900px) and (max-width:1285px) {
+            body { font-size:14px; }
+            header { height: 60px; }
+            .links_header { top:20px; }
+            footer { height:150px; }
+            section { top:10px; }
+            table { padding-top:10px; white-space:nowrap; }
+            th { font-size:12px; }
+            .bild { height:100px; }
+            
+            @media screen and (max-height:530px) { footer { display:none; } }
+            @media screen and (max-width:1150px) { 
+                @media screen and (max-height: 548px) { footer { display:none; } }
             }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
+            @media screen and (max-width:988px) { 
+                @media screen and (max-height: 565px) { footer { display:none; } }
             }
-
-            .content {
-                text-align: center;
+            @media screen and (max-width:792px) { 
+                @media screen and (max-height: 580px) { footer { display:none; } }
             }
-
-            .title {
-                font-size: 84px;
+            @media screen and (max-width:768px) { 
+                @media screen and (max-height: 585px) { footer { display:none; } }
             }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
+            @media screen and (max-width:758px) { 
+                @media screen and (max-height: 600px) { footer { display:none; } }
             }
-
-            .m-b-md {
-                margin-bottom: 30px;
+            @media screen and (max-width:684px) { 
+                @media screen and (max-height: 618px) { footer { display:none; } }
             }
-        </style>
+            @media screen and (max-width:680px) { footer { display:none; } }
+        }
+        
+    </style>
+    <title>Startseite</title>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
+        @if(Auth::guest())
+        <header>
+            <img class="logo" src="../imgs/logo.png">
+            <div class="links">
+                <a class="links_header" href="/register">Registrieren |</a>
+                <a class="links_header" href="/login">Login |</a>
+                <a class="links_header" href="/help">Hilfe</a>
+            </div>
+        </header>
+        <section>
+            <div class="bild">
+                Big Picture here
+            </div>
+            <div class="main">
+                <div class="video">
+                    Video here
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="text">
+                    <h4>Diplomarbeit Adlatus</h4>
+                    <p>Adlatus ist eine Diplomarbeit der HTL Rennweg. Das Projektteam hat versucht eine Tagesstrukturplan-App zu entwickeln</p>
+                    <p>Auf der Webseite kann man für eine Person einen Tagesplan entwickeln, welcher dieser dann auf der App öffnen kann. Beim Tagesplan kann ich verschiedene Aktivitäten hinzufügen und man wird auf diese erinnert</p>
                 </div>
             </div>
-        </div>
-    </body>
-</html>
+        </section>
+        <footer>
+            <table>
+                <tr>
+                    <th>Kontakt</th>
+                    <th>Links</th>
+                </tr>
+                <tr>
+                    <td><a href="http://www.project-adlatus.at">www.project-adlatus.at</a></td>
+                    <td><a href="/">Home</a></td>
+                </tr>
+                <tr>
+                    <td>Diplomarbeitsprojekt HTL3R</td>
+                    <td><a href="/register">Registrieren</a></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><a href="/login">Login</a></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><a href="/help">Hilfe</a></td>
+                </tr>
+            </table>
+        </footer>
+        @endif
+        @if(Auth::check())
+            <section><a href="/dashboard" style="color:black">return back to Dashboard</a></section>
+        @endif
+@endsection
