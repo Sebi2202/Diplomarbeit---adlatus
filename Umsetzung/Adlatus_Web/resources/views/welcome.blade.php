@@ -223,6 +223,9 @@
         </footer>
         @endif
         @if(Auth::check())
-            <section><a href="/dashboard" style="color:black">return back to Dashboard</a></section>
+            <?php
+                Auth::logout();
+                header("Refresh:0");
+            ?>
         @endif
 @endsection
