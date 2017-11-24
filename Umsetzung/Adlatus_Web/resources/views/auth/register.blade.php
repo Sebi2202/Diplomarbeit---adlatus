@@ -145,132 +145,70 @@
     
     
 
-</style>
+    </style>
+    </head>
+    <body>
+    @if(Auth::guest())
+        <header>
+            <img class="logo" src="../imgs/logo.png">
+            <div class="links">
+                <a class="links_header" href="/">Home |</a>
+                <a class="links_header" href="/login">Login |</a>
+                <a class="links_header" href="/help">Hilfe</a>
+            </div>
+        </header>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <header>
-                <img class="logo" src="../imgs/logo.png">
-                <div class="links">
-                    <a class="links_header" href="/">Home |</a>
-                    <a class="links_header" href="/login">Login |</a>
-                    <a class="links_header" href="/help">Hilfe</a>
-                </div>
-            </header>
+        <div class="">
+            <h2>Registrierung</h2>
 
-            <div class="panel panel-default">
-                <h2>Register</h2>
-
-                <div class="panel-body">
+            <div class="">
                 {!! Form::open(['action' => 'Auth\RegisterController@register', 'method' => 'POST']) !!}
-                    {{ Form::text('vorname', '', ['class' => 'fm', 'placeholder' => 'Vorname'])}}
-                    {{ Form::text('nachname', '', ['class' => 'fm', 'placeholder' => 'Nachname'])}}
-                    <br>
-                    {{ Form::email('email', '', ['class' => 'fm', 'placeholder' => 'E-Mail'])}}
-                    <br>
-                    {{ Form::text('sozNummer', '', ['class' => 'fm', 'placeholder' => 'Soz. Versicherungsnummer'])}}
-                    <br>
-                    {{ Form::password('password', ['class' => 'fm', 'placeholder' => 'Passwort'])}}
-                    <br>
-                    {{ Form::password('again', ['class' => 'fm', 'placeholder' => 'Passwort wiederholen'])}}
-                    <br>
-                	{{Form::submit('Registrieren', ['class' => 'rg'])}}
-           		{!! Form::close() !!}
+                {{ Form::text('vorname', '', ['class' => 'fm', 'placeholder' => 'Vorname'])}}
+                {{ Form::text('nachname', '', ['class' => 'fm', 'placeholder' => 'Nachname'])}}
+                <br>
+                {{ Form::email('email', '', ['class' => 'fm', 'placeholder' => 'E-Mail'])}}
+                <br>
+                {{ Form::text('sozNummer', '', ['class' => 'fm', 'placeholder' => 'Soz. Versicherungsnummer'])}}
+                <br>
+                {{ Form::password('password', ['class' => 'fm', 'placeholder' => 'Passwort'])}}
+                <br>
+                {{ Form::password('again', ['class' => 'fm', 'placeholder' => 'Passwort wiederholen'])}}
+                <br>
+            	{{Form::submit('Registrieren', ['class' => 'rg'])}}
+           	    {!! Form::close() !!}
 
                 <p class="text_link">Ich habe bereits einen Account - <a class="to_login" href="/login">Login</a></p>
-
-                <!--
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                    -->
-                </div>
             </div>
-            <footer>
-            <table>
-                <tr>
-                    <th>Kontakt</th>
-                    <th>Links</th>
-                </tr>
-                <tr>
-                    <td><a href="http://www.project-adlatus.at">www.project-adlatus.at</a></td>
-                    <td><a href="/">Home</a></td>
-                </tr>
-                <tr>
-                    <td>Diplomarbeitsprojekt HTL3R</td>
-                    <td><a href="/registrierung">Registrieren</a></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><a href="/login">Login</a></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><a href="/help">Hilfe</a></td>
-                </tr>
-            </table>
-        </footer>
-
         </div>
-    </div>
-</div>
+    <footer>
+        <table>
+            <tr>
+                <th>Kontakt</th>
+                <th>Links</th>
+            </tr>
+            <tr>
+                <td><a href="http://www.project-adlatus.at">www.project-adlatus.at</a></td>
+                <td><a href="/">Home</a></td>
+            </tr>
+            <tr>
+                <td>Diplomarbeitsprojekt HTL3R</td>
+                <td><a href="/registrierung">Registrieren</a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="/login">Login</a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="/help">Hilfe</a></td>
+            </tr>
+        </table>
+    </footer>
+    @endif
+    @if(Auth::check())
+    <?php
+        Auth::logout();
+        header("Refresh:0");
+    ?>
+@endif
 @endsection

@@ -112,17 +112,6 @@ class RegisterController extends Controller
             $user->role_id = 1;
 
             $user->save();
-            /*
-            $patient = new Patient();
-            $patient->sozNr = $request->input('sozNummer');
-            $patient->vorname = $request->input('vorname');
-            $patient->nachname = $request->input('nachname');
-            $patient->email = $request->input('email');
-            $patient->password = $request->input('password');
-            $patient->therapeut_sozNr = $request->input('sozNummer');
-
-            $patient->save();
-            */
 
             $pat = new User();
             $pat->sozNr = $request->input('sozNummer');
