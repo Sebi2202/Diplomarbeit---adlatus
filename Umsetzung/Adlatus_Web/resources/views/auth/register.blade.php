@@ -205,10 +205,4 @@
         </table>
     </footer>
     @endif
-    @if(Auth::check())
-    <?php
-        Auth::logout();
-        header("Refresh:0");
-    ?>
-    @endif
 @endsection
