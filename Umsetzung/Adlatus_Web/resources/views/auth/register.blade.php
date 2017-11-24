@@ -210,5 +210,5 @@
         Auth::logout();
         header("Refresh:0");
     ?>
-@endif
+    @endif
 @endsection
