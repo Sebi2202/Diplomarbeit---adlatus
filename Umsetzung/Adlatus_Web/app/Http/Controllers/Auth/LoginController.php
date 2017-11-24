@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
@@ -45,14 +46,14 @@ class LoginController extends Controller
     }
 
     public function login(Request $request) {
-        if(Auth::attempt([
-            'sozNr' => $request->input('sozNummer'), 
-            'password' => $request->input('password')
-        ]))
-        {
-            return redirect('/dashboard');
-        } else {
-            return redirect('/login');
+        $users = User::all();
+        foreach($users as $user) {
+            if(Auth::attempt([
+                'sozNr' => $request->input('sozNummer'), 
+                'password' => $request->input('password')
+            ]) and $user->role_id = 1) {
+                return redirect('/dashboard');
+            }
         }
     }
 
