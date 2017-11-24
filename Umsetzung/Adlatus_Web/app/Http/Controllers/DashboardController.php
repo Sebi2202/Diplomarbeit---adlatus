@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Mail;
+use App\Mail\PasswordRecoveryLink;
 
 class DashboardController extends Controller
 {
@@ -24,5 +26,9 @@ class DashboardController extends Controller
     public function index()
     {
         return view('dashboard');
+    }
+
+    public function email(Request $request) {
+        Mail::to($request->input('email'))->send(new PasswordRecoveryLink());
     }
 }
