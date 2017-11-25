@@ -19,3 +19,4 @@ Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('Dashboard');
 Route::get('/password/email', 'DashboardController@email')->name('sendEmail');
+Route::put('/password/reset', 'Auth\ForgotPasswordController@update');
