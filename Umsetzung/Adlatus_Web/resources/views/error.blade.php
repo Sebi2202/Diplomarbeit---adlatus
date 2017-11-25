@@ -31,7 +31,7 @@
 
         .links {
             text-align:right;
-            margin-left:10%;
+            margin-left:15%;
             margin-right:15%;
             white-space:nowrap;
         }
@@ -91,7 +91,7 @@
             <img class="logo" src="../imgs/logo.png">
             <div class="links">
                 <a class="links_header" href="/">Home |</a>
-                <a class="links_header" href="/register">Registrieren |</a>
+                <a class="links_header" href="/register">Registrierung |</a>
                 <a class="links_header" href="/help">Hilfe</a>
             </div>
         </header>

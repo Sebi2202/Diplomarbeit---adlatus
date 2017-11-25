@@ -134,7 +134,7 @@
             <img class="logo" src="../imgs/logo.png">
             <div class="links">
                 <a class="links_header" href="/">Home |</a>
-                <a class="links_header" href="/registrierung">Registrieren |</a>
+                <a class="links_header" href="/registrierung">Registrierung |</a>
                 <a class="links_header" href="/help">Hilfe</a>
             </div>
         </header>
