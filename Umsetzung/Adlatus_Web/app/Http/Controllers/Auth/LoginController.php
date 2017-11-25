@@ -46,7 +46,6 @@ class LoginController extends Controller
     }
 
     public function login(Request $request) {
-        $users = User::all();
         if(Auth::attempt([
             'sozNr' => $request->input('sozNummer'), 
             'password' => $request->input('password'),
