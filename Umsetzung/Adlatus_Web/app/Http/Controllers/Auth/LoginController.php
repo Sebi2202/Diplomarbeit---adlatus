@@ -56,7 +56,20 @@ class LoginController extends Controller
             return redirect('/login');
         }
     }
-    
+
+    public function loginApp(Request $request) {
+        if(Auth::attempt([
+            'sozNr' => $request->input('sozialNr'),
+            'password' => $request->input('password'),
+            'role_id' => 2
+        ])) {
+            return response()->json(['angenommen' => true]);
+        } else {
+            return response()->json(['angenommen' => false]);
+        }
+    }
+
+    //Auth()->id();
 
     public function logout() {
         Auth::logout();
