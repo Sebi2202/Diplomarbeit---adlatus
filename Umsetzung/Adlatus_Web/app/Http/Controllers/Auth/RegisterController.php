@@ -110,6 +110,7 @@ class RegisterController extends Controller
             $user->email = $request->input('email');
             $user->password = Hash::make($request->input('password'));
             $user->role_id = 1;
+            $user->therapeut_sozNr = $request->input('sozNummer');
 
             $user->save();
             /*
