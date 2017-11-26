@@ -61,7 +61,6 @@ class LoginController extends Controller
         if(Auth::attempt([
             'sozNr' => $request->input('sozialNr'),
             'password' => $request->input('password'),
-            'role_id' => 2
         ])) {
             return response()->json(['angenommen' => true]);
         } else {
