@@ -27,6 +27,6 @@
         </div>
 @endif
 @if(Auth::guest())
-    <h2>Sie sind nicht eingeloggt! Klicken Sie <a href="/login" style="color: black;">hier</a> um sich einzuloggen</h2>
+    <h3>Sie sind nicht eingeloggt! Klicken Sie <a href="/login" style="color: black;">hier</a> um sich einzuloggen</h3>
 @endif
 @endsection
