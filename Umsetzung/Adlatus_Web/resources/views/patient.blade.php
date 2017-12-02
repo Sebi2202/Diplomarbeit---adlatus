@@ -2,6 +2,14 @@
 
 @section('content')
 @if(Auth::check())
+    <style>
+        #really:not(:target) .sure {display: none;}
+        #really:target .sure {display: block;}
+
+        .sure {
+            display:none;
+        }
+    </style>
     </head>
     <body>
         <div class="">
@@ -24,6 +32,20 @@
                 {{Form::hidden('_method', 'PUT')}}
            	    {!! Form::close() !!} 
                 <button><a href="/dashboard">Abbrechen</a></button>
+                @if(Auth::user()->id != $user->id)
+                    <br>
+                    <div id="really">
+                        <button><a href="#really">Konto Löschen</a></button>
+                
+                        <div class="sure">
+                            {!! Form::open(['action' => ['PatientController@destroy', $user->id], 'method' => 'POST']) !!}
+                                {{Form::submit('Löschen', ['class' => ''])}}
+					            {{Form::hidden('_method', 'DELETE')}}
+           		            {!! Form::close() !!}
+                            <button><a href="#">Abbrechen</a></button>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
 @endif
