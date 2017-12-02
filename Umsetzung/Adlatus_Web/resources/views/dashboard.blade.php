@@ -55,6 +55,7 @@
         h2 {
             padding-left:40px;
             padding-top:20px;
+            padding-bottom:10px;
             font-size:18px;
             font-weight:normal;
         }
