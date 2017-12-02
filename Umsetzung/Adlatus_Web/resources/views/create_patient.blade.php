@@ -154,6 +154,8 @@
 
         td { padding-right:10px; }
 
+        /* @media - Responsive Design */
+
         @media screen and (min-width:676px) and (max-height:611px) { footer { position:relative; } }
 
         @media screen and (max-width:675px) {
@@ -170,9 +172,9 @@
         <header>
             <img class="logo" src="../imgs/logo.png">
             <div class="links">
-                <a class="links_header" href="/">Home |</a>
-                <a class="links_header" href="/patient">Kontenverwaltung |</a>
-                <a class="links_header" href="/edit_patient">Kontenbearbeitung</a>
+                <a class="links_header" href="/dashboard">Home |</a>
+                <a class="links_header" href="/dashboard/create_patient">Konto erstellen |</a>
+                <a class="links_header" href="/">Logout</a>
             </div>
         </header>
 
