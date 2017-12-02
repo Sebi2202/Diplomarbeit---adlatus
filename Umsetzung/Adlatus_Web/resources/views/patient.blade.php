@@ -16,15 +16,14 @@
             bottom:250px;
         }
 
-        .sure {
-            display:none;
-        }
-
-        body {
+        body { 
             margin:0px;
             font-family:Verdana;
-            font-size:14px;
-            /* Hintergrund-Bild */
+            font-size:14px;}
+        }
+
+        .sure {
+            display:none;
         }
 
         a {
@@ -216,7 +215,7 @@
 
     </style>
     </head>
-    <body>
+    <body class="test">
         <header>
             <img class="logo" src="../imgs/logo.png">
             <div class="links">
