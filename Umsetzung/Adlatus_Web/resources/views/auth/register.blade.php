@@ -98,6 +98,7 @@
         background-color:lightgray;
         border:none;
         box-shadow: 3px 5px 5px gray;
+        z-index:100;
     }
     
     footer {
