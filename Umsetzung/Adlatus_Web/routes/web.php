@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/dashboard', 'DashboardController@index')->name('Dashboard');
 Route::get('/password/email', 'DashboardController@email')->name('sendEmail');
 Route::get('/dashboard/create_patient', 'PagesController@create');
+Route::get('/dashboard/patient/{id}', 'PatientController@show');
 
 Route::put('/password/reset', 'Auth\ForgotPasswordController@update');
 

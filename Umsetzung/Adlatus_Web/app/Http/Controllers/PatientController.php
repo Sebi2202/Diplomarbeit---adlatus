@@ -92,7 +92,7 @@ class PatientController extends Controller
      */
     public function show($id)
     {
-        //
+        return User::find($id);
     }
 
     /**
