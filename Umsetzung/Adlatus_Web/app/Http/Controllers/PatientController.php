@@ -116,7 +116,32 @@ class PatientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
+        $this->validate($request, [
+            'vorname' => 'required',
+            'nachname' => 'required',
+            'email' => 'required',
+            'password' => array(
+                'required',
+                'min:6'
+            ),
+            'again' => 'required'
+        ]); 
+
+        if($request->input('password') == $request->input('again')) {
+            $user = User::find($id);
+            
+            $user->vorname = $request->input('vorname');
+            $user->nachname = $request->input('nachname');
+            $user->email = $request->input('email');
+            $user->password = Hash::make($request->input('password'));
+                
+            $user->save();  
+            
+            return redirect('/dashboard')->with('Success', 'Patient updated');
+        }
+        else {
+            return redirect('/dashboard/patient/{id}')->with('Error', 'Patient could not be updated');
+        }
     }
 
     /**
