@@ -99,7 +99,7 @@
         <section>
             <h2>Error</h2>
             <h4>Fehlermeldung: Sozialversicherungsnummer ist schon aktiv!</h4>
-            <a class="back" href="/register">Zurück zur Registrierung</a>
+            <!--<a class="back" href="/register">Zurück zur Registrierung</a>-->
         </section>
 
         <footer>
