@@ -26,5 +26,6 @@ Route::put('/password/reset', 'Auth\ForgotPasswordController@update');
 Route::put('/dashboard/patient/{id}', 'PatientController@update');
 
 Route::post('/dashboard/create_patient', 'PatientController@store');
+Route::post('/dashboard', 'Auth\LoginController@logout');
 
 Route::delete('/dashboard/patient/{id}', 'PatientController@destroy');

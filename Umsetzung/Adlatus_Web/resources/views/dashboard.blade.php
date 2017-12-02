@@ -9,6 +9,11 @@
 @if(Auth::check())
     </head>
     <body>
+        <div>
+            {!! Form::open(['action' => 'Auth\LoginController@logout', 'method' => 'POST']) !!}
+                {{Form::submit('Logout', ['class' => ''])}}
+            {!! Form::close() !!}
+        </div>
         <h2>You're logged in!</h2>
         @foreach($users as $user)
             @if($user->therapeut_sozNr == Auth::user()->sozNr)
