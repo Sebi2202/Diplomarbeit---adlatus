@@ -25,6 +25,12 @@
            	    {!! Form::close() !!} 
                 <button><a href="/dashboard">Abbrechen</a></button>
             </div>
+            <div class="">
+                {!! Form::open(['action' => ['PatientController@destroy', $user->id], 'method' => 'POST']) !!}
+                    {{Form::submit('Konto löschen', ['class' => ''])}}
+					{{Form::hidden('_method', 'DELETE')}}
+           		{!! Form::close() !!}
+            </div>
         </div>
 @endif
 @if(Auth::guest())

@@ -152,6 +152,15 @@ class PatientController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        if($user->id == Auth::user()->id) {
+            Auth::logout();
+            $user->delete();
+            return redirect('/login');
+        }
+        else {
+            $user->delete();
+            return redirect('/dashboard');
+        }
     }
 }

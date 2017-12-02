@@ -27,3 +27,4 @@ Route::put('/dashboard/patient/{id}', 'PatientController@update');
 
 Route::post('/dashboard/create_patient', 'PatientController@store');
 
+Route::delete('/dashboard/patient/{id}', 'PatientController@destroy');
