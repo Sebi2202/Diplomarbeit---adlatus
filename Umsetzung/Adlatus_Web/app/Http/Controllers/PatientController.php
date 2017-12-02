@@ -92,7 +92,8 @@ class PatientController extends Controller
      */
     public function show($id)
     {
-        return User::find($id);
+        $user = User::find($id);
+        return view('patient')->with('user', $user);
     }
 
     /**
@@ -115,7 +116,7 @@ class PatientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
     }
 
     /**
