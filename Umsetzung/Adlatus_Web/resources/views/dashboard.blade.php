@@ -154,6 +154,22 @@
 
         @media screen and (max-width:350px) { section { width:230px; } }
 
+        .patient {
+            text-align:center;
+            font-family:Verdana;
+            font-weight:bold;
+            font-size:12px;
+
+            padding-left:10px;
+            padding-right:10px;
+            padding-top:8px;
+            padding-bottom:8px;
+
+            width:40%;
+            background-color:lightgray;
+            border:none;
+        }
+
     </style>
     <body>
         <header>
@@ -171,7 +187,7 @@
                 @foreach($users as $user)
                     @if($user->therapeut_sozNr == Auth::user()->sozNr)
                         <div class="konto">
-                            <button><a href="/dashboard/patient/{{$user->id}}">Get to Patient</a></button><br>
+                            <a href="/dashboard/patient/{{$user->id}}" class="patient">Get to Patient</a><br>
                             <p>{{$user->vorname}} {{$user->nachname}}</p>
                         </div>
                     @endif
