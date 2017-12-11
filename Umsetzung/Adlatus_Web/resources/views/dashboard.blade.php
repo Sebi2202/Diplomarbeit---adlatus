@@ -175,7 +175,7 @@
         <header>
             <img class="logo" src="../imgs/logo.png">
             <div class="links">
-                <a class="links_header" href="/dashboard">Home |</a>
+                <a class="links_header" href="/dashboard">Dashboard |</a>
                 <a class="links_header" href="/dashboard/create_patient">Konto erstellen |</a>
                 <a class="links_header" href="/">Logout</a>
             </div>

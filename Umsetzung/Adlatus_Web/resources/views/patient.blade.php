@@ -157,9 +157,9 @@
             box-shadow: 3px 5px 5px gray;
         }
 
-        .ifdel { width:139px;  }
+        .ifdel { background-color:red; width:139px;  }
 
-        .ifcancel { background-color:red; width:139px;}
+        .ifcancel { background-color:lightgray; width:139px;}
 
         footer {
             /* position:relative;
@@ -219,7 +219,7 @@
         <header>
             <img class="logo" src="../imgs/logo.png">
             <div class="links">
-                <a class="links_header" href="/dashboard">Home |</a>
+                <a class="links_header" href="/dashboard">Dashboard |</a>
                 <a class="links_header" href="/dashboard/create_patient">Konto erstellen |</a>
                 <a class="links_header" href="/">Logout</a>
             </div>

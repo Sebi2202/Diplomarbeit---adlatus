@@ -90,9 +90,9 @@
     <header>
             <img class="logo" src="../imgs/logo.png">
             <div class="links">
-                <a class="links_header" href="/">Home |</a>
-                <a class="links_header" href="/register">Registrierung |</a>
-                <a class="links_header" href="/help">Hilfe</a>
+                <a class="links_header" href="/dashboard">Dashboard |</a>
+                <a class="links_header" href="/dashboard/create_patient">Konto erstellen |</a>
+                <a class="links_header" href="/">Logout</a>
             </div>
         </header>
 
