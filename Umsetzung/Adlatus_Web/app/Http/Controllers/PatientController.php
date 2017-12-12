@@ -57,6 +57,7 @@ class PatientController extends Controller
         ]); 
 
         $users = User::all();
+        //User::where('sozNr', $request->input('sozNummer'));
         foreach($users as $user) {
             if($user->sozNr == $request->input('sozNummer')) {
                 return view('error');
