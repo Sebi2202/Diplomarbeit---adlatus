@@ -162,7 +162,7 @@
         <div class="panel">
             <h2>Registrierung</h2>
 
-            <div class="">
+            <div>
                 {!! Form::open(['action' => 'Auth\RegisterController@register', 'method' => 'POST']) !!}
                 {{ Form::text('vorname', '', ['class' => 'fm', 'placeholder' => 'Vorname'])}}
                 {{ Form::text('nachname', '', ['class' => 'fm', 'placeholder' => 'Nachname'])}}
