@@ -60,8 +60,7 @@ class LoginController extends Controller
     public function loginApp(Request $request) {
         if(Auth::attempt([
             'sozNr' => $request->input('sozialNr'),
-            'password' => $request->input('password'),
-            'role_id' => 2
+            'password' => $request->input('password')
         ])) {
             return response()->json(['angenommen' => true]);
         } else {
