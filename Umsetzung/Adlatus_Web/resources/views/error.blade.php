@@ -90,16 +90,16 @@
     <header>
             <img class="logo" src="../imgs/logo.png">
             <div class="links">
-                <a class="links_header" href="/">Home |</a>
-                <a class="links_header" href="/register">Registrierung |</a>
-                <a class="links_header" href="/help">Hilfe</a>
+                <a class="links_header" href="/dashboard">Dashboard |</a>
+                <a class="links_header" href="/dashboard/create_patient">Konto erstellen |</a>
+                <a class="links_header" href="/">Logout</a>
             </div>
         </header>
 
         <section>
             <h2>Error</h2>
             <h4>Fehlermeldung: Sozialversicherungsnummer ist schon aktiv!</h4>
-            <a class="back" href="/register">Zurück zur Registrierung</a>
+            <!--<a class="back" href="/register">Zurück zur Registrierung</a>-->
         </section>
 
         <footer>

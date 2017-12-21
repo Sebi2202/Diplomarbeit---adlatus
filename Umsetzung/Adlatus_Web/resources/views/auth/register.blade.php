@@ -98,6 +98,7 @@
         background-color:lightgray;
         border:none;
         box-shadow: 3px 5px 5px gray;
+        z-index:100;
     }
     
     footer {
@@ -161,7 +162,7 @@
         <div class="panel">
             <h2>Registrierung</h2>
 
-            <div class="">
+            <div>
                 {!! Form::open(['action' => 'Auth\RegisterController@register', 'method' => 'POST']) !!}
                 {{ Form::text('vorname', '', ['class' => 'fm', 'placeholder' => 'Vorname'])}}
                 {{ Form::text('nachname', '', ['class' => 'fm', 'placeholder' => 'Nachname'])}}

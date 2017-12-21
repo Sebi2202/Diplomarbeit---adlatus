@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mail;
 use App\Mail\PasswordRecoveryLink;
+use App\User;
 
 class DashboardController extends Controller
 {
@@ -25,7 +26,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $users = User::all();
+        return view('dashboard')->with('users', $users);
     }
 
     public function email(Request $request) {
