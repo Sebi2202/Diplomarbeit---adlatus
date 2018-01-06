@@ -20,12 +20,14 @@ Auth::routes();
 Route::get('/dashboard', 'DashboardController@index')->name('Dashboard');
 Route::get('/password/email', 'DashboardController@email')->name('sendEmail');
 Route::get('/dashboard/create_patient', 'PagesController@create');
-Route::get('/dashboard/patient/{id}', 'PatientController@show');
+Route::get('/dashboard/patient/{id}', 'PagesController@index');
+Route::get('/dashboard/patient/edit/{id}', 'PatientController@show');
+Route::get('/dashboard/patient/calendar/{id}', 'PagesController@show');
 
 Route::put('/password/reset', 'Auth\ForgotPasswordController@update');
-Route::put('/dashboard/patient/{id}', 'PatientController@update');
+Route::put('/dashboard/patient/edit/{id}', 'PatientController@update');
 
 Route::post('/dashboard/create_patient', 'PatientController@store');
 Route::post('/dashboard', 'Auth\LoginController@logout');
 
-Route::delete('/dashboard/patient/{id}', 'PatientController@destroy');
+Route::delete('/dashboard/patient/edit/{id}', 'PatientController@destroy');

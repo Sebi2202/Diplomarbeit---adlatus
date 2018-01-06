@@ -141,7 +141,7 @@ class PatientController extends Controller
             return redirect('/dashboard')->with('Success', 'Patient updated');
         }
         else {
-            return redirect('/dashboard/patient/{id}')->with('Error', 'Patient could not be updated');
+            return redirect('/dashboard/patient/edit/{id}')->with('Error', 'Patient could not be updated');
         }
     }
 
