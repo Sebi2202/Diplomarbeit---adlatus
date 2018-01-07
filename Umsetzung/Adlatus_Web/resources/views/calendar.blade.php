@@ -4,38 +4,169 @@
 @if(Auth::check())
     {!! Html::style('css/app.css') !!}
     {!! Html::style('vendor/calendar/fullcalendar/fullcalendar.min.css') !!}
+
+<style>
+
+    body { 
+        margin:0px;
+        font-family:Verdana;
+        font-size:14px;}
+    }
+
+    a {
+        text-decoration:none;
+        color:white;
+        z-index:100;
+    }
+
+    .text { margin-left:5%; margin-right:5%; }
+
+    .header-container {
+        background-color: lightblue;
+        width:100%;
+        height:60px;
+    }
+
+    h2 { text-align:center; font-family:Verdana; }
+
+    .fc-header-toolbar { text-align:center; font-family:Verdana;}
+
+    .links {
+        text-align:right;
+        margin-left:15%;
+        margin-right:15%;
+        white-space:nowrap;
+    }
+
+    .links_header {
+        position:relative;
+        top:20px;
+        font-weight:bold;
+        color:white;
+    }
+
+    section { position:relative; top:50px; }
+
+    #calendar {
+        margin-left:15%; margin-right:15%; text-align:center;
+    }
+
+    footer {
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        background-color:gray;
+        height:150px;
+        z-index:-9999;
+    }
+
+    .footer-table {
+        width:30%;
+        font-size:12px;
+        padding-top:10px;
+        margin-left:15%;
+        white-space:nowrap;
+        color:white;
+        
+    }
+
+    .table-head {
+        height:40px;
+        font-size:12px;
+        text-align:left;
+        padding-right:10px;
+    }
+
+    .table-d { padding-right:10px; }
+
+    /* @media - Responsive Design */
+    @media screen and (min-width:1200px) and (max-height:950px) { footer { position:relative; top:97px; } }
+
+    @media screen and (max-width:1200px) and (min-width:992px) and (max-height:847px)  { footer { position:relative; top:97px; } }
+    @media screen and (max-width:991px) and (min-width:748px) and (max-height:733px)  { footer { position:relative; top:97px; } }
+    @media screen and (max-width:747px) and (min-width:735px) and (max-height:731px)  { footer { position:relative; top:97px; } }
+    @media screen and (max-width:734px) and (min-width:650px) and (max-height:725px)  { footer { position:relative; top:139px; } }
+    @media screen and (max-width:649px) and (min-width:530px) and (max-height:630px)  { footer { position:relative; top:108px; } }
+    @media screen and (max-width:530px) and (min-width:460px) and (max-height:620px)  { footer { position:relative; top:108px; } }
+    @media screen and (max-width:459px) and (min-width:350px) and (max-height:565px)  { footer { position:relative; top:108px; } }
+    @media screen and (max-width:514px) { 
+        .fc-left { width:100%;} 
+    }
+    
+
+</style>
+
 </head>
 <body>
-    <div class="container">
-        
-        {!! Form::open(['action' => 'PatientController@store', 'method' => 'POST']) !!}
-        <div id="responsive-modal" class="modal fade" tabindex="-1" data-backdrop="static">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4>HALLO</h4>
-                    </div>
-                    <div class="modal-body">
-                        
-                    </div>
-                    <div class="modal-footer">
-                        <button data-dismiss="modal">Abbrechen</button>
-                        {!! Form::submit('Done', ['class' => '']) !!}
+
+    <header class="header-container">
+        <img class="logo" src="../imgs/logo.png">
+        <div class="links">
+            <a class="links_header" href="/dashboard">Dashboard |</a>
+            <a class="links_header" href="/dashboard/create_patient">Konto erstellen |</a>
+            <a class="links_header" href="/">Logout</a>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            
+            {!! Form::open(['action' => 'PatientController@store', 'method' => 'POST']) !!}
+            <div id="responsive-modal" class="modal fade" tabindex="-1" data-backdrop="static">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4>HALLO</h4>
+                        </div>
+                        <div class="modal-body">
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button data-dismiss="modal">Abbrechen</button>
+                            {!! Form::submit('Done', ['class' => '']) !!}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {!! Form::close() !!}
-    
-        <div id="calendar">
+            {!! Form::close() !!}
+        
+            <div id="calendar">
 
+            </div>
         </div>
-    </div>
+    </section>
+
+    <footer>
+        <table class="footer-table">
+            <tr class="table-row">
+                <th class="table-head" >Kontakt</th>
+                <th class="table-head">Links</th>
+            </tr>
+            <tr class="table-row">
+                <td class="table-d"><a href="http://www.project-adlatus.at" style="color:white;">www.project-adlatus.at</a></td>
+                <td class="table-d"><a href="/" style="color:white;">Home</a></td>
+            </tr>
+            <tr class="table-row">
+                <td class="table-d">Diplomarbeitsprojekt HTL3R</td>
+                <td class="table-d"><a href="/registrierung" style="color:white;">Registrieren</a></td>
+            </tr>
+            <tr class="table-row">
+                <td class="table-d"></td>
+                <td class="table-d"><a href="/login" style="color:white;">Login</a></td>
+            </tr>
+            <tr class="table-row">
+                <td class="table-d"></td>
+                <td class="table-d"><a href="/help"style="color:white;">Hilfe</a></td>
+            </tr>
+        </table>
+    </footer>
 </body>
     {!! Html::script('js/app.js') !!}
     {!! Html::script('vendor/calendar/fullcalendar/lib/jquery.min.js') !!}
     {!! Html::script('vendor/calendar/fullcalendar/lib/moment.min.js') !!}
     {!! Html::script('vendor/calendar/fullcalendar/fullcalendar.min.js') !!}
+    {!! Html::script('vendor/calendar/fullcalendar/locale/de-at.js') !!}
 
     <script>
         var BASEURL = "{{ url('/dashboard/patient/calendar') }}";
