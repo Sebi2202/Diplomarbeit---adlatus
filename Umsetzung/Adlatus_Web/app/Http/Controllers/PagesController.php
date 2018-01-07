@@ -20,4 +20,9 @@ class PagesController extends Controller
         $user = User::find($id);
         return view('calendar')->with('user', $user);
     }
+
+    public function task($id) {
+        $user = User::find($id);
+        return view('create_task')->with('user', $user);
+    }
 }

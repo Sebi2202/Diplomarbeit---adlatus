@@ -17,10 +17,9 @@ class CreateTasksTable extends Migration
             $table->increments('task_id');
             $table->integer('fk_userid');
             $table->integer('fk_activityid');
-            $table->date('datum');
-            $table->dateTime('uhrzeit');
+            $table->dateTime('start');
             $table->char('wochentag', 20);
-            $table->char('titel', 40);
+            $table->char('title', 40);
             $table->boolean('confirmed');
             $table->char('nachricht', 200)->nullable();
             $table->timestamps();
