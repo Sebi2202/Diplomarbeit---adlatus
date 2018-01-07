@@ -45,6 +45,8 @@
         color:white;
     }
 
+    
+
     section { position:relative; top:50px; }
 
     #calendar {
@@ -52,6 +54,8 @@
     }
 
     .fc-day-number { pointer-events:none; cursor:default; text-decoration:none; }
+
+    .fc-past { cursor:pointer; }
 
     footer {
         position:absolute;
@@ -92,8 +96,25 @@
     @media screen and (max-width:649px) and (min-width:530px) and (max-height:630px)  { footer { position:relative; top:108px; } }
     @media screen and (max-width:530px) and (min-width:460px) and (max-height:620px)  { footer { position:relative; top:108px; } }
     @media screen and (max-width:459px) and (min-width:350px) and (max-height:565px)  { footer { position:relative; top:108px; } }
+    
+    /* Header Buttons */
+
     @media screen and (max-width:514px) { 
-        .fc-left { width:100%;} 
+        .fc-left { width:100%; }
+        .fc-button-group { position:relative; left:30%; }
+        .fc-today-button { position:relative; left:30%; }
+    }
+
+    @media screen and (max-width:490px) { 
+        .fc-left { width:100%; }
+        .fc-button-group { position:relative; left:25%; }
+        .fc-today-button { position:relative; left:25%; }
+    }
+
+    @media screen and (max-width:415px) { 
+        .fc-left { width:100%; }
+        .fc-button-group { position:relative; left:20%; }
+        .fc-today-button { position:relative; left:20%; }
     }
     
 
