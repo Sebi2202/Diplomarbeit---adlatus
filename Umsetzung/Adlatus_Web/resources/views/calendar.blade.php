@@ -51,6 +51,8 @@
         margin-left:15%; margin-right:15%; text-align:center;
     }
 
+    .fc-day-number { pointer-events:none; cursor:default; text-decoration:none; }
+
     footer {
         position:absolute;
         left:0;
