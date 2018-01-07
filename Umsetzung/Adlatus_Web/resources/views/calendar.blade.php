@@ -78,6 +78,10 @@
         padding-right:10px;
     }
 
+    .fc-day-number {
+        
+    }
+
     .table-d { padding-right:10px; }
 
     /* @media - Responsive Design */
@@ -111,26 +115,6 @@
 
     <section>
         <div class="container">
-            
-            {!! Form::open(['action' => 'PatientController@store', 'method' => 'POST']) !!}
-            <div id="responsive-modal" class="modal fade" tabindex="-1" data-backdrop="static">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4>HALLO</h4>
-                        </div>
-                        <div class="modal-body">
-                            
-                        </div>
-                        <div class="modal-footer">
-                            <button data-dismiss="modal">Abbrechen</button>
-                            {!! Form::submit('Done', ['class' => '']) !!}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {!! Form::close() !!}
-        
             <div id="calendar">
 
             </div>

@@ -36,8 +36,30 @@ class TaskController extends Controller
      */
     public function store(Request $request, $id)
     {
-        $user = User::find($id);
-        return view('calendar')->with('user', $user);
+        $this->validate($request, [
+            'title' => 'required',
+            'activitynr' => 'required',
+            'date' => array(
+                'required',
+                'regex:/([0][1-9]|[1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9])/u'
+            ),
+        ]);
+            
+        $pieces = explode("/", url()->previous());
+        $date = $pieces[sizeof($pieces)-1];
+
+        $task = new Task();
+        $task->fk_userid = $id;
+        $task->fk_activityid = $request->input('activitynr');
+        $task->start = $date . " " . $request->input('date');
+        $task->title = $request->input('title');
+        $task->confirmed = 0;
+        $task->nachricht = $request->input('message');
+        
+        $task->save();
+        
+        return redirect('/dashboard/patient/calendar/' . $id)->with('Success', 'Task created');
+        
     }
 
     /**
