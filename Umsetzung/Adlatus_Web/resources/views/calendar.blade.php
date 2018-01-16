@@ -180,7 +180,6 @@
         var now = new Date();
         var id = "<?php echo $user->id; ?>"
         $(document).ready(function() {
-            
         $('#calendar').fullCalendar({
             header: {
                 left: 'prev,next today',
@@ -197,7 +196,8 @@
                 window.location.href = "/dashboard/patient/calendar/" + id + "/" + date;
             },
 
-            events: BASEURL + '/tasks/{id}'
+            events: BASEURL + '/tasks/' + id
+            
             });
 
         });

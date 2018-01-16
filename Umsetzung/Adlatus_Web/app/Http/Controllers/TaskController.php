@@ -14,6 +14,10 @@ class TaskController extends Controller
      */
     public function index($id)
     {
+        //Ist die Id vom eingeloggten User Patient
+        //TO DO: Liste von Arbeitspakete, die ich erledigt habe und welche ich noch machen muss, wie viele Stunden habe ich schon gebraucht und wie viele brauche ich noch, Dead-Lines dazuschreiben
+        //Dead-Line: 24.01 23:59
+        
         $data = Task::where('fk_userid', $id)->get(['title', 'start']);
         return $data;
     }
