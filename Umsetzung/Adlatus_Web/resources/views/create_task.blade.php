@@ -33,7 +33,7 @@
         echo $vars[2] . " " . $vars[1] . " " . $vars[0];
     ?>
     <br>
-    @foreach($tasks as $task)
+    
     <nav>
         <div onClick="dropDownNull()">
            <div class="lab">0:00</div>
@@ -131,7 +131,7 @@
         <div id="nine" style="display:none">
             <div class="lab">9:00</div><br>
             <div class="lab">9:15</div><br>
-            <div class="lab">9:30 @if($task->start == $date . " " . "09:30:00") {{$task->task_id}} @endif </div><br>
+            <div class="lab">9:30</div><br>
             <div class="lab">9:45</div><br>
         </div>
 
@@ -169,10 +169,34 @@
            <div class="lab">13:00</div>
         </div>
         <div id="thirteen" style="display:none">
-            <div class="lab">13:00</div><br>
-            <div class="lab">13:15</div><br>
-            <div class="lab">13:30</div><br>
-            <div class="lab">13:45</div><br>
+            <div class="lab">13:00 
+                @foreach($tasks as $task) 
+                    @if($task->start == $date . " " . "13:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                    @endif
+                @endforeach
+            </div><br>
+            <div class="lab">13:15 
+                @foreach($tasks as $task) 
+                    @if($task->start == $date . " " . "13:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                    @endif
+                @endforeach
+            </div><br>
+            <div class="lab">13:30 
+                @foreach($tasks as $task) 
+                    @if($task->start == $date . " " . "13:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                    @endif
+                @endforeach
+            </div><br>
+            <div class="lab">13:45 
+                @foreach($tasks as $task) 
+                    @if($task->start == $date . " " . "13:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                    @endif
+                @endforeach
+            </div><br>
         </div>
 
         <div onClick="dropDownFourteen()">
@@ -275,7 +299,7 @@
             <div class="lab">23:45</div><br>
         </div>
     </nav>
-@endforeach
+
     <section>
         <div class="">
             <a onClick="termin()"><img src="/icons/arzt.png" width="120px" height="120px"></a><label>Arzttermin</label><br>
@@ -303,6 +327,7 @@
             <h2><label id="label1">Arzttermin</label></h2>
             {{ Form::hidden('title', 'Arzttermin')}}
             {{ Form::hidden('activitynr', '1') }}
+            {{ Form::hidden('link', '/icons/arzt.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -319,6 +344,7 @@
             <h2><label id="label1">Körperpflege</label></h2>
             {{ Form::hidden('title', 'Körperpflege')}}
             {{ Form::hidden('activitynr', '2') }}
+            {{ Form::hidden('link', '/icons/waschen.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -335,6 +361,7 @@
             <h2><label id="label1">Einkaufen</label></h2>
             {{ Form::hidden('title', 'Einkaufen')}}
             {{ Form::hidden('activitynr', '3') }}
+            {{ Form::hidden('link', '/icons/einkaufen.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -351,6 +378,7 @@
             <h2><label id="label1">Anrufe</label></h2>
             {{ Form::hidden('title', 'Anrufe')}}
             {{ Form::hidden('activitynr', '4') }}
+            {{ Form::hidden('link', '/icons/anruf.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -367,6 +395,7 @@
             <h2><label id="label1">Trinken</label></h2>
             {{ Form::hidden('title', 'Trinken')}}
             {{ Form::hidden('activitynr', '5') }}
+            {{ Form::hidden('link', '/icons/trinken.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -383,6 +412,7 @@
             <h2><label id="label1">Blutdruckmessen</label></h2>
             {{ Form::hidden('title', 'Blutdruckmessen')}}
             {{ Form::hidden('activitynr', '6') }}
+            {{ Form::hidden('link', '/icons/blutdruck.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -399,6 +429,7 @@
             <h2><label id="label1">Medikamente</label></h2>
             {{ Form::hidden('title', 'Medikamente')}}
             {{ Form::hidden('activitynr', '7') }}
+            {{ Form::hidden('link', '/icons/medic.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -415,6 +446,7 @@
             <h2><label id="label1">Blumen gießen</label></h2>
             {{ Form::hidden('title', 'Blumen gießen')}}
             {{ Form::hidden('activitynr', '8') }}
+            {{ Form::hidden('link', '/icons/blumen.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -431,6 +463,7 @@
             <h2><label id="label1">Essen</label></h2>
             {{ Form::hidden('title', 'Essen')}}
             {{ Form::hidden('activitynr', '9') }}
+            {{ Form::hidden('link', '/icons/essen.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -447,6 +480,7 @@
             <h2><label id="label1">Wäsche waschen</label></h2>
             {{ Form::hidden('title', 'Wäsche waschen')}}
             {{ Form::hidden('activitynr', '10') }}
+            {{ Form::hidden('link', '/icons/waesche_waschen.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -463,6 +497,7 @@
             <h2><label id="label1">Bewegung</label></h2>
             {{ Form::hidden('title', 'Bewegung')}}
             {{ Form::hidden('activitynr', '11') }}
+            {{ Form::hidden('link', '/icons/bewegen.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -479,6 +514,7 @@
             <h2><label id="label1">Aufstehen</label></h2>
             {{ Form::hidden('title', 'Aufstehen')}}
             {{ Form::hidden('activitynr', '12') }}
+            {{ Form::hidden('link', '/icons/wecker.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -495,6 +531,7 @@
             <h2><label id="label1">Schlafenszeit</label></h2>
             {{ Form::hidden('title', 'Schlafenszeit')}}
             {{ Form::hidden('activitynr', '13') }}
+            {{ Form::hidden('link', '/icons/schlafen.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -511,6 +548,7 @@
             <h2><label id="label1">Erholungszeit</label></h2>
             {{ Form::hidden('title', 'Erholungszeit')}}
             {{ Form::hidden('activitynr', '14') }}
+            {{ Form::hidden('link', '/icons/entspannung.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -527,6 +565,7 @@
             <h2><label id="label1">Haustiere versorgen</label></h2>
             {{ Form::hidden('title', 'Haustiere versorgen')}}
             {{ Form::hidden('activitynr', '15') }}
+            {{ Form::hidden('link', '/icons/haustier.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -543,6 +582,7 @@
             <h2><label id="label1">Zähneputzen</label></h2>
             {{ Form::hidden('title', 'Zähneputzen')}}
             {{ Form::hidden('activitynr', '16') }}
+            {{ Form::hidden('link', '/icons/zahn.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -559,6 +599,7 @@
             <h2><label id="label1">Gedächtnistraining</label></h2>
             {{ Form::hidden('title', 'Gedächtnistraining')}}
             {{ Form::hidden('activitynr', '17') }}
+            {{ Form::hidden('link', '/icons/gedaechtnis.png') }}
             <div class="">
                 Uhrzeit {{Form::text('date', '', ['class' => '', 'placeholder' => '15:30'])}} <br>
                 Persönliche Nachricht (Optional) <br>
@@ -568,13 +609,12 @@
                 <a class="" onClick="brain()">Abbrechen</a>
             </div>
         </div>
-        
 
         <script>
             function pflege() {
                 var x = document.getElementById("pfl");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -584,7 +624,7 @@
             function termin() {
                 var x = document.getElementById("ter");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -594,7 +634,7 @@
             function einkaufen() {
                 var x = document.getElementById("eink");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -604,7 +644,7 @@
             function anruf() {
                 var x = document.getElementById("anr");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -614,7 +654,7 @@
             function trinken() {
                 var x = document.getElementById("trin");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -624,7 +664,7 @@
             function blutdruck() {
                 var x = document.getElementById("blut");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -634,7 +674,7 @@
             function medic() {
                 var x = document.getElementById("med");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -644,7 +684,7 @@
             function blumen() {
                 var x = document.getElementById("blum");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -654,7 +694,7 @@
             function essen() {
                 var x = document.getElementById("ess");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -664,7 +704,7 @@
             function waschen() {
                 var x = document.getElementById("wasch");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -674,7 +714,7 @@
             function bewegen() {
                 var x = document.getElementById("bew");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -684,7 +724,7 @@
             function aufstehen() {
                 var x = document.getElementById("auf");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -694,7 +734,7 @@
             function schlafen() {
                 var x = document.getElementById("schlaf");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -704,7 +744,7 @@
             function erholen() {
                 var x = document.getElementById("erh");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -714,7 +754,7 @@
             function animals() {
                 var x = document.getElementById("ani");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -724,7 +764,7 @@
             function teeth() {
                 var x = document.getElementById("tee");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -734,7 +774,7 @@
             function brain() {
                 var x = document.getElementById("brai");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -744,7 +784,7 @@
             function dropDownNull() {
                 var x = document.getElementById("null");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -754,7 +794,7 @@
             function dropDownOne() {
                 var x = document.getElementById("one");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -764,7 +804,7 @@
             function dropDownTwo() {
                 var x = document.getElementById("two");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -774,7 +814,7 @@
             function dropDownThree() {
                 var x = document.getElementById("three");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -784,7 +824,7 @@
             function dropDownFour() {
                 var x = document.getElementById("four");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -794,7 +834,7 @@
             function dropDownFive() {
                 var x = document.getElementById("five");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -804,7 +844,7 @@
             function dropDownSix() {
                 var x = document.getElementById("six");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -814,7 +854,7 @@
             function dropDownSeven() {
                 var x = document.getElementById("seven");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -824,7 +864,7 @@
             function dropDownEight() {
                 var x = document.getElementById("eight");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -834,7 +874,7 @@
             function dropDownNine() {
                 var x = document.getElementById("nine");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -844,7 +884,7 @@
             function dropDownTen() {
                 var x = document.getElementById("ten");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -854,7 +894,7 @@
             function dropDownEleven() {
                 var x = document.getElementById("eleven");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -864,7 +904,7 @@
             function dropDownTwelve() {
                 var x = document.getElementById("twelve");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -874,7 +914,7 @@
             function dropDownThirteen() {
                 var x = document.getElementById("thirteen");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -884,7 +924,7 @@
             function dropDownFourteen() {
                 var x = document.getElementById("fourteen");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -894,7 +934,7 @@
             function dropDownFifteen() {
                 var x = document.getElementById("fifteen");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -904,7 +944,7 @@
             function dropDownSixteen() {
                 var x = document.getElementById("sixteen");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -914,7 +954,7 @@
             function dropDownSeventeen() {
                 var x = document.getElementById("seventeen");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -924,7 +964,7 @@
             function dropDownEighteen() {
                 var x = document.getElementById("eighteen");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -934,7 +974,7 @@
             function dropDownNineteen() {
                 var x = document.getElementById("nineteen");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -944,7 +984,7 @@
             function dropDownTwenty() {
                 var x = document.getElementById("twenty");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -954,7 +994,7 @@
             function dropDownTwentyOne() {
                 var x = document.getElementById("twentyone");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -964,7 +1004,7 @@
             function dropDownTwentyTwo() {
                 var x = document.getElementById("twentytwo");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
@@ -974,7 +1014,7 @@
             function dropDownTwentyThree() {
                 var x = document.getElementById("twentythree");
                 if(x.style.display === "none") {
-                    x.style.display = "block"
+                    x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";

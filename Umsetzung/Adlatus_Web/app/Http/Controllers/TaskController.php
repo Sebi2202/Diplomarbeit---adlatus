@@ -46,6 +46,7 @@ class TaskController extends Controller
                 'required',
                 'regex:/([0][1-9]|[1][0-9]|[2][0-3]):([1][5]|[3][0]|[4][5]|[0][0])/u'
             ),
+            'link' => 'required'
         ]);
             
         $pieces = explode("/", url()->previous());
@@ -58,6 +59,7 @@ class TaskController extends Controller
         $task->title = $request->input('title');
         $task->confirmed = 0;
         $task->nachricht = $request->input('message');
+        $task->link = $request->input('link');
         
         $task->save();
         
@@ -94,7 +96,7 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, $date, $task_id)
     {
         //
     }
@@ -115,6 +117,6 @@ class TaskController extends Controller
     }
 
     public function confirm() {
-        
+
     }
 }

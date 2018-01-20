@@ -25,13 +25,16 @@ Route::get('/dashboard/patient/edit/{id}', 'PatientController@show');
 Route::get('/dashboard/patient/calendar/{id}', 'PagesController@show');
 Route::get('/dashboard/patient/calendar/tasks/{id}', 'TaskController@index');
 Route::get('/dashboard/patient/calendar/{id}/{start}', 'PagesController@task');
+Route::get('/dashboard/patient/calendar/{id}/{date}/{task_id}', 'PagesController@showTask');
 
 Route::put('/password/reset', 'Auth\ForgotPasswordController@update');
 Route::put('/dashboard/patient/edit/{id}', 'PatientController@update');
+
+Route::put('/dashboard/patient/calendar/{id}/{date}/{task_id}', 'TaskController@update');
 
 Route::post('/dashboard/create_patient', 'PatientController@store');
 Route::post('/dashboard', 'Auth\LoginController@logout');
 Route::post('/dashboard/patient/calendar/{id}/date', 'TaskController@store');
 
-
+Route::delete('/dashboard/patient/calendar/{id}/{date}/{task_id}', 'TaskController@destroy');
 Route::delete('/dashboard/patient/edit/{id}', 'PatientController@destroy');
