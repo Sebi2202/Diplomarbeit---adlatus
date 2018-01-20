@@ -98,7 +98,29 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id, $date, $task_id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'activitynr' => 'required',
+            'date' => array(
+                'required',
+                'regex:/([0][1-9]|[1][0-9]|[2][0-3]):([1][5]|[3][0]|[4][5]|[0][0])/u'
+            ),
+            'link' => 'required'
+        ]);
+        
+        $task = Task::find($task_id);
+
+        $task->fk_userid = $id;
+        $task->fk_activityid = $request->input('activitynr');
+        $task->start = $date . " " . $request->input('date') . ":00";
+        $task->title = $request->input('title');
+        $task->confirmed = 0;
+        $task->nachricht = $request->input('message');
+        $task->link = $request->input('link');
+
+        $task->save();
+        
+        return redirect('/dashboard/patient/calendar/' . $id . '/' . $date);
     }
 
     /**
@@ -107,9 +129,12 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, $date, $task_id)
     {
-        //
+        $task = Task::find($task_id);
+        $task->delete();
+
+        return redirect('/dashboard/patient/calendar/' . $id . '/' . $date);
     }
 
     public function nextTasks() {

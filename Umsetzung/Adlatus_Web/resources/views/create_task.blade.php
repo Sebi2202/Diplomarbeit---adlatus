@@ -39,130 +39,442 @@
            <div class="lab">0:00</div>
         </div>
         <div id="null" style="display:none">
-            <div class="lab">0:00</div><br>
-            <div class="lab">0:15</div><br>
-            <div class="lab">0:30</div><br>
-            <div class="lab">0:45</div><br>
+            <div class="lab">0:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "00:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach    
+            </div><br>
+            <div class="lab">0:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "00:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">0:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "00:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">0:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "00:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
         </div>
 
         <div onClick="dropDownOne()">
            <div class="lab">1:00</div>
         </div>
         <div id="one" style="display:none">
-            <div class="lab">1:00</div><br>
-            <div class="lab">1:15</div><br>
-            <div class="lab">1:30</div><br>
-            <div class="lab">1:45</div><br>
+            <div class="lab">1:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "01:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">1:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "01:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
+            <div class="lab">1:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "01:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
+            <div class="lab">1:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "01:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
         </div>
 
         <div onClick="dropDownTwo()">
            <div class="lab">2:00</div>
         </div>
         <div id="two" style="display:none">
-            <div class="lab">2:00</div><br>
-            <div class="lab">2:15</div><br>
-            <div class="lab">2:30</div><br>
-            <div class="lab">2:45</div><br>
+            <div class="lab">2:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "02:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
+            <div class="lab">2:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "02:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach        
+            </div><br>
+            <div class="lab">2:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "02:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">2:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "02:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach         
+            </div><br>
         </div>
 
         <div onClick="dropDownThree()">
            <div class="lab">3:00</div>
         </div>
         <div id="three" style="display:none">
-            <div class="lab">3:00</div><br>
-            <div class="lab">3:15</div><br>
-            <div class="lab">3:30</div><br>
-            <div class="lab">3:45</div><br>
+            <div class="lab">3:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "03:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach         
+            </div><br>
+            <div class="lab">3:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "03:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach        
+            </div><br>
+            <div class="lab">3:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "03:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach        
+            </div><br>
+            <div class="lab">3:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "03:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach        
+            </div><br>
         </div>
 
         <div onClick="dropDownFour()">
            <div class="lab">4:00</div>
         </div>
         <div id="four" style="display:none">
-            <div class="lab">4:00</div><br>
-            <div class="lab">4:15</div><br>
-            <div class="lab">4:30</div><br>
-            <div class="lab">4:45</div><br>
+            <div class="lab">4:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "04:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
+            <div class="lab">4:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "04:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach        
+            </div><br>
+            <div class="lab">4:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "04:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach        
+            </div><br>
+            <div class="lab">4:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "04:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach        
+            </div><br>
         </div>
 
         <div onClick="dropDownFive()">
            <div class="lab">5:00</div>
         </div>
         <div id="five" style="display:none">
-            <div class="lab">5:00</div><br>
-            <div class="lab">5:15</div><br>
-            <div class="lab">5:30</div><br>
-            <div class="lab">5:45</div><br>
+            <div class="lab">5:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "05:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach        
+            </div><br>
+            <div class="lab">5:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "05:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
+            <div class="lab">5:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "05:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
+            <div class="lab">5:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "05:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
         </div>
 
         <div onClick="dropDownSix()">
            <div class="lab">6:00</div>
         </div>
         <div id="six" style="display:none">
-            <div class="lab">6:00</div><br>
-            <div class="lab">6:15</div><br>
-            <div class="lab">6:30</div><br>
-            <div class="lab">6:45</div><br>
+            <div class="lab">6:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "06:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
+            <div class="lab">6:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "06:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">6:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "06:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">6:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "06:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
         </div>
 
         <div onClick="dropDownSeven()">
            <div class="lab">7:00</div>
         </div>
         <div id="seven" style="display:none">
-            <div class="lab">7:00</div><br>
-            <div class="lab">7:15</div><br>
-            <div class="lab">7:30</div><br>
-            <div class="lab">7:45</div><br>
+            <div class="lab">7:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "07:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">7:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "07:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">7:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "07:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">7:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "07:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
         </div>
 
         <div onClick="dropDownEight()">
            <div class="lab">8:00</div>
         </div>
         <div id="eight" style="display:none">
-            <div class="lab">8:00</div><br>
-            <div class="lab">8:15</div><br>
-            <div class="lab">8:30</div><br>
-            <div class="lab">8:45</div><br>
+            <div class="lab">8:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "08:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">8:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "08:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach    
+            </div><br>
+            <div class="lab">8:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "08:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach    
+            </div><br>
+            <div class="lab">8:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "08:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach    
+            </div><br>
         </div>
 
         <div onClick="dropDownNine()">
            <div class="lab">9:00</div>
         </div>
         <div id="nine" style="display:none">
-            <div class="lab">9:00</div><br>
-            <div class="lab">9:15</div><br>
-            <div class="lab">9:30</div><br>
-            <div class="lab">9:45</div><br>
+            <div class="lab">9:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "09:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach    
+            </div><br>
+            <div class="lab">9:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "09:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach    
+            </div><br>
+            <div class="lab">9:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "09:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach    
+            </div><br>
+            <div class="lab">9:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "09:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach    
+            </div><br>
         </div>
 
         <div onClick="dropDownTen()">
            <div class="lab">10:00</div>
         </div>
         <div id="ten" style="display:none">
-            <div class="lab">10:00</div><br>
-            <div class="lab">10:15</div><br>
-            <div class="lab">10:30</div><br>
-            <div class="lab">10:45</div><br>
+            <div class="lab">10:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "10:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">10:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "10:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">10:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "10:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">10:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "10:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
         </div>
 
         <div onClick="dropDownEleven()">
            <div class="lab">11:00</div>
         </div>
         <div id="eleven" style="display:none">
-            <div class="lab">11:00</div><br>
-            <div class="lab">11:15</div><br>
-            <div class="lab">11:30</div><br>
-            <div class="lab">11:45</div><br>
+            <div class="lab">11:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "11:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">11:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "11:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">11:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "11:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">11:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "11:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
         </div>
 
         <div onClick="dropDownTwelve()">
            <div class="lab">12:00</div>
         </div>
         <div id="twelve" style="display:none">
-            <div class="lab">12:00</div><br>
-            <div class="lab">12:15</div><br>
-            <div class="lab">12:30</div><br>
-            <div class="lab">12:45</div><br>
+            <div class="lab">12:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "12:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">12:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "12:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
+            <div class="lab">12:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "12:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
+            <div class="lab">12:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "12:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
         </div>
 
         <div onClick="dropDownThirteen()">
@@ -203,100 +515,340 @@
            <div class="lab">14:00</div>
         </div>
         <div id="fourteen" style="display:none">
-            <div class="lab">14:00</div><br>
-            <div class="lab">14:15</div><br>
-            <div class="lab">14:30</div><br>
-            <div class="lab">14:45</div><br>
+            <div class="lab">14:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "14:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
+            <div class="lab">14:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "14:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach    
+            </div><br>
+            <div class="lab">14:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "14:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach    
+            </div><br>
+            <div class="lab">14:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "14:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach    
+            </div><br>
         </div>
 
         <div onClick="dropDownFifteen()">
            <div class="lab">15:00</div>
         </div>
         <div id="fifteen" style="display:none">
-            <div class="lab">15:00</div><br>
-            <div class="lab">15:15</div><br>
-            <div class="lab">15:30</div><br>
-            <div class="lab">15:45</div><br>
+            <div class="lab">15:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "15:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach    
+            </div><br>
+            <div class="lab">15:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "15:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">15:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "15:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">15:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "15:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
         </div>
 
         <div onClick="dropDownSixteen()">
            <div class="lab">16:00</div>
         </div>
         <div id="sixteen" style="display:none">
-            <div class="lab">16:00</div><br>
-            <div class="lab">16:15</div><br>
-            <div class="lab">16:30</div><br>
-            <div class="lab">16:45</div><br>
+            <div class="lab">16:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "16:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">16:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "16:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">16:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "16:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">16:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "16:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
         </div>
 
         <div onClick="dropDownSeventeen()">
            <div class="lab">17:00</div>
         </div>
         <div id="seventeen" style="display:none">
-            <div class="lab">17:00</div><br>
-            <div class="lab">17:15</div><br>
-            <div class="lab">17:30</div><br>
-            <div class="lab">17:45</div><br>
+            <div class="lab">17:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "17:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">17:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "17:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">17:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "17:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">17:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "17:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
         </div>
 
         <div onClick="dropDownEighteen()">
            <div class="lab">18:00</div>
         </div>
         <div id="eighteen" style="display:none">
-            <div class="lab">18:00</div><br>
-            <div class="lab">18:15</div><br>
-            <div class="lab">18:30</div><br>
-            <div class="lab">18:45</div><br>
+            <div class="lab">18:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "18:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">18:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "18:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
+            <div class="lab">18:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "18:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
+            <div class="lab">18:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "18:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
         </div>
 
         <div onClick="dropDownNineteen()">
            <div class="lab">19:00</div>
         </div>
         <div id="nineteen" style="display:none">
-            <div class="lab">19:00</div><br>
-            <div class="lab">19:15</div><br>
-            <div class="lab">19:30</div><br>
-            <div class="lab">19:45</div><br>
+            <div class="lab">19:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "19:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach       
+            </div><br>
+            <div class="lab">19:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "19:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">19:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "19:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">19:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "19:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
         </div>
 
         <div onClick="dropDownTwenty()">
            <div class="lab">20:00</div>
         </div>
         <div id="twenty" style="display:none">
-            <div class="lab">20:00</div><br>
-            <div class="lab">20:15</div><br>
-            <div class="lab">20:30</div><br>
-            <div class="lab">20:45</div><br>
+            <div class="lab">20:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "20:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">20:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "20:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">20:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "20:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">20:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "20:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
         </div>
 
         <div onClick="dropDownTwentyOne()">
            <div class="lab">21:00</div>
         </div>
         <div id="twentyone" style="display:none">
-            <div class="lab">21:00</div><br>
-            <div class="lab">21:15</div><br>
-            <div class="lab">21:30</div><br>
-            <div class="lab">21:45</div><br>
+            <div class="lab">21:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "21:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach     
+            </div><br>
+            <div class="lab">21:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "21:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">21:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "21:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">21:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "21:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
         </div>
 
         <div onClick="dropDownTwentyTwo()">
            <div class="lab">22:00</div>
         </div>
         <div id="twentytwo" style="display:none">
-            <div class="lab">22:00</div><br>
-            <div class="lab">22:15</div><br>
-            <div class="lab">22:30</div><br>
-            <div class="lab">22:45</div><br>
+            <div class="lab">22:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "22:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">22:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "22:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">22:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "22:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">22:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "22:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
         </div>
 
         <div onClick="dropDownTwentyThree()">
            <div class="lab">23:00</div>
         </div>
         <div id="twentythree" style="display:none">
-            <div class="lab">23:00</div><br>
-            <div class="lab">23:15</div><br>
-            <div class="lab">23:30</div><br>
-            <div class="lab">23:45</div><br>
+            <div class="lab">23:00
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "23:00:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">23:15
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "23:15:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">23:30
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "23:30:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
+            <div class="lab">23:45
+            @foreach($tasks as $task) 
+                @if($task->start == $date . " " . "23:45:00") 
+                    <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="30px" height="30px"></a> 
+                @endif
+            @endforeach      
+            </div><br>
         </div>
     </nav>
 

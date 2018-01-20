@@ -28,7 +28,11 @@
                 {{ Form::submit('Speichern', ['class' => '']) }}
                 {{Form::hidden('_method', 'PUT')}}
             {!! Form::close() !!}
-            
+            {!! Form::open(['action' => ['TaskController@destroy', $user->id, $date, $task->id], 'method' => 'POST']) !!}
+                {{ Form::submit('Löschen', ['class' => '']) }}
+                {{ Form::hidden('_method', 'DELETE') }}
+            {!! Form::close() !!}
+
                 <a href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}">Abbrechen</a>
             </div>
         </div>
