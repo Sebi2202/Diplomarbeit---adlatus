@@ -14,7 +14,6 @@ class TaskController extends Controller
      */
     public function index($id)
     {
-        //Ist die Id vom eingeloggten User Patient
         //TO DO: Liste von Arbeitspakete, die ich erledigt habe und welche ich noch machen muss, wie viele Stunden habe ich schon gebraucht und wie viele brauche ich noch, Dead-Lines dazuschreiben
         //Dead-Line: 24.01 23:59
 
@@ -45,7 +44,7 @@ class TaskController extends Controller
             'activitynr' => 'required',
             'date' => array(
                 'required',
-                'regex:/([0][1-9]|[1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9])/u'
+                'regex:/([0][1-9]|[1][0-9]|[2][0-3]):([1][5]|[3][0]|[4][5]|[0][0])/u'
             ),
         ]);
             
@@ -55,14 +54,14 @@ class TaskController extends Controller
         $task = new Task();
         $task->fk_userid = $id;
         $task->fk_activityid = $request->input('activitynr');
-        $task->start = $date . " " . $request->input('date');
+        $task->start = $date . " " . $request->input('date') . ":00";
         $task->title = $request->input('title');
         $task->confirmed = 0;
         $task->nachricht = $request->input('message');
         
         $task->save();
         
-        return redirect('/dashboard/patient/calendar/' . $id)->with('Success', 'Task created');
+        return redirect('/dashboard/patient/calendar/' . $id . '/' . $date)->with('Success', 'Task created');
         
     }
 
@@ -109,5 +108,13 @@ class TaskController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function nextTasks() {
+
+    }
+
+    public function confirm() {
+        
     }
 }

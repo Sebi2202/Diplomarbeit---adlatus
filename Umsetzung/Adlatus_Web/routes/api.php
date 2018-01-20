@@ -18,5 +18,5 @@ use Illuminate\Http\Request;
 });*/
 
 Route::post('/login', 'Auth\LoginController@loginApp');
-Route::post('/startseite', 'TaskController@nextTasks');
-Route::put('/startseite', 'TaskController@update');
+Route::get('/startseite', 'TaskController@nextTasks');
+Route::put('/startseite', 'TaskController@confirm');

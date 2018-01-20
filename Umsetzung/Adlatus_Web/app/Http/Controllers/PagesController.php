@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Task;
+use App\Activity;
 use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
@@ -32,10 +34,11 @@ class PagesController extends Controller
     public function task($id) {
         $user = User::find($id);
         $auth = Auth::user();
+        $tasks = Task::all();
         
         if(!$user || !($user->therapeut_sozNr == $auth->sozNr)) {
             return redirect('/dashboard');
         }
-        return view('create_task')->with('user', $user);
+        return view('create_task')->with('user', $user)->with('tasks', $tasks);
     }
 }

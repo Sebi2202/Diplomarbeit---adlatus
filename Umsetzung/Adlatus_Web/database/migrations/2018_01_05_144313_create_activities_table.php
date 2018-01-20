@@ -16,6 +16,7 @@ class CreateActivitiesTable extends Migration
         Schema::create('activities', function (Blueprint $table) {
             $table->integer('pk_activityid')->primary();
             $table->string('description');
+            $table->string('link');
         });
     }
 
