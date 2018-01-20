@@ -34,7 +34,7 @@ class PagesController extends Controller
     public function task($id) {
         $user = User::find($id);
         $auth = Auth::user();
-        $tasks = Task::all();
+        $tasks = Task::all()->where('fk_userid', $user->id);
         
         if(!$user || !($user->therapeut_sozNr == $auth->sozNr)) {
             return redirect('/dashboard');

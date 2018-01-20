@@ -32,9 +32,8 @@
         $vars = explode("-", $date);
         echo $vars[2] . " " . $vars[1] . " " . $vars[0];
     ?>
+    <br>
     @foreach($tasks as $task)
-       
-    @endforeach
     <nav>
         <div onClick="dropDownNull()">
            <div class="lab">0:00</div>
@@ -132,7 +131,7 @@
         <div id="nine" style="display:none">
             <div class="lab">9:00</div><br>
             <div class="lab">9:15</div><br>
-            <div class="lab">9:30</div><br>
+            <div class="lab">9:30 @if($task->start == $date . " " . "09:30:00") {{$task->task_id}} @endif </div><br>
             <div class="lab">9:45</div><br>
         </div>
 
@@ -276,7 +275,7 @@
             <div class="lab">23:45</div><br>
         </div>
     </nav>
-
+@endforeach
     <section>
         <div class="">
             <a onClick="termin()"><img src="/icons/arzt.png" width="120px" height="120px"></a><label>Arzttermin</label><br>
@@ -300,7 +299,7 @@
 
         <div id="ter" style="display:none">
             {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
-            <img src="/icons/medic.png" width="120px" height="120px"> <br>
+            <img src="/icons/arzt.png" width="120px" height="120px"> <br>
             <h2><label id="label1">Arzttermin</label></h2>
             {{ Form::hidden('title', 'Arzttermin')}}
             {{ Form::hidden('activitynr', '1') }}
@@ -316,7 +315,7 @@
 
         <div id="pfl" style="display:none">
             {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
-            <img src="/icons/medic.png" width="120px" height="120px"> <br>
+            <img src="/icons/waschen.png" width="120px" height="120px"> <br>
             <h2><label id="label1">Körperpflege</label></h2>
             {{ Form::hidden('title', 'Körperpflege')}}
             {{ Form::hidden('activitynr', '2') }}
@@ -332,7 +331,7 @@
 
         <div id="eink" style="display:none">
             {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
-            <img src="/icons/medic.png" width="120px" height="120px"> <br>
+            <img src="/icons/einkaufen.png" width="120px" height="120px"> <br>
             <h2><label id="label1">Einkaufen</label></h2>
             {{ Form::hidden('title', 'Einkaufen')}}
             {{ Form::hidden('activitynr', '3') }}
@@ -348,7 +347,7 @@
                 
         <div id="anr" style="display:none">
             {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
-            <img src="/icons/medic.png" width="120px" height="120px"> <br>
+            <img src="/icons/anruf.png" width="120px" height="120px"> <br>
             <h2><label id="label1">Anrufe</label></h2>
             {{ Form::hidden('title', 'Anrufe')}}
             {{ Form::hidden('activitynr', '4') }}
@@ -364,7 +363,7 @@
 
         <div id="trin" style="display:none">
             {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
-            <img src="/icons/medic.png" width="120px" height="120px"> <br>
+            <img src="/icons/trinken.png" width="120px" height="120px"> <br>
             <h2><label id="label1">Trinken</label></h2>
             {{ Form::hidden('title', 'Trinken')}}
             {{ Form::hidden('activitynr', '5') }}
@@ -380,7 +379,7 @@
 
         <div id="blut" style="display:none">
             {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
-            <img src="/icons/medic.png" width="120px" height="120px"> <br>
+            <img src="/icons/blutdruck.png" width="120px" height="120px"> <br>
             <h2><label id="label1">Blutdruckmessen</label></h2>
             {{ Form::hidden('title', 'Blutdruckmessen')}}
             {{ Form::hidden('activitynr', '6') }}
@@ -412,7 +411,7 @@
 
         <div id="blum" style="display:none">
             {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
-            <img src="/icons/medic.png" width="120px" height="120px"> <br>
+            <img src="/icons/blumen.png" width="120px" height="120px"> <br>
             <h2><label id="label1">Blumen gießen</label></h2>
             {{ Form::hidden('title', 'Blumen gießen')}}
             {{ Form::hidden('activitynr', '8') }}
@@ -428,7 +427,7 @@
 
         <div id="ess" style="display:none">
             {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
-            <img src="/icons/medic.png" width="120px" height="120px"> <br>
+            <img src="/icons/essen.png" width="120px" height="120px"> <br>
             <h2><label id="label1">Essen</label></h2>
             {{ Form::hidden('title', 'Essen')}}
             {{ Form::hidden('activitynr', '9') }}
@@ -444,7 +443,7 @@
 
         <div id="wasch" style="display:none">
             {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
-            <img src="/icons/medic.png" width="120px" height="120px"> <br>
+            <img src="/icons/waesche_waschen.png" width="120px" height="120px"> <br>
             <h2><label id="label1">Wäsche waschen</label></h2>
             {{ Form::hidden('title', 'Wäsche waschen')}}
             {{ Form::hidden('activitynr', '10') }}
@@ -460,7 +459,7 @@
 
         <div id="bew" style="display:none">
             {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
-            <img src="/icons/medic.png" width="120px" height="120px"> <br>
+            <img src="/icons/bewegung.png" width="120px" height="120px"> <br>
             <h2><label id="label1">Bewegung</label></h2>
             {{ Form::hidden('title', 'Bewegung')}}
             {{ Form::hidden('activitynr', '11') }}
@@ -476,7 +475,7 @@
 
         <div id="auf" style="display:none">
             {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
-            <img src="/icons/medic.png" width="120px" height="120px"> <br>
+            <img src="/icons/wecker.png" width="120px" height="120px"> <br>
             <h2><label id="label1">Aufstehen</label></h2>
             {{ Form::hidden('title', 'Aufstehen')}}
             {{ Form::hidden('activitynr', '12') }}
@@ -492,7 +491,7 @@
 
         <div id="schlaf" style="display:none">
             {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
-            <img src="/icons/medic.png" width="120px" height="120px"> <br>
+            <img src="/icons/schlafen.png" width="120px" height="120px"> <br>
             <h2><label id="label1">Schlafenszeit</label></h2>
             {{ Form::hidden('title', 'Schlafenszeit')}}
             {{ Form::hidden('activitynr', '13') }}
@@ -508,7 +507,7 @@
 
         <div id="erh" style="display:none">
             {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
-            <img src="/icons/medic.png" width="120px" height="120px"> <br>
+            <img src="/icons/entspannung.png" width="120px" height="120px"> <br>
             <h2><label id="label1">Erholungszeit</label></h2>
             {{ Form::hidden('title', 'Erholungszeit')}}
             {{ Form::hidden('activitynr', '14') }}
@@ -524,7 +523,7 @@
 
         <div id="ani" style="display:none">
             {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
-            <img src="/icons/medic.png" width="120px" height="120px"> <br>
+            <img src="/icons/haustier.png" width="120px" height="120px"> <br>
             <h2><label id="label1">Haustiere versorgen</label></h2>
             {{ Form::hidden('title', 'Haustiere versorgen')}}
             {{ Form::hidden('activitynr', '15') }}
@@ -540,7 +539,7 @@
 
         <div id="tee" style="display:none">
             {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
-            <img src="/icons/medic.png" width="120px" height="120px"> <br>
+            <img src="/icons/zahn.png" width="120px" height="120px"> <br>
             <h2><label id="label1">Zähneputzen</label></h2>
             {{ Form::hidden('title', 'Zähneputzen')}}
             {{ Form::hidden('activitynr', '16') }}
@@ -556,7 +555,7 @@
 
         <div id="brai" style="display:none">
             {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
-            <img src="/icons/medic.png" width="120px" height="120px"> <br>
+            <img src="/icons/gedaechtnis.png" width="120px" height="120px"> <br>
             <h2><label id="label1">Gedächtnistraining</label></h2>
             {{ Form::hidden('title', 'Gedächtnistraining')}}
             {{ Form::hidden('activitynr', '17') }}
