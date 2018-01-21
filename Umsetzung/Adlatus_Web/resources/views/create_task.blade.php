@@ -157,7 +157,7 @@
 
         .popup {
             position:absolute;
-            top:10px;
+            top:100px;
             border:1px solid;
             background-color:white;
             
