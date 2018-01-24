@@ -13,7 +13,9 @@
             margin:0px;
             font-family:Verdana;
             font-size:14px;
-            /* Hintergrund-Bild */
+            background-image: url("/background-image/BackgroundImage.jpg");
+            background-repeat: no-repeat;
+            background-size:100%;
         }
 
         a {
@@ -30,6 +32,8 @@
             height:60px;
         }
 
+        .logo { position:absolute; margin-left:15%; width:150px; top:6px; }
+
         .links {
             text-align:right;
             margin-left:15%;
@@ -39,7 +43,7 @@
 
         .links_header {
             position:relative;
-            top:20px;
+            top:40px;
             font-weight:bold;
             color:white;
         }
@@ -50,6 +54,8 @@
             margin-right:15%;
             
             height:450px;
+
+            background-color:white;
         }
 
         h2 {
@@ -173,7 +179,7 @@
     </style>
     <body>
         <header>
-            <img class="logo" src="../imgs/logo.png">
+            <img class="logo" src="/logo/adlatus_Logo.png">
             <div class="links">
                 <a class="links_header" href="/dashboard">Dashboard |</a>
                 <a class="links_header" href="/dashboard/create_patient">Konto erstellen |</a>

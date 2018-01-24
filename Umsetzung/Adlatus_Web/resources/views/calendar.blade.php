@@ -10,7 +10,8 @@
     body { 
         margin:0px;
         font-family:Verdana;
-        font-size:14px;}
+        font-size:14px;
+        
     }
 
     a {
@@ -29,7 +30,10 @@
 
     h2 { text-align:center; font-family:Verdana; }
 
-    .fc-header-toolbar { text-align:center; font-family:Verdana;}
+    .fc-header-toolbar { text-align:center; font-family:Verdana; }
+    .fc-day-number { color:darkblue; }
+
+    .logo { position:absolute; margin-left:15%; width:150px; top:6px; }
 
     .links {
         text-align:right;
@@ -40,10 +44,12 @@
 
     .links_header {
         position:relative;
-        top:20px;
+        top:40px;
         font-weight:bold;
         color:white;
     }
+
+    .links_header:hover { text-decoration:none; color:white; }
 
     
 
@@ -128,7 +134,7 @@
 <body>
 
     <header class="header-container">
-        <img class="logo" src="../imgs/logo.png">
+        <img class="logo" src="/logo/adlatus_Logo.png">
         <div class="links">
             <a class="links_header" href="/dashboard">Dashboard |</a>
             <a class="links_header" href="/dashboard/create_patient">Konto erstellen |</a>

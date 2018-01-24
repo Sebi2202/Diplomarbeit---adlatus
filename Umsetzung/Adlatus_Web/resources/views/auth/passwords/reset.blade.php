@@ -7,6 +7,9 @@
             margin:0px;
             font-family:Verdana;
             font-size:14px;
+            background-image: url("/background-image/BackgroundImage.jpg");
+            background-repeat: no-repeat;
+            background-size:100%;
         }
 
         a {
@@ -20,6 +23,8 @@
             height:60px;
         }
 
+        .logo { position:absolute; margin-left:15%; width:150px; top:6px; }
+
         .links {
             text-align:right;
             margin-left:15%;
@@ -29,7 +34,7 @@
 
         .links_header {
             position:relative;
-            top:20px;
+            top:40px;
             font-weight:bold;
             color:white;
         }
@@ -43,6 +48,7 @@
             padding-left:40px;
             padding-right:40px;
             padding-bottom:20px;
+            background-color:white;
             
         }
 
@@ -134,7 +140,7 @@
     </head>
     <body>
         <header>
-            <img class="logo" src="../imgs/logo.png">
+            <img class="logo" src="/logo/adlatus_Logo.png">
             <div class="links">
                 <a class="links_header" href="/">Home |</a>
                 <a class="links_header" href="/register">Registrierung |</a>
