@@ -19,6 +19,8 @@
             color:white;
         }
 
+        .logo { position:absolute; margin-left:15%; width:150px; top:6px; }
+
         .links {
             text-align:right;
             margin-left:15%;
@@ -28,7 +30,7 @@
 
         .links_header {
             position:relative;
-            top:20px;
+            top:40px;
             font-weight:bold;
             color:white;
         }
@@ -195,7 +197,7 @@
     <body>
         @if(Auth::guest())
         <header>
-            <img class="logo" src="../imgs/logo.png">
+            <img class="logo" src="/logo/adlatus_Logo.png">
             <div class="links">
                 <a class="links_header" href="/register">Registrierung |</a>
                 <a class="links_header" href="/login">Login |</a>
