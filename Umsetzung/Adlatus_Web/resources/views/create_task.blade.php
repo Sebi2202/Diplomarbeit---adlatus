@@ -1201,7 +1201,7 @@
                     {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
                     <img src="/icons/waschen.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Körperpflege</label></h2>
-                    {{ Form::hidden('title', 'Körperpflege')}}
+                    {{ Form::hidden('title', 'Koerperpflege')}}
                     {{ Form::hidden('activitynr', '2') }}
                     {{ Form::hidden('link', '/icons/waschen.png') }}
                     <div class="">
@@ -1353,7 +1353,7 @@
                     {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
                     <img src="/icons/waesche_waschen.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Wäsche waschen</label></h2>
-                    {{ Form::hidden('title', 'Wäsche waschen')}}
+                    {{ Form::hidden('title', 'Waesche waschen')}}
                     {{ Form::hidden('activitynr', '10') }}
                     {{ Form::hidden('link', '/icons/waesche_waschen.png') }}
                     <div class="">
@@ -1467,7 +1467,7 @@
                     {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
                     <img src="/icons/zahn.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Zähneputzen</label></h2>
-                    {{ Form::hidden('title', 'Zähneputzen')}}
+                    {{ Form::hidden('title', 'Zaehneputzen')}}
                     {{ Form::hidden('activitynr', '16') }}
                     {{ Form::hidden('link', '/icons/zahn.png') }}
                     <div class="">
@@ -1486,7 +1486,7 @@
                     {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
                     <img src="/icons/gedaechtnis.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Gedächtnistraining</label></h2>
-                    {{ Form::hidden('title', 'Gedächtnistraining')}}
+                    {{ Form::hidden('title', 'Gedaechtnistraining')}}
                     {{ Form::hidden('activitynr', '17') }}
                     {{ Form::hidden('link', '/icons/gedaechtnis.png') }}
                     <div class="">

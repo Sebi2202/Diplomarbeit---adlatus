@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Task;
+use Carbon\Carbon;
 
 class TaskController extends Controller
 {
@@ -14,9 +15,6 @@ class TaskController extends Controller
      */
     public function index($id)
     {
-        //TO DO: Liste von Arbeitspakete, die ich erledigt habe und welche ich noch machen muss, wie viele Stunden habe ich schon gebraucht und wie viele brauche ich noch, Dead-Lines dazuschreiben
-        //Dead-Line: 24.01 23:59
-
         $data = Task::where('fk_userid', $id)->get(['title', 'start']);
         return $data;
     }
@@ -137,11 +135,34 @@ class TaskController extends Controller
         return redirect('/dashboard/patient/calendar/' . $id . '/' . $date);
     }
 
-    public function nextTasks() {
+    public function nextTasks($id) {
+        $tasks = Task::where('fk_userid', $id)
+                    ->where('start', '>', Carbon::now())
+                    ->take(4)
+                    ->orderBy('start', 'desc')
+                    ->get(['title', 'start', 'link']);
+        
+        return $tasks;
+        /*
+        $res2 = "";
 
+        foreach($tasks as $task) {
+            $dum = json_decode($task, true);
+            $parts = explode(" ", $dum['start']);
+            unset($dum['start']);
+            $dum['start'] = $parts[0];
+            $dum['time'] = $parts[1];
+            $res2 = $res2 . json_encode($dum);
+        }
+
+        return "[" . $res2 . "]";
+        */
     }
 
-    public function confirm() {
+    public function confirm(Request $request, $id) {
+        $task = Task::find($id);
+        $task->confirmed = $request->input('angenommen');
 
+        return $task;
     }
 }
