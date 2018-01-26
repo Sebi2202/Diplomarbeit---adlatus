@@ -62,7 +62,8 @@ class LoginController extends Controller
             'sozNr' => $request->input('sozialNr'),
             'password' => $request->input('password'),
         ])) {
-            return response()->json(['angenommen' => true]);
+            $user = Auth::user()
+            return response()->json(['angenommen' => true, 'id' => $user->id]);
         } else {
             return response()->json(['angenommen' => false]);
         }
