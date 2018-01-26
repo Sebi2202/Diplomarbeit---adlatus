@@ -41,7 +41,6 @@
     .panel {
         position:relative;
         top:50px;
-        border:1px solid;
         margin-left:15%;
         margin-right:15%;
         padding-left:40px;
@@ -80,7 +79,7 @@
 
         margin-bottom:20px;
         margin-right:3%;
-        
+
         border:1px solid;
         box-shadow:1px 1px 1px gray;
         width:40%;
@@ -124,7 +123,7 @@
         margin-left:15%;
         white-space:nowrap;
         color:white;
-        
+
     }
 
     th {
@@ -155,7 +154,7 @@
         section { width:315px; }
     }
 
-    @media screen and (max-width:960px) {.fm {width:80%;} .rg { float:left; } .last_text { float:left; } section { height:320px; } 
+    @media screen and (max-width:960px) {.fm {width:80%;} .rg { float:left; } .last_text { float:left; } section { height:320px; }
         @media screen and (max-height:620px) { footer { position:relative; top:88px; } }
     }
 

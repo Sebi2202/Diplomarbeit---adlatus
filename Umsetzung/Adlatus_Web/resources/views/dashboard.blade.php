@@ -49,10 +49,9 @@
         }
 
         section {
-            border:1px solid;
             margin-left:15%;
             margin-right:15%;
-            
+
             height:450px;
 
             background-color:white;
@@ -70,7 +69,7 @@
             display:flex;
             flex-direction:row;
             flex-wrap:wrap;
-            
+
         }
 
         .konto {
@@ -119,7 +118,7 @@
             margin-left:15%;
             white-space:nowrap;
             color:white;
-            
+
         }
 
         th {

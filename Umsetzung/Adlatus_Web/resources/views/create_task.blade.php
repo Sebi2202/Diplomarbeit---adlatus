@@ -45,7 +45,6 @@
 
         .all {
             position:relative;
-            border:1px solid;
             margin-left:20%;
             margin-right:20%;
             padding-left:5%;
@@ -57,7 +56,7 @@
             display:flex;
             flex-direction:row;
             justify-content:space-between;
-            
+
         }
 
         section {
@@ -74,7 +73,7 @@
             font-family:Verdana;
         }
 
-        
+
 
         .task-label {
             position:relative;
@@ -90,7 +89,7 @@
 
         #container {
             display:none;
-        }      
+        }
 
         .lab {
             width:250px;
@@ -123,7 +122,7 @@
             background-color:#eee;
             border:1px solid lightgrey;
             border-bottom-style:none;
-            
+
         }
 
         .nav-img { margin-left:auto;  }
@@ -149,7 +148,7 @@
             margin-left:15%;
             white-space:nowrap;
             color:white;
-            
+
         }
 
         .footer-th {
@@ -166,7 +165,7 @@
             top:100px;
             border:1px solid;
             background-color:white;
-            
+
             padding-left:5%;
             padding-right:5%;
             padding-top:20px;
@@ -174,7 +173,7 @@
             width:300px;
         }
 
-       
+
         .fm-clock {
             font-family:Verdana;
             font-size:12px;
@@ -186,8 +185,8 @@
 
             margin-bottom:20px;
             margin-right:3%;
-            
-            
+
+
             width:60%;
         }
 
@@ -234,9 +233,9 @@
             background-color:#4C9900;
             border:none;
             box-shadow: 3px 5px 5px gray;
-        }        
+        }
 
-        
+
 
         /* @media - Responsive Design */
         @media screen and (max-width:1625px) {.all {margin-left:15%; margin-right:15%;} }
@@ -244,16 +243,16 @@
         @media screen and (max-width:1354px) {.all {margin-left:10%; margin-right:10%;} }
 
         @media screen and (max-width:1161px) {.all {margin-left:5%; margin-right:5%;} }
-        
+
         @media screen and (max-width:1016px) {
-            .content {flex-direction:column; flex-wrap:wrap;} 
+            .content {flex-direction:column; flex-wrap:wrap;}
             nav { margin-bottom:10px; margin-left:auto; margin-right:auto; }
             .lab { width:600px; }
             .lab-drop { width:590px; }
             .name, .date { text-align:center; }
             .section-table { margin-left:auto; margin-right:auto; }
             .section-td { padding-right:0px; }
-            .popup { 
+            .popup {
                 position: absolute;
                 margin-left: auto;
                 margin-right: auto;
@@ -270,35 +269,35 @@
         @media screen and (max-width:768px) { .lab {width:400px;} .lab-drop {width:390px;} }
 
         @media screen and (max-width:515px) {
-            .lab {width:300px;} 
-            .lab-drop {width:290px;} 
+            .lab {width:300px;}
+            .lab-drop {width:290px;}
             .section-img { width:50px; height:50px; }
             .task-label { font-size:11px; }
         }
 
         @media screen and (max-width:460px) { .popup {width:250px;} .section-img { width:40px; height:40px; } .task-label { bottom:15px; left: 5px; font-size:10px; } }
 
-        @media screen and (max-width:395px) { 
-            .popup {top:850px; font-size:10px;} 
-            .section-img { width:30px; height:30px; } 
-            .task-label { bottom:12px; left:4px; font-size:10px; } 
+        @media screen and (max-width:395px) {
+            .popup {top:850px; font-size:10px;}
+            .section-img { width:30px; height:30px; }
+            .task-label { bottom:12px; left:4px; font-size:10px; }
             .fm-clock { padding-bottom:0px; padding-top:0px; font-size:10px; }
-            .save, .cancel { padding-top:4px; padding-bottom:4px; font-size:10px; }    
+            .save, .cancel { padding-top:4px; padding-bottom:4px; font-size:10px; }
         }
 
-        
+
         @media screen and (max-width:390px) { .lab {width:250px;} .lab-drop {width:240px;} }
 
         @media screen and (max-width:375px) { .lab {width:286px;} .lab-drop {width:276px;} }
 
         @media screen and (max-width:360px) { .lab {width:274px;} .lab-drop {width:264px;} }
 
-        
+
     </style>
 </head>
 <body>
     <header>
-        <img class="logo" src="/logo/adlatus_Logo.png"> 
+        <img class="logo" src="/logo/adlatus_Logo.png">
         <div class="links">
             <a class="links_header" href="/dashboard">Dashboard |</a>
             <a class="links_header" href="/dashboard/create_patient">Konto erstellen |</a>
@@ -325,32 +324,32 @@
                 </div>
                 <div id="null" style="display:none">
                     <div class="lab-drop">0:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "00:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "00:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach    
+                    @endforeach
                     </div>
                     <div class="lab-drop">0:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "00:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "00:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">0:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "00:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "00:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">0:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "00:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "00:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                 </div>
 
@@ -359,32 +358,32 @@
                 </div>
                 <div id="one" style="display:none">
                     <div class="lab-drop">1:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "01:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "01:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">1:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "01:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "01:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                     <div class="lab-drop">1:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "01:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "01:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                     <div class="lab-drop">1:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "01:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "01:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                 </div>
 
@@ -393,32 +392,32 @@
                 </div>
                 <div id="two" style="display:none">
                     <div class="lab-drop">2:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "02:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "02:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                     <div class="lab-drop">2:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "02:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "02:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach        
+                    @endforeach
                     </div>
                     <div class="lab-drop">2:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "02:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "02:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">2:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "02:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "02:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach         
+                    @endforeach
                     </div>
                 </div>
 
@@ -427,32 +426,32 @@
                 </div>
                 <div id="three" style="display:none">
                     <div class="lab-drop">3:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "03:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "03:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach         
+                    @endforeach
                     </div>
                     <div class="lab-drop">3:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "03:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "03:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach        
+                    @endforeach
                     </div>
                     <div class="lab-drop">3:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "03:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "03:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach        
+                    @endforeach
                     </div>
                     <div class="lab-drop">3:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "03:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "03:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach        
+                    @endforeach
                     </div>
                 </div>
 
@@ -461,32 +460,32 @@
                 </div>
                 <div id="four" style="display:none">
                     <div class="lab-drop">4:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "04:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "04:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                     <div class="lab-drop">4:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "04:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "04:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach        
+                    @endforeach
                     </div>
                     <div class="lab-drop">4:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "04:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "04:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach        
+                    @endforeach
                     </div>
                     <div class="lab-drop">4:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "04:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "04:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach        
+                    @endforeach
                     </div>
                 </div>
 
@@ -495,32 +494,32 @@
                 </div>
                 <div id="five" style="display:none">
                     <div class="lab-drop">5:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "05:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "05:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach        
+                    @endforeach
                     </div>
                     <div class="lab-drop">5:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "05:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "05:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                     <div class="lab-drop">5:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "05:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "05:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                     <div class="lab-drop">5:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "05:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "05:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                 </div>
 
@@ -529,32 +528,32 @@
                 </div>
                 <div id="six" style="display:none">
                     <div class="lab-drop">6:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "06:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "06:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                     <div class="lab-drop">6:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "06:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "06:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">6:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "06:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "06:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">6:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "06:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "06:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                 </div>
 
@@ -563,32 +562,32 @@
                 </div>
                 <div id="seven" style="display:none">
                     <div class="lab-drop">7:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "07:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "07:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">7:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "07:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "07:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">7:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "07:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "07:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">7:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "07:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "07:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                 </div>
 
@@ -597,32 +596,32 @@
                 </div>
                 <div id="eight" style="display:none">
                     <div class="lab-drop">8:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "08:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "08:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">8:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "08:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "08:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach    
+                    @endforeach
                     </div>
                     <div class="lab-drop">8:30
-                    @foreach($tasks as $task) 
+                    @foreach($tasks as $task)
                         @if($task->start == $date . " " . "08:30:00")
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach    
+                    @endforeach
                     </div>
                     <div class="lab-drop">8:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "08:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "08:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach    
+                    @endforeach
                     </div>
                 </div>
 
@@ -631,32 +630,32 @@
                 </div>
                 <div id="nine" style="display:none">
                     <div class="lab-drop">9:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "09:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "09:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach    
+                    @endforeach
                     </div>
                     <div class="lab-drop">9:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "09:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "09:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach    
+                    @endforeach
                     </div>
                     <div class="lab-drop">9:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "09:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "09:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach    
+                    @endforeach
                     </div>
                     <div class="lab-drop">9:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "09:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "09:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach    
+                    @endforeach
                     </div>
                 </div>
 
@@ -665,32 +664,32 @@
                 </div>
                 <div id="ten" style="display:none">
                     <div class="lab-drop">10:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "10:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "10:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">10:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "10:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "10:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">10:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "10:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "10:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">10:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "10:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "10:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                 </div>
 
@@ -699,32 +698,32 @@
                 </div>
                 <div id="eleven" style="display:none">
                     <div class="lab-drop">11:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "11:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "11:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">11:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "11:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "11:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">11:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "11:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "11:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">11:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "11:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "11:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                 </div>
 
@@ -733,32 +732,32 @@
                 </div>
                 <div id="twelve" style="display:none">
                     <div class="lab-drop">12:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "12:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "12:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach    
+                    @endforeach
                     </div>
                     <div class="lab-drop">12:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "12:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "12:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                     <div class="lab-drop">12:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "12:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "12:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                     <div class="lab-drop">12:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "12:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "12:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                 </div>
 
@@ -766,31 +765,31 @@
                 <div class="lab">13:00</div>
                 </div>
                 <div id="thirteen" style="display:none">
-                    <div class="lab-drop">13:00 
-                        @foreach($tasks as $task) 
-                            @if($task->start == $date . " " . "13:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    <div class="lab-drop">13:00
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "13:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                             @endif
                         @endforeach
                     </div>
-                    <div class="lab-drop">13:15 
-                        @foreach($tasks as $task) 
-                            @if($task->start == $date . " " . "13:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    <div class="lab-drop">13:15
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "13:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                             @endif
                         @endforeach
                     </div>
-                    <div class="lab-drop">13:30 
-                        @foreach($tasks as $task) 
-                            @if($task->start == $date . " " . "13:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    <div class="lab-drop">13:30
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "13:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                             @endif
                         @endforeach
                     </div>
-                    <div class="lab-drop">13:45 
-                        @foreach($tasks as $task) 
-                            @if($task->start == $date . " " . "13:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    <div class="lab-drop">13:45
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "13:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                             @endif
                         @endforeach
                     </div>
@@ -801,32 +800,32 @@
                 </div>
                 <div id="fourteen" style="display:none">
                     <div class="lab-drop">14:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "14:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "14:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                     <div class="lab-drop">14:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "14:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "14:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach    
+                    @endforeach
                     </div>
                     <div class="lab-drop">14:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "14:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "14:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach    
+                    @endforeach
                     </div>
                     <div class="lab-drop">14:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "14:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "14:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach    
+                    @endforeach
                     </div>
                 </div>
 
@@ -835,32 +834,32 @@
                 </div>
                 <div id="fifteen" style="display:none">
                     <div class="lab-drop">15:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "15:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "15:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach    
+                    @endforeach
                     </div>
                     <div class="lab-drop">15:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "15:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "15:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">15:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "15:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "15:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">15:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "15:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "15:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                 </div>
 
@@ -869,32 +868,32 @@
                 </div>
                 <div id="sixteen" style="display:none">
                     <div class="lab-drop">16:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "16:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "16:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">16:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "16:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "16:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">16:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "16:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "16:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">16:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "16:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "16:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                 </div>
 
@@ -903,32 +902,32 @@
                 </div>
                 <div id="seventeen" style="display:none">
                     <div class="lab-drop">17:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "17:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "17:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">17:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "17:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "17:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">17:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "17:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "17:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">17:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "17:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "17:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                 </div>
 
@@ -937,32 +936,32 @@
                 </div>
                 <div id="eighteen" style="display:none">
                     <div class="lab-drop">18:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "18:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "18:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">18:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "18:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "18:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                     <div class="lab-drop">18:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "18:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "18:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                     <div class="lab-drop">18:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "18:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "18:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                 </div>
 
@@ -971,32 +970,32 @@
                 </div>
                 <div id="nineteen" style="display:none">
                     <div class="lab-drop">19:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "19:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "19:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach       
+                    @endforeach
                     </div>
                     <div class="lab-drop">19:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "19:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "19:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">19:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "19:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "19:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">19:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "19:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "19:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                 </div>
 
@@ -1005,32 +1004,32 @@
                 </div>
                 <div id="twenty" style="display:none">
                     <div class="lab-drop">20:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "20:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "20:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">20:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "20:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "20:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">20:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "20:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "20:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">20:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "20:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "20:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                 </div>
 
@@ -1039,32 +1038,32 @@
                 </div>
                 <div id="twentyone" style="display:none">
                     <div class="lab-drop">21:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "21:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "21:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach     
+                    @endforeach
                     </div>
                     <div class="lab-drop">21:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "21:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "21:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">21:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "21:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "21:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">21:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "21:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "21:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                 </div>
 
@@ -1073,32 +1072,32 @@
                 </div>
                 <div id="twentytwo" style="display:none">
                     <div class="lab-drop">22:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "22:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "22:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">22:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "22:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "22:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">22:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "22:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "22:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">22:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "22:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "22:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                 </div>
 
@@ -1107,32 +1106,32 @@
                 </div>
                 <div id="twentythree" style="display:none">
                     <div class="lab-drop">23:00
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "23:00:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "23:00:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">23:15
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "23:15:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "23:15:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">23:30
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "23:30:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "23:30:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                     <div class="lab-drop">23:45
-                    @foreach($tasks as $task) 
-                        @if($task->start == $date . " " . "23:45:00") 
-                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a> 
+                    @foreach($tasks as $task)
+                        @if($task->start == $date . " " . "23:45:00")
+                            <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
-                    @endforeach      
+                    @endforeach
                     </div>
                 </div>
             </nav>
@@ -1234,7 +1233,7 @@
                         </div>
                     </div>
                 </div>
-                        
+
                 <div class="popup" id="anr" style="display:none">
                     {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
                     <img src="/icons/anruf.png" width="80px" height="80px"> <br>

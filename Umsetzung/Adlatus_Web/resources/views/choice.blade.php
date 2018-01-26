@@ -5,7 +5,7 @@
 
 <style>
 
-    body { 
+    body {
         margin:0px;
         font-family:Verdana;
         font-size:14px;
@@ -47,7 +47,6 @@
 
     section {
         position:relative;
-        border:1px solid;
         top:50px;
         margin-left:25%;
         margin-right:25%;
@@ -115,7 +114,7 @@
         margin-left:15%;
         white-space:nowrap;
         color:white;
-        
+
     }
 
     .table-head {
@@ -129,7 +128,7 @@
 
     /* @media - Responsive Design */
 
-    @media screen and (max-height:615px) { footer { position:relative; top:103px; } } 
+    @media screen and (max-height:615px) { footer { position:relative; top:103px; } }
 
     @media screen and (max-width:1000px) {
         .button-tagesplan { width:100%;}

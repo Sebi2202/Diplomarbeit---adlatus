@@ -42,14 +42,13 @@
         section {
             position:relative;
             top:50px;
-            border:1px solid;
             margin-left:15%;
             margin-right:15%;
             padding-left:40px;
             padding-right:40px;
             padding-bottom:20px;
             background-color:white;
-            
+
         }
 
         h2 {
@@ -64,11 +63,11 @@
             padding-top:5px;
             padding-bottom:5px;
             padding-left:10px;
-            
+
 
             margin-bottom:20px;
             margin-right:3%;
-            
+
             border:1px solid;
             box-shadow:1px 1px 1px gray;
             width:40%;
@@ -83,7 +82,7 @@
             padding-bottom:8px;
             padding-right:50px;
             padding-left:50px;
-            
+
             margin-right:40px;
             float:right;
 
@@ -110,7 +109,7 @@
             margin-left:15%;
             white-space:nowrap;
             color:white;
-            
+
         }
 
         th {
@@ -159,7 +158,7 @@
             </div>
             {!! Form::open(['action' => 'Auth\ForgotPasswordController@update', 'method' => 'POST']) !!}
                 {{ Form::token() }}
-                {{ Form::text('sozNummer', '', ['class' => 'fm', 'placeholder' => 'Soz. Versicherungsnummer']) }} 
+                {{ Form::text('sozNummer', '', ['class' => 'fm', 'placeholder' => 'Soz. Versicherungsnummer']) }}
                 <br>
                 {{ Form::email('email', '', ['class' => 'fm', 'placeholder' => 'E-Mail'])}}
                 <br>
@@ -168,7 +167,7 @@
                 {{ Form::password('again', ['class' => 'fm', 'placeholder' => 'Passwort wiederholen'])}}
                 {{ Form::submit('Bestätigen', ['class' => 'sb']) }}
                 {{ Form::hidden('_method', 'PUT') }}
-            {!! Form::close() !!}    
+            {!! Form::close() !!}
         </section>
         <footer>
             <table>

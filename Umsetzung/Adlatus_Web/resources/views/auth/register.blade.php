@@ -41,7 +41,6 @@
     .panel {
         position:relative;
         top:50px;
-        border:1px solid;
         margin-left:15%;
         margin-right:15%;
         padding-left:40px;
@@ -53,7 +52,7 @@
         font-size:18px;
         font-weight:normal;
     }
-    
+
     .text_link {
         position:relative;
         left:1px;
@@ -68,7 +67,7 @@
         text-decoration:none;
         color:lightblue;
     }
-    
+
     .fm {
         font-family:Verdana;
         font-size:12px;
@@ -80,7 +79,7 @@
 
         margin-bottom:20px;
         margin-right:3%;
-        
+
         border:1px solid;
         box-shadow:1px 1px 1px gray;
         width:40%;
@@ -105,7 +104,7 @@
         box-shadow: 3px 5px 5px gray;
         z-index:100;
     }
-    
+
     footer {
         /* position:relative;
         width:100%; */
@@ -125,7 +124,7 @@
         margin-left:15%;
         white-space:nowrap;
         color:white;
-        
+
     }
 
     th {
@@ -141,15 +140,15 @@
 
     @media screen and (max-height:720px) { footer { position:relative; top:113px; } }
     @media screen and (max-height:775px) and (max-width:870px) { footer { position:relative; top:136px; } }
-    @media screen and (max-width:450px) { 
+    @media screen and (max-width:450px) {
         .fm { width:80%; }
         .panel { width:250px;}
 
         @media screen and (max-height:775px) { footer { position:relative; top:85px; } }
     }
     @media screen and (max-width:870px) { .rg { float:none; } }
-    
-    
+
+
 
     </style>
     </head>

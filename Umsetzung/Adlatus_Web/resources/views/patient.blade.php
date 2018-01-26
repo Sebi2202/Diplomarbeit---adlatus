@@ -16,7 +16,7 @@
             bottom:250px;
         }
 
-        body { 
+        body {
             margin:0px;
             font-family:Verdana;
             font-size:14px;
@@ -60,7 +60,6 @@
         }
 
         section {
-            border:1px solid;
             margin-left:15%;
             margin-right:15%;
             padding-left:40px;
@@ -73,7 +72,7 @@
             font-size:18px;
             font-weight:normal;
         }
-        
+
         .text_link {
             position:relative;
             left:1px;
@@ -88,7 +87,7 @@
             text-decoration:none;
             color:lightblue;
         }
-        
+
         .fm {
             font-family:Verdana;
             font-size:12px;
@@ -100,7 +99,7 @@
 
             margin-bottom:20px;
             margin-right:3%;
-            
+
             border:1px solid;
             box-shadow:1px 1px 1px gray;
             width:40%;
@@ -186,7 +185,7 @@
             margin-left:15%;
             white-space:nowrap;
             color:white;
-            
+
         }
 
         th {
@@ -200,12 +199,12 @@
 
         /* @media - Responsive Design */
 
-        @media screen and (min-width:731px) and (max-height:611px) { footer { position:relative; } } 
+        @media screen and (min-width:731px) and (max-height:611px) { footer { position:relative; } }
 
         @media screen and (max-width:730px) {
             #really:target .sure { bottom:297px; }
-            .fm { width:80%; } 
-            section { height:450px; } 
+            .fm { width:80%; }
+            section { height:450px; }
             @media screen and (max-height:661px) { footer { position:relative; } }
         }
 
@@ -250,7 +249,7 @@
                 <div class="btns">
                     {{Form::submit('Speichern', ['class' => 'rg'])}}
                     {{Form::hidden('_method', 'PUT')}}
-                    {!! Form::close() !!} 
+                    {!! Form::close() !!}
                     <a class="cancel" href="/dashboard">Abbrechen</a>
                 </div>
                 @if(Auth::user()->id != $user->id)

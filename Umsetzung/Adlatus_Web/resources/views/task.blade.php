@@ -49,13 +49,12 @@
 
         margin-left:25%;
         margin-right:25%;
-        
+
         padding-left:5%;
         padding-right:5%;
         padding-top:20px;
         padding-bottom:30px;
 
-        border:1px solid;
         background-color:white;
     }
 
@@ -76,7 +75,7 @@
         margin-left:15%;
         white-space:nowrap;
         color:white;
-        
+
     }
 
     .footer-th {
@@ -138,7 +137,7 @@
         margin-bottom:20px;
         margin-right:3%;
         margin
-        
+
         width:60%;
     }
 
@@ -152,8 +151,8 @@
     @media screen and (max-width:790px) { section { margin-left:15%; margin-right:15%; } }
     @media screen and (max-width:540px) { section { margin-left:10%; margin-right:10%; } }
     @media screen and (max-width:450px) { section { margin-left:5%; margin-right:5%; } }
-    @media screen and (max-width:390px) { 
-        .buttons { flex-direction:column; } 
+    @media screen and (max-width:390px) {
+        .buttons { flex-direction:column; }
         .save { margin-bottom:10px; width:100%; }
         .delete { width:100%; }
         .cancel { position:relative; bottom:10px; }
@@ -166,7 +165,7 @@
         footer { position:relative; top:65px;}
     }
 
-    
+
 </style>
 </head>
 <body>
@@ -211,11 +210,11 @@
                     <div class="div-cancel">
                         <a class="cancel" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}">Abbrechen</a>
                     </div>
-                
+
                 </div>
             </div>
         </section>
-    
+
         <footer>
             <table class="footer-table">
                 <tr>

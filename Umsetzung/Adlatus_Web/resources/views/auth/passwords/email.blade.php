@@ -41,7 +41,6 @@
         section {
             position:relative;
             top:50px;
-            border:1px solid;
             margin-left:15%;
             margin-right:15%;
             padding-left:40px;
@@ -65,7 +64,7 @@
 
             margin-bottom:20px;
             margin-right:3%;
-            
+
             border:1px solid;
             box-shadow:1px 1px 1px gray;
             width:40%;
@@ -107,7 +106,7 @@
             margin-left:15%;
             white-space:nowrap;
             color:white;
-            
+
         }
 
         th {
@@ -117,13 +116,13 @@
         }
 
         /* @media - Responsive Design */
-        @media screen and (max-width:703px) { .fm { width:80%; } .sb { float:none; }  
+        @media screen and (max-width:703px) { .fm { width:80%; } .sb { float:none; }
             @media screen and (max-height:525px) { footer { position:relative; top:101px; } }
         }
         @media screen and (max-width:415px) { section { margin-left:10%; margin-right:10%; } }
         @media screen and (max-width:370px) { section { width:250px; } }
         @media screen and (max-height:500px) and (min-width:704px) { footer { position:relative; top:105px; } }
-        
+
 
     </style>
     </head>
@@ -136,7 +135,7 @@
                 <a class="links_header" href="/help">Hilfe</a>
             </div>
         </header>
-        
+
         <section>
             <div class="">
                 <h2>Passwortrücksetzung</h2>
@@ -149,9 +148,9 @@
             {!! Form::open(['action' => 'DashboardController@email', 'method' => 'POST']) !!}
                 {{ Form::token() }}
                 E-Mail eingeben <br><br>
-                {{ Form::email('email', '', ['class' => 'fm', 'placeholder' => 'E-Mail Adresse eingeben!']) }} 
+                {{ Form::email('email', '', ['class' => 'fm', 'placeholder' => 'E-Mail Adresse eingeben!']) }}
                 {{ Form::submit('Bestätigen', ['class' => 'sb']) }}
-            {!! Form::close() !!}    
+            {!! Form::close() !!}
         </section>
 
         <footer>
