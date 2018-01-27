@@ -55,7 +55,8 @@
             text-align:center;
             background-image: url("/background-image/mockup.png");
             background-repeat: no-repeat;
-            background-size:100%;
+            background-size:80%;
+            background-position: center;
         }
 
         .text {
@@ -105,17 +106,25 @@
 
 
         /* @media - Responsive Design */
-        @media screen and (max-height:629px) { footer { position:relative; } }
-        @media screen and (max-width:1150px) and (max-height:646px) { footer { position:relative; } }
-        @media screen and (max-width:988px) and (max-height:663px) { footer { position:relative; } }
-        @media screen and (max-width:792px) and (max-height:680px) { footer { position:relative; } }
-        @media screen and (max-width:605px) and (max-height:697px) { footer { position:relative; } }
-        @media screen and (max-width:564px) and (max-height:714px) { footer { position:relative; } }
-        @media screen and (max-width:506px) and (max-height:731px) { footer { position:relative; } }
-        @media screen and (max-width:467px) and (max-height:748px) { footer { position:relative; } }
-        @media screen and (max-width:430px) and (max-height:766px) { footer { position:relative; } }
+        @media screen and (max-height:779px) { footer { position:relative; } }
+        @media screen and (max-width:1150px) and (max-height:796px) { footer { position:relative; } }
+        @media screen and (max-width:988px) and (max-height:813px) { footer { position:relative; } }
+        @media screen and (max-width:792px) and (max-height:830px) { footer { position:relative; } }
+        @media screen and (max-width:700px) and (max-height:1040px) { footer { position:relative; } }
+        @media screen and (max-width:678px) and (max-height:1062px) { footer { position:relative; } }
+        @media screen and (max-width:585px) and (max-height:1078px) { footer { position:relative; } }
+        @media screen and (max-width:476px) and (max-height:1095px) { footer { position:relative; } }
+        @media screen and (max-width:451px) and (max-height:1112px) { footer { position:relative; } }
+        @media screen and (max-width:413px) and (max-height:1129px) { footer { position:relative; } }
+
+        @media screen and (max-width:1280px) { .video { background-size: 130%; } }
+        @media screen and (max-width:1000px) { .video { background-size: 160%;} }
+        @media screen and (max-width:700px) { .main { flex-direction: column; justify-content:flex-start; } .video { height:200px; background-size:100%; } }
+        @media screen and (max-width:636px) { .bild { background-size:150%; } }
+        @media screen and (max-width:425px) { .bild { background-size:160%; } }
 
         @media screen and (max-width:400px) { section { width:280px; } }
+        
 
         /*
 
