@@ -45,6 +45,7 @@
 
         .all {
             position:relative;
+            padding-top:10px;
             margin-left:20%;
             margin-right:20%;
             padding-left:5%;
@@ -72,8 +73,6 @@
             font-size:18px;
             font-family:Verdana;
         }
-
-
 
         .task-label {
             position:relative;
