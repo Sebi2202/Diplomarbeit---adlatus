@@ -53,6 +53,7 @@
             margin-right:15%;
 
             height:450px;
+            padding-top:10px;
 
             background-color:white;
         }

@@ -139,7 +139,7 @@ class TaskController extends Controller
         $tasks = Task::where('fk_userid', $id)
                     ->where('start', '>', Carbon::now())
                     ->take(4)
-                    ->orderBy('start', 'desc')
+                    ->orderBy('start', 'asc')
                     ->get(['title', 'start', 'link']);
         
         return $tasks;
