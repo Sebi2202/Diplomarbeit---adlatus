@@ -90,8 +90,8 @@
         padding-right:10px;
     }
 
-    .fc-day-number {
-        
+    .fc-content {
+        display:none;
     }
 
     .table-d { padding-right:10px; }

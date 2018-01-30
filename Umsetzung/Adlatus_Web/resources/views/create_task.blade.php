@@ -92,6 +92,9 @@
         }
 
         .lab {
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
             width:250px;
             height:25px;
             background-color:#eee;
@@ -100,6 +103,12 @@
             padding-left:10px;
             padding-top:5px;
             margin-right:10px;
+        }
+
+        .lab-icons {
+            display:flex;
+            flex-direction:row;
+            justify-content:flex-end;
         }
 
         .lab-end {
@@ -114,15 +123,18 @@
             display:flex;
             flex-direction:row;
             justify-content:flex-start;
+            padding-right:10px;
             padding-left:20px;
             padding-top:5px;
-            width:240px;
+            width:230px;
             height:25px;
             background-color:#eee;
             border:1px solid lightgrey;
             border-bottom-style:none;
-
         }
+
+        .arrow-right { position:relative; bottom:1px; }
+        .arrow-down { position:relative; bottom:4px; right:8px; }
 
         .nav-img { margin-left:auto;  }
 
@@ -319,7 +331,12 @@
         <div class="content">
             <nav>
                 <div onClick="dropDownNull()">
-                    <div class="lab">0:00</div>
+                    <div class="lab">0:00
+                        <div class="lab-icons">
+                            <img class="arrow-right" id="right-null" src="/dropdown/right.png" width="30px;" height="22px;">
+                            <img class="arrow-down" id="down-null" src="/dropdown/down.png" width="15px;" height="25px;">
+                        </div>
+                    </div>
                 </div>
                 <div id="null" style="display:none">
                     <div class="lab-drop">0:00
@@ -354,7 +371,10 @@
 
                 <div onClick="dropDownOne()">
                     <div class="lab">1:00
-
+                        <div class="lab-icons">
+                            <img class="arrow-right" id="right-one" src="/dropdown/right.png" width="30px;" height="22px;">
+                            <img class="arrow-down" id="down-one" src="/dropdown/down.png" width="15px;" height="25px;">
+                        </div>
                     </div>
                 </div>
                 <div id="one" style="display:none">
@@ -389,7 +409,12 @@
                 </div>
 
                 <div onClick="dropDownTwo()">
-                <div class="lab">2:00</div>
+                <div class="lab">2:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-two" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-two" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="two" style="display:none">
                     <div class="lab-drop">2:00
@@ -423,7 +448,12 @@
                 </div>
 
                 <div onClick="dropDownThree()">
-                <div class="lab">3:00</div>
+                <div class="lab">3:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-three" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-three" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="three" style="display:none">
                     <div class="lab-drop">3:00
@@ -457,7 +487,12 @@
                 </div>
 
                 <div onClick="dropDownFour()">
-                <div class="lab">4:00</div>
+                <div class="lab">4:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-four" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-four" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="four" style="display:none">
                     <div class="lab-drop">4:00
@@ -491,7 +526,12 @@
                 </div>
 
                 <div onClick="dropDownFive()">
-                <div class="lab">5:00</div>
+                <div class="lab">5:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-five" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-five" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="five" style="display:none">
                     <div class="lab-drop">5:00
@@ -525,7 +565,12 @@
                 </div>
 
                 <div onClick="dropDownSix()">
-                <div class="lab">6:00</div>
+                <div class="lab">6:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-six" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-six" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="six" style="display:none">
                     <div class="lab-drop">6:00
@@ -559,7 +604,12 @@
                 </div>
 
                 <div onClick="dropDownSeven()">
-                <div class="lab">7:00</div>
+                <div class="lab">7:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-seven" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-seven" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="seven" style="display:none">
                     <div class="lab-drop">7:00
@@ -593,7 +643,12 @@
                 </div>
 
                 <div onClick="dropDownEight()">
-                <div class="lab">8:00</div>
+                <div class="lab">8:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-eight" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-eight" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="eight" style="display:none">
                     <div class="lab-drop">8:00
@@ -627,7 +682,12 @@
                 </div>
 
                 <div onClick="dropDownNine()">
-                <div class="lab">9:00</div>
+                <div class="lab">9:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-nine" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-nine" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="nine" style="display:none">
                     <div class="lab-drop">9:00
@@ -661,7 +721,12 @@
                 </div>
 
                 <div onClick="dropDownTen()">
-                <div class="lab">10:00</div>
+                <div class="lab">10:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-ten" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-ten" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="ten" style="display:none">
                     <div class="lab-drop">10:00
@@ -695,7 +760,12 @@
                 </div>
 
                 <div onClick="dropDownEleven()">
-                <div class="lab">11:00</div>
+                <div class="lab">11:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-eleven" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-eleven" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="eleven" style="display:none">
                     <div class="lab-drop">11:00
@@ -729,7 +799,12 @@
                 </div>
 
                 <div onClick="dropDownTwelve()">
-                <div class="lab">12:00</div>
+                <div class="lab">12:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-twelve" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-twelve" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="twelve" style="display:none">
                     <div class="lab-drop">12:00
@@ -763,7 +838,12 @@
                 </div>
 
                 <div onClick="dropDownThirteen()">
-                <div class="lab">13:00</div>
+                <div class="lab">13:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-thirteen" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-thirteen" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="thirteen" style="display:none">
                     <div class="lab-drop">13:00
@@ -797,7 +877,12 @@
                 </div>
 
                 <div onClick="dropDownFourteen()">
-                <div class="lab">14:00</div>
+                <div class="lab">14:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-fourteen" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-fourteen" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="fourteen" style="display:none">
                     <div class="lab-drop">14:00
@@ -831,7 +916,12 @@
                 </div>
 
                 <div onClick="dropDownFifteen()">
-                <div class="lab">15:00</div>
+                <div class="lab">15:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-fifteen" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-fifteen" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="fifteen" style="display:none">
                     <div class="lab-drop">15:00
@@ -865,7 +955,12 @@
                 </div>
 
                 <div onClick="dropDownSixteen()">
-                <div class="lab">16:00</div>
+                <div class="lab">16:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-sixteen" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-sixteen" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="sixteen" style="display:none">
                     <div class="lab-drop">16:00
@@ -899,7 +994,12 @@
                 </div>
 
                 <div onClick="dropDownSeventeen()">
-                <div class="lab">17:00</div>
+                <div class="lab">17:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-seventeen" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-seventeen" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="seventeen" style="display:none">
                     <div class="lab-drop">17:00
@@ -933,7 +1033,12 @@
                 </div>
 
                 <div onClick="dropDownEighteen()">
-                <div class="lab">18:00</div>
+                <div class="lab">18:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-eighteen" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-eighteen" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="eighteen" style="display:none">
                     <div class="lab-drop">18:00
@@ -967,7 +1072,12 @@
                 </div>
 
                 <div onClick="dropDownNineteen()">
-                <div class="lab">19:00</div>
+                <div class="lab">19:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-nineteen" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-nineteen" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="nineteen" style="display:none">
                     <div class="lab-drop">19:00
@@ -1001,7 +1111,12 @@
                 </div>
 
                 <div onClick="dropDownTwenty()">
-                <div class="lab">20:00</div>
+                <div class="lab">20:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-twenty" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-twenty" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="twenty" style="display:none">
                     <div class="lab-drop">20:00
@@ -1035,7 +1150,12 @@
                 </div>
 
                 <div onClick="dropDownTwentyOne()">
-                <div class="lab">21:00</div>
+                <div class="lab">21:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-twentyone" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-twentyone" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="twentyone" style="display:none">
                     <div class="lab-drop">21:00
@@ -1069,7 +1189,12 @@
                 </div>
 
                 <div onClick="dropDownTwentyTwo()">
-                <div class="lab">22:00</div>
+                <div class="lab">22:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-twentytwo" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-twentytwo" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="twentytwo" style="display:none">
                     <div class="lab-drop">22:00
@@ -1103,7 +1228,12 @@
                 </div>
 
                 <div onClick="dropDownTwentyThree()">
-                <div class="lab">23:00</div>
+                <div class="lab">23:00
+                    <div class="lab-icons">
+                        <img class="arrow-right" id="right-twentythree" src="/dropdown/right.png" width="30px;" height="22px;">
+                        <img class="arrow-down" id="down-twentythree" src="/dropdown/down.png" width="15px;" height="25px;">
+                    </div>
+                </div>
                 </div>
                 <div id="twentythree" style="display:none">
                     <div class="lab-drop">23:00
@@ -1672,12 +1802,41 @@
                         }
                     }
 
+                    document.getElementById("down-null").style.display = "none";
+                    document.getElementById("down-one").style.display = "none";
+                    document.getElementById("down-two").style.display = "none";
+                    document.getElementById("down-three").style.display = "none";
+                    document.getElementById("down-four").style.display = "none";
+                    document.getElementById("down-five").style.display = "none";
+                    document.getElementById("down-six").style.display = "none";
+                    document.getElementById("down-seven").style.display = "none";
+                    document.getElementById("down-eight").style.display = "none";
+                    document.getElementById("down-nine").style.display = "none";
+                    document.getElementById("down-ten").style.display = "none";
+                    document.getElementById("down-eleven").style.display = "none";
+                    document.getElementById("down-twelve").style.display = "none";
+                    document.getElementById("down-thirteen").style.display = "none";
+                    document.getElementById("down-fourteen").style.display = "none";
+                    document.getElementById("down-fifteen").style.display = "none";
+                    document.getElementById("down-sixteen").style.display = "none";
+                    document.getElementById("down-seventeen").style.display = "none";
+                    document.getElementById("down-eighteen").style.display = "none";
+                    document.getElementById("down-nineteen").style.display = "none";
+                    document.getElementById("down-twenty").style.display = "none";
+                    document.getElementById("down-twentyone").style.display = "none";
+                    document.getElementById("down-twentytwo").style.display = "none";
+                    document.getElementById("down-twentythree").style.display = "none";
+
                     function dropDownNull() {
                         var x = document.getElementById("null");
                         if(x.style.display === "none") {
+                            document.getElementById("right-null").style.display = "none";
+                            document.getElementById("down-null").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-null").style.display = "block";
+                            document.getElementById("down-null").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1685,9 +1844,13 @@
                     function dropDownOne() {
                         var x = document.getElementById("one");
                         if(x.style.display === "none") {
+                            document.getElementById("right-one").style.display = "none";
+                            document.getElementById("down-one").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-one").style.display = "block";
+                            document.getElementById("down-one").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1695,9 +1858,13 @@
                     function dropDownTwo() {
                         var x = document.getElementById("two");
                         if(x.style.display === "none") {
+                            document.getElementById("right-two").style.display = "none";
+                            document.getElementById("down-two").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-two").style.display = "block";
+                            document.getElementById("down-two").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1705,9 +1872,13 @@
                     function dropDownThree() {
                         var x = document.getElementById("three");
                         if(x.style.display === "none") {
+                            document.getElementById("right-three").style.display = "none";
+                            document.getElementById("down-three").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-three").style.display = "block";
+                            document.getElementById("down-three").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1715,9 +1886,13 @@
                     function dropDownFour() {
                         var x = document.getElementById("four");
                         if(x.style.display === "none") {
+                            document.getElementById("right-four").style.display = "none";
+                            document.getElementById("down-four").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-four").style.display = "block";
+                            document.getElementById("down-four").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1725,9 +1900,13 @@
                     function dropDownFive() {
                         var x = document.getElementById("five");
                         if(x.style.display === "none") {
+                            document.getElementById("right-five").style.display = "none";
+                            document.getElementById("down-five").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-five").style.display = "block";
+                            document.getElementById("down-five").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1735,9 +1914,13 @@
                     function dropDownSix() {
                         var x = document.getElementById("six");
                         if(x.style.display === "none") {
+                            document.getElementById("right-six").style.display = "none";
+                            document.getElementById("down-six").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-six").style.display = "block";
+                            document.getElementById("down-six").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1745,9 +1928,13 @@
                     function dropDownSeven() {
                         var x = document.getElementById("seven");
                         if(x.style.display === "none") {
+                            document.getElementById("right-seven").style.display = "none";
+                            document.getElementById("down-seven").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-seven").style.display = "block";
+                            document.getElementById("down-seven").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1755,9 +1942,13 @@
                     function dropDownEight() {
                         var x = document.getElementById("eight");
                         if(x.style.display === "none") {
+                            document.getElementById("right-eight").style.display = "none";
+                            document.getElementById("down-eight").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-eight").style.display = "block";
+                            document.getElementById("down-eight").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1765,9 +1956,13 @@
                     function dropDownNine() {
                         var x = document.getElementById("nine");
                         if(x.style.display === "none") {
+                            document.getElementById("right-nine").style.display = "none";
+                            document.getElementById("down-nine").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-nine").style.display = "block";
+                            document.getElementById("down-nine").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1775,9 +1970,13 @@
                     function dropDownTen() {
                         var x = document.getElementById("ten");
                         if(x.style.display === "none") {
+                            document.getElementById("right-ten").style.display = "none";
+                            document.getElementById("down-ten").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-ten").style.display = "block";
+                            document.getElementById("down-ten").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1785,9 +1984,13 @@
                     function dropDownEleven() {
                         var x = document.getElementById("eleven");
                         if(x.style.display === "none") {
+                            document.getElementById("right-eleven").style.display = "none";
+                            document.getElementById("down-eleven").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-eleven").style.display = "block";
+                            document.getElementById("down-eleven").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1795,9 +1998,13 @@
                     function dropDownTwelve() {
                         var x = document.getElementById("twelve");
                         if(x.style.display === "none") {
+                            document.getElementById("right-twelve").style.display = "none";
+                            document.getElementById("down-twelve").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-twelve").style.display = "block";
+                            document.getElementById("down-twelve").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1805,9 +2012,13 @@
                     function dropDownThirteen() {
                         var x = document.getElementById("thirteen");
                         if(x.style.display === "none") {
+                            document.getElementById("right-thirteen").style.display = "none";
+                            document.getElementById("down-thirteen").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-thirteen").style.display = "block";
+                            document.getElementById("down-thirteen").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1815,9 +2026,13 @@
                     function dropDownFourteen() {
                         var x = document.getElementById("fourteen");
                         if(x.style.display === "none") {
+                            document.getElementById("right-fourteen").style.display = "none";
+                            document.getElementById("down-fourteen").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-fourteen").style.display = "block";
+                            document.getElementById("down-fourteen").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1825,9 +2040,13 @@
                     function dropDownFifteen() {
                         var x = document.getElementById("fifteen");
                         if(x.style.display === "none") {
+                            document.getElementById("right-fifteen").style.display = "none";
+                            document.getElementById("down-fifteen").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-fifteen").style.display = "block";
+                            document.getElementById("down-fifteen").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1835,9 +2054,13 @@
                     function dropDownSixteen() {
                         var x = document.getElementById("sixteen");
                         if(x.style.display === "none") {
+                            document.getElementById("right-sixteen").style.display = "none";
+                            document.getElementById("down-sixteen").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-sixteen").style.display = "block";
+                            document.getElementById("down-sixteen").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1845,9 +2068,13 @@
                     function dropDownSeventeen() {
                         var x = document.getElementById("seventeen");
                         if(x.style.display === "none") {
+                            document.getElementById("right-seventeen").style.display = "none";
+                            document.getElementById("down-seventeen").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-seventeen").style.display = "block";
+                            document.getElementById("down-seventeen").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1855,9 +2082,13 @@
                     function dropDownEighteen() {
                         var x = document.getElementById("eighteen");
                         if(x.style.display === "none") {
+                            document.getElementById("right-eighteen").style.display = "none";
+                            document.getElementById("down-eighteen").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-eighteen").style.display = "block";
+                            document.getElementById("down-eighteen").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1865,9 +2096,13 @@
                     function dropDownNineteen() {
                         var x = document.getElementById("nineteen");
                         if(x.style.display === "none") {
+                            document.getElementById("right-nineteen").style.display = "none";
+                            document.getElementById("down-nineteen").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-nineteen").style.display = "block";
+                            document.getElementById("down-nineteen").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1875,9 +2110,13 @@
                     function dropDownTwenty() {
                         var x = document.getElementById("twenty");
                         if(x.style.display === "none") {
+                            document.getElementById("right-twenty").style.display = "none";
+                            document.getElementById("down-twenty").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-twenty").style.display = "block";
+                            document.getElementById("down-twenty").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1885,9 +2124,13 @@
                     function dropDownTwentyOne() {
                         var x = document.getElementById("twentyone");
                         if(x.style.display === "none") {
+                            document.getElementById("right-twentyone").style.display = "none";
+                            document.getElementById("down-twentyone").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-twentyone").style.display = "block";
+                            document.getElementById("down-twentyone").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1895,9 +2138,13 @@
                     function dropDownTwentyTwo() {
                         var x = document.getElementById("twentytwo");
                         if(x.style.display === "none") {
+                            document.getElementById("right-twentytwo").style.display = "none";
+                            document.getElementById("down-twentytwo").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-twentytwo").style.display = "block";
+                            document.getElementById("down-twentytwo").style.display = "none";
                             x.style.display = "none";
                         }
                     }
@@ -1905,9 +2152,13 @@
                     function dropDownTwentyThree() {
                         var x = document.getElementById("twentythree");
                         if(x.style.display === "none") {
+                            document.getElementById("right-twentythree").style.display = "none";
+                            document.getElementById("down-twentythree").style.display = "block";
                             x.style.display = "block";
                         }
                         else {
+                            document.getElementById("right-twentythree").style.display = "block";
+                            document.getElementById("down-twentythree").style.display = "none";
                             x.style.display = "none";
                         }
                     }
