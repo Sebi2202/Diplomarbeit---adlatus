@@ -2,8 +2,9 @@
 
 @section('content')
 @if(Auth::check())
-    <style>
+    
 
+    <style>
         body {
             margin:0;
             font-family:Verdana;
@@ -113,8 +114,7 @@
             display:flex;
             flex-direction:row;
             justify-content:flex-start;
-            padding-right:10px;
-            padding-left:10px;
+            padding-left:20px;
             padding-top:5px;
             width:240px;
             height:25px;
@@ -319,7 +319,7 @@
         <div class="content">
             <nav>
                 <div onClick="dropDownNull()">
-                <div class="lab">0:00</div>
+                    <div class="lab">0:00</div>
                 </div>
                 <div id="null" style="display:none">
                     <div class="lab-drop">0:00
@@ -353,7 +353,9 @@
                 </div>
 
                 <div onClick="dropDownOne()">
-                <div class="lab">1:00</div>
+                    <div class="lab">1:00
+
+                    </div>
                 </div>
                 <div id="one" style="display:none">
                     <div class="lab-drop">1:00
