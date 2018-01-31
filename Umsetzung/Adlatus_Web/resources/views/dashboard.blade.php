@@ -193,7 +193,9 @@
                 @foreach($users as $user)
                     @if($user->therapeut_sozNr == Auth::user()->sozNr)
                         <div class="konto">
-                            <a href="/dashboard/patient/{{$user->id}}" class="patient">Get to Patient</a><br>
+                            <a href="/dashboard/patient/{{$user->id}}">    
+                                <img src="/user/profile.png" width="100px;" href="/dashboard/patient/{{$user->id}}" >
+                            </a><br>
                             <p>{{$user->vorname}} {{$user->nachname}}</p>
                         </div>
                     @endif
