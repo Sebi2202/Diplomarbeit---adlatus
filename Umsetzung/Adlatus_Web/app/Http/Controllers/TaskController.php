@@ -135,9 +135,9 @@ class TaskController extends Controller
         return redirect('/dashboard/patient/calendar/' . $id . '/' . $date);
     }
 
-    public function nextTasks($id) {
+    public function nextTasks($id, $time) {
         $tasks = Task::where('fk_userid', $id)
-                    ->where('start', '>', Carbon::now())
+                    ->where('start', '>', $time)
                     ->take(4)
                     ->orderBy('start', 'asc')
                     ->get(['title', 'start', 'link']);
