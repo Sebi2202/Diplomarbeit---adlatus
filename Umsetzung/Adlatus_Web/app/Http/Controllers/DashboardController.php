@@ -29,7 +29,7 @@ class DashboardController extends Controller
     {
         $auth = Auth::user();
         $users = User::where('therapeut_sozNr', $auth->sozNr)
-            ->orderBy('vorname', 'asc')->get();
+            ->orderBy('nachname', 'asc')->get();
 
         return view('dashboard')->with('users', $users)->with('auth', $auth);
     }

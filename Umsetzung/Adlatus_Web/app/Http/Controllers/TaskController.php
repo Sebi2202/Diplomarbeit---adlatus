@@ -50,16 +50,26 @@ class TaskController extends Controller
         $pieces = explode("/", url()->previous());
         $date = $pieces[sizeof($pieces)-1];
 
-        $task = new Task();
-        $task->fk_userid = $id;
-        $task->fk_activityid = $request->input('activitynr');
-        $task->start = $date . " " . $request->input('date') . ":00";
-        $task->title = $request->input('title');
-        $task->confirmed = 0;
-        $task->nachricht = $request->input('message');
-        $task->link = $request->input('link');
+        $tsks = Task::where('fk_userid', $id);
+
+        foreach ($tsks as $tsk) {
+            if($tsk->start == $date . " " . $request->input('date') . ":00") {
+                return redirect('/dashboard/patient/calendar/' . $id . '/' . $date)->with('Fail', 'Task already exist on this time');
+            }
+            else {
+                $task = new Task();
+                $task->fk_userid = $id;
+                $task->fk_activityid = $request->input('activitynr');
+                $task->start = $date . " " . $request->input('date') . ":00";
+                $task->title = $request->input('title');
+                $task->confirmed = 0;
+                $task->nachricht = $request->input('message');
+                $task->link = $request->input('link');
         
-        $task->save();
+                $task->save();
+            }
+        }
+        
         
         return redirect('/dashboard/patient/calendar/' . $id . '/' . $date)->with('Success', 'Task created');
         
