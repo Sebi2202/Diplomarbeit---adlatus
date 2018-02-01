@@ -42,7 +42,7 @@ class TaskController extends Controller
             'activitynr' => 'required',
             'date' => array(
                 'required',
-                'regex:/([0][1-9]|[1][0-9]|[2][0-3]):([1][5]|[3][0]|[4][5]|[0][0])/u'
+                'regex:/([0][0-9]|[1][0-9]|[2][0-3]):([1][5]|[3][0]|[4][5]|[0][0])/u'
             ),
             'link' => 'required'
         ]);

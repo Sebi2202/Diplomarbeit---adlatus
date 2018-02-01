@@ -134,7 +134,8 @@
         }
 
         .arrow-right { position:relative; bottom:1px; }
-        .arrow-down { position:relative; bottom:4px; right:8px; }
+        .arrow-down { position:relative; bottom:4px; right:8px; padding-left:15px;}
+        .full-date-icon { padding-right:2px; }
 
         .nav-img { margin-left:auto;  }
 
@@ -333,6 +334,11 @@
                 <div onClick="dropDownNull()">
                     <div class="lab">0:00
                         <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "00:00:00" || $task->start == $date . " " . "00:15:00" || $task->start == $date . " " . "00:30:00" || $task->start == $date . " " . "00:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                             <img class="arrow-right" id="right-null" src="/dropdown/right.png" width="30px;" height="22px;">
                             <img class="arrow-down" id="down-null" src="/dropdown/down.png" width="15px;" height="25px;">
                         </div>
@@ -372,6 +378,11 @@
                 <div onClick="dropDownOne()">
                     <div class="lab">1:00
                         <div class="lab-icons">
+                            @foreach($tasks as $task)
+                                @if($task->start == $date . " " . "01:00:00" || $task->start == $date . " " . "01:15:00" || $task->start == $date . " " . "01:30:00" || $task->start == $date . " " . "01:45:00")
+                                    <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                                @endif
+                            @endforeach
                             <img class="arrow-right" id="right-one" src="/dropdown/right.png" width="30px;" height="22px;">
                             <img class="arrow-down" id="down-one" src="/dropdown/down.png" width="15px;" height="25px;">
                         </div>
@@ -411,6 +422,11 @@
                 <div onClick="dropDownTwo()">
                 <div class="lab">2:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "02:00:00" || $task->start == $date . " " . "02:15:00" || $task->start == $date . " " . "02:30:00" || $task->start == $date . " " . "02:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-two" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-two" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -450,6 +466,11 @@
                 <div onClick="dropDownThree()">
                 <div class="lab">3:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "03:00:00" || $task->start == $date . " " . "03:15:00" || $task->start == $date . " " . "03:30:00" || $task->start == $date . " " . "03:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-three" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-three" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -489,6 +510,11 @@
                 <div onClick="dropDownFour()">
                 <div class="lab">4:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "04:00:00" || $task->start == $date . " " . "04:15:00" || $task->start == $date . " " . "04:30:00" || $task->start == $date . " " . "04:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-four" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-four" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -528,6 +554,11 @@
                 <div onClick="dropDownFive()">
                 <div class="lab">5:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "05:00:00" || $task->start == $date . " " . "05:15:00" || $task->start == $date . " " . "05:30:00" || $task->start == $date . " " . "05:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-five" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-five" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -567,6 +598,11 @@
                 <div onClick="dropDownSix()">
                 <div class="lab">6:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "06:00:00" || $task->start == $date . " " . "06:15:00" || $task->start == $date . " " . "06:30:00" || $task->start == $date . " " . "06:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-six" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-six" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -606,6 +642,11 @@
                 <div onClick="dropDownSeven()">
                 <div class="lab">7:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "07:00:00" || $task->start == $date . " " . "07:15:00" || $task->start == $date . " " . "07:30:00" || $task->start == $date . " " . "07:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-seven" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-seven" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -645,6 +686,11 @@
                 <div onClick="dropDownEight()">
                 <div class="lab">8:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "08:00:00" || $task->start == $date . " " . "08:15:00" || $task->start == $date . " " . "08:30:00" || $task->start == $date . " " . "08:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-eight" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-eight" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -684,6 +730,11 @@
                 <div onClick="dropDownNine()">
                 <div class="lab">9:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "09:00:00" || $task->start == $date . " " . "09:15:00" || $task->start == $date . " " . "09:30:00" || $task->start == $date . " " . "09:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-nine" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-nine" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -723,6 +774,11 @@
                 <div onClick="dropDownTen()">
                 <div class="lab">10:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "10:00:00" || $task->start == $date . " " . "10:15:00" || $task->start == $date . " " . "10:30:00" || $task->start == $date . " " . "10:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-ten" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-ten" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -762,6 +818,11 @@
                 <div onClick="dropDownEleven()">
                 <div class="lab">11:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "11:00:00" || $task->start == $date . " " . "11:15:00" || $task->start == $date . " " . "11:30:00" || $task->start == $date . " " . "11:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-eleven" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-eleven" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -801,6 +862,11 @@
                 <div onClick="dropDownTwelve()">
                 <div class="lab">12:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "12:00:00" || $task->start == $date . " " . "12:15:00" || $task->start == $date . " " . "12:30:00" || $task->start == $date . " " . "12:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-twelve" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-twelve" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -840,6 +906,11 @@
                 <div onClick="dropDownThirteen()">
                 <div class="lab">13:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "13:00:00" || $task->start == $date . " " . "13:15:00" || $task->start == $date . " " . "13:30:00" || $task->start == $date . " " . "13:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-thirteen" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-thirteen" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -879,6 +950,11 @@
                 <div onClick="dropDownFourteen()">
                 <div class="lab">14:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "14:00:00" || $task->start == $date . " " . "14:15:00" || $task->start == $date . " " . "14:30:00" || $task->start == $date . " " . "14:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-fourteen" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-fourteen" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -918,6 +994,11 @@
                 <div onClick="dropDownFifteen()">
                 <div class="lab">15:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "15:00:00" || $task->start == $date . " " . "15:15:00" || $task->start == $date . " " . "15:30:00" || $task->start == $date . " " . "15:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-fifteen" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-fifteen" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -957,6 +1038,11 @@
                 <div onClick="dropDownSixteen()">
                 <div class="lab">16:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "16:00:00" || $task->start == $date . " " . "16:15:00" || $task->start == $date . " " . "16:30:00" || $task->start == $date . " " . "16:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-sixteen" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-sixteen" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -996,6 +1082,11 @@
                 <div onClick="dropDownSeventeen()">
                 <div class="lab">17:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "17:00:00" || $task->start == $date . " " . "17:15:00" || $task->start == $date . " " . "17:30:00" || $task->start == $date . " " . "17:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-seventeen" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-seventeen" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -1035,6 +1126,11 @@
                 <div onClick="dropDownEighteen()">
                 <div class="lab">18:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "18:00:00" || $task->start == $date . " " . "18:15:00" || $task->start == $date . " " . "18:30:00" || $task->start == $date . " " . "18:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-eighteen" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-eighteen" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -1074,6 +1170,11 @@
                 <div onClick="dropDownNineteen()">
                 <div class="lab">19:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "19:00:00" || $task->start == $date . " " . "19:15:00" || $task->start == $date . " " . "19:30:00" || $task->start == $date . " " . "19:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-nineteen" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-nineteen" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -1113,6 +1214,11 @@
                 <div onClick="dropDownTwenty()">
                 <div class="lab">20:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "20:00:00" || $task->start == $date . " " . "20:15:00" || $task->start == $date . " " . "20:30:00" || $task->start == $date . " " . "20:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-twenty" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-twenty" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -1152,6 +1258,11 @@
                 <div onClick="dropDownTwentyOne()">
                 <div class="lab">21:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "21:00:00" || $task->start == $date . " " . "21:15:00" || $task->start == $date . " " . "21:30:00" || $task->start == $date . " " . "21:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-twentyone" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-twentyone" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -1191,6 +1302,11 @@
                 <div onClick="dropDownTwentyTwo()">
                 <div class="lab">22:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "22:00:00" || $task->start == $date . " " . "22:15:00" || $task->start == $date . " " . "22:30:00" || $task->start == $date . " " . "22:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-twentytwo" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-twentytwo" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
@@ -1230,6 +1346,11 @@
                 <div onClick="dropDownTwentyThree()">
                 <div class="lab">23:00
                     <div class="lab-icons">
+                        @foreach($tasks as $task)
+                            @if($task->start == $date . " " . "23:00:00" || $task->start == $date . " " . "23:15:00" || $task->start == $date . " " . "23:30:00" || $task->start == $date . " " . "23:45:00")
+                                <a class="nav-img full-date-icon" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
+                            @endif
+                        @endforeach
                         <img class="arrow-right" id="right-twentythree" src="/dropdown/right.png" width="30px;" height="22px;">
                         <img class="arrow-down" id="down-twentythree" src="/dropdown/down.png" width="15px;" height="25px;">
                     </div>
