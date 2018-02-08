@@ -10,12 +10,12 @@
     </head>
     <style>
         body {
-            margin:0px;
+            margin:0;
             font-family:Verdana;
             font-size:14px;
             background-image: url("/background-image/BackgroundImage.jpg");
-            background-repeat: no-repeat;
-            background-size:100%;
+            background-repeat: no-repeat no-repeat;
+            background-size:100% 100%;
         }
 
         a {
@@ -53,6 +53,7 @@
             margin-right:15%;
 
             height:450px;
+            padding-top:10px;
 
             background-color:white;
         }
@@ -175,6 +176,10 @@
             border:none;
         }
 
+        .konto { margin-left:auto; margin-right:auto; }
+        .therapeut { }
+        .strich { margin-left:20px; margin-right:20px; }
+
     </style>
     <body>
         <header>
@@ -188,11 +193,23 @@
 
         <section>
             <h2>Kontenverwaltung</h2>
+            <div class="betreuer">
+                <div class="konto">
+                    <a href="/dashboard/patient/{{$auth->id}}">    
+                        <img src="/user/profile.png" width="100px;" href="/dashboard/patient/{{$auth->id}}" >
+                    </a><br>
+                    <p class="therapeut">{{$auth->vorname}} {{$auth->nachname}}</p>
+                </div>
+            </div>
+            <hr class="strich">
+            <br>
             <div class="konten">
                 @foreach($users as $user)
-                    @if($user->therapeut_sozNr == Auth::user()->sozNr)
+                    @if($user->therapeut_sozNr == Auth::user()->sozNr && $user->sozNr != Auth::user()->sozNr)
                         <div class="konto">
-                            <a href="/dashboard/patient/{{$user->id}}" class="patient">Get to Patient</a><br>
+                            <a href="/dashboard/patient/{{$user->id}}">    
+                                <img src="/user/profile.png" width="100px;" href="/dashboard/patient/{{$user->id}}" >
+                            </a><br>
                             <p>{{$user->vorname}} {{$user->nachname}}</p>
                         </div>
                     @endif

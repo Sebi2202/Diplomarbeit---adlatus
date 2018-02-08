@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Mail;
 use App\Mail\PasswordRecoveryLink;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -26,8 +27,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('dashboard')->with('users', $users);
+        $auth = Auth::user();
+        $users = User::where('therapeut_sozNr', $auth->sozNr)
+            ->orderBy('nachname', 'asc')->get();
+
+        return view('dashboard')->with('users', $users)->with('auth', $auth);
     }
 
     public function email(Request $request) {
