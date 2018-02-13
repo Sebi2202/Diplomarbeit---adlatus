@@ -10,7 +10,7 @@
             font-size:14px;
             background-image: url("/background-image/BackgroundImage.jpg");
             background-repeat: no-repeat;
-            background-size:100%;
+            background-size:cover;
         }
 
         a {
@@ -45,6 +45,7 @@
             margin-left:15%;
             margin-right:15%;
             padding-left:40px;
+            margin-bottom:500px;
             height:400px;
             background-color:white;
         }

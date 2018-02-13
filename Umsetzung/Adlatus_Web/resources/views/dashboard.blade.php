@@ -14,8 +14,8 @@
             font-family:Verdana;
             font-size:14px;
             background-image: url("/background-image/BackgroundImage.jpg");
-            background-repeat: no-repeat no-repeat;
-            background-size:100% 100%;
+            background-repeat:no-repeat;
+            background-size:cover;
         }
 
         a {
@@ -159,6 +159,9 @@
         }
 
         @media screen and (max-width:350px) { section { width:230px; } }
+        /*
+        @media screen and (max-width:1145px) { body { background-repeat: no-repeat no-repeat;
+            background-size:100% 100%; } }*/
 
         .patient {
             text-align:center;

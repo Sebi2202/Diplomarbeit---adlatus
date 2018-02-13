@@ -153,7 +153,7 @@
     <footer>
         <table class="footer-table">
             <tr class="table-row">
-                <th class="table-head" >Kontakt</th>
+                <th class="table-head">Kontakt</th>
                 <th class="table-head">Links</th>
             </tr>
             <tr class="table-row">

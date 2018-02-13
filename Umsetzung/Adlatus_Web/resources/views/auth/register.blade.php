@@ -8,7 +8,7 @@
         font-size:14px;
         background-image: url("/background-image/BackgroundImage.jpg");
         background-repeat: no-repeat;
-        background-size:100%;
+        background-size:cover;
     }
 
     a {
@@ -43,6 +43,7 @@
         top:50px;
         margin-left:15%;
         margin-right:15%;
+        margin-bottom:500px;
         padding-left:40px;
         background-color:white;
     }
