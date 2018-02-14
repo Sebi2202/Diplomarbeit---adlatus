@@ -304,7 +304,11 @@
 
         @media screen and (max-width:360px) { .lab {width:274px;} .lab-drop {width:264px;} }
 
-
+        ::-webkit-input-placeholder { color:lightgray; }
+        ::-moz-placeholder { color:lightgray; }
+        :-ms-input-placeholder { color:lightgray; }
+        :-moz-placeholder { color:lightgray; }
+        
     </style>
 </head>
 <body>

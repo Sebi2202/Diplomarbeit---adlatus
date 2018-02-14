@@ -244,7 +244,7 @@
                 <br>
                 {{ Form::email('email', $user->email, ['class' => 'fm', 'placeholder' => 'E-Mail'])}}
                 <br>
-                {{ Form::password('password', ['class' => 'fm', 'placeholder' => 'Passwort'])}}
+                {{ Form::password('password', ['class' => 'fm', 'placeholder' => 'neues Passwort'])}}
                 <br>
                 {{ Form::password('again', ['class' => 'fm', 'placeholder' => 'Passwort wiederholen'])}}
                 <br>
@@ -258,7 +258,7 @@
                     <br>
                     <div id="really">
                         <div class="btns">
-                            <a href="#really" class="delete">Konto Löschen</a>
+                            <a href="#really" class="delete">Konto löschen</a>
                         </div>
                         <div class="sure">
                             <h2 style="text-align:center;">Konto löschen</h2>

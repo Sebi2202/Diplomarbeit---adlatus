@@ -181,7 +181,7 @@
                 <br>
                 {{Form::password('password', ['class' => 'fm', 'placeholder' => 'Passwort'])}}
                 <br>
-                {{Form::submit('Submit', ['class' => 'rg'])}}
+                {{Form::submit('Anmelden', ['class' => 'rg'])}}
             {!! Form::close() !!}
         </div>
         <div class="last_text">

@@ -80,6 +80,7 @@
         .konto {
             padding-right:25px;
             padding-left:25px;
+            padding-bottom:25px;
             width:150px;
             height:150px;
             text-align:center;

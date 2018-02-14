@@ -9,9 +9,11 @@
         margin:0px;
         font-family:Verdana;
         font-size:14px;
-        background-image: url("/background-image/BackgroundImage.jpg");
-        background-repeat: no-repeat;
-        background-size:100%;
+        background: url("/background-image/BackgroundImage.jpg") no-repeat center center fixed;
+        background-size:cover;
+        -webkit-background-size: cover; 
+        -moz-background-size: cover;    
+        -o-background-size: cover;
     }
 
     a {

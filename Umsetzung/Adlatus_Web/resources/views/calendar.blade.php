@@ -22,6 +22,8 @@
 
     .text { margin-left:5%; margin-right:5%; }
 
+    .name { margin-left:15%; margin-right:15%; font-weight:bold; }
+
     .header-container {
         background-color: lightblue;
         width:100%;
@@ -97,15 +99,15 @@
     .table-d { padding-right:10px; }
 
     /* @media - Responsive Design */
-    @media screen and (min-width:1200px) and (max-height:950px) { footer { position:relative; top:97px; } }
+    @media screen and (min-width:1200px) and (max-height:980px) { footer { position:relative; top:97px; } }
 
-    @media screen and (max-width:1200px) and (min-width:992px) and (max-height:847px)  { footer { position:relative; top:97px; } }
-    @media screen and (max-width:991px) and (min-width:748px) and (max-height:733px)  { footer { position:relative; top:97px; } }
-    @media screen and (max-width:747px) and (min-width:735px) and (max-height:731px)  { footer { position:relative; top:97px; } }
-    @media screen and (max-width:734px) and (min-width:650px) and (max-height:725px)  { footer { position:relative; top:139px; } }
-    @media screen and (max-width:649px) and (min-width:530px) and (max-height:630px)  { footer { position:relative; top:108px; } }
-    @media screen and (max-width:530px) and (min-width:460px) and (max-height:620px)  { footer { position:relative; top:108px; } }
-    @media screen and (max-width:459px) and (min-width:350px) and (max-height:565px)  { footer { position:relative; top:108px; } }
+    @media screen and (max-width:1200px) and (min-width:992px) and (max-height:877px)  { footer { position:relative; top:97px; } }
+    @media screen and (max-width:991px) and (min-width:748px) and (max-height:763px)  { footer { position:relative; top:97px; } }
+    @media screen and (max-width:747px) and (min-width:735px) and (max-height:761px)  { footer { position:relative; top:97px; } }
+    @media screen and (max-width:734px) and (min-width:650px) and (max-height:755px)  { footer { position:relative; top:139px; } }
+    @media screen and (max-width:649px) and (min-width:530px) and (max-height:660px)  { footer { position:relative; top:108px; } }
+    @media screen and (max-width:530px) and (min-width:460px) and (max-height:650px)  { footer { position:relative; top:108px; } }
+    @media screen and (max-width:459px) and (min-width:350px) and (max-height:595px)  { footer { position:relative; top:108px; } }
     
     /* Header Buttons */
 
@@ -144,7 +146,9 @@
 
     <section>
         <div class="container">
+        <p class="name">{{$user->vorname}} {{$user->nachname}}</p>
             <div id="calendar">
+    
 
             </div>
         </div>
