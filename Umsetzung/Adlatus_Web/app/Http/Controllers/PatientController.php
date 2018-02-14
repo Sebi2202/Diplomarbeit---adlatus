@@ -121,28 +121,33 @@ class PatientController extends Controller
             'vorname' => 'required',
             'nachname' => 'required',
             'email' => 'required',
-            'password' => array(
-                'required',
-                'min:6'
-            ),
-            'again' => 'required'
         ]); 
 
-        if($request->input('password') == $request->input('again')) {
-            $user = User::find($id);
-            
+        $user = User::find($id);
+        $cnt = strlen($request->input('password'));
+
+        if($cnt == 0) {
             $user->vorname = $request->input('vorname');
             $user->nachname = $request->input('nachname');
             $user->email = $request->input('email');
-            $user->password = Hash::make($request->input('password'));
                 
             $user->save();  
             
             return redirect('/dashboard')->with('Success', 'Patient updated');
         }
-        else {
-            return redirect('/dashboard/patient/edit/{id}')->with('Error', 'Patient could not be updated');
+        if($cnt >= 6 && $request->input('password') == $request->input('again')) {
+            $user->vorname = $request->input('vorname');
+            $user->nachname = $request->input('nachname');
+            $user->email = $request->input('email');
+            $user->password = Hash::make($request->input('password'));
+                    
+            $user->save();  
+                
+            return redirect('/dashboard')->with('Success', 'Patient updated');
         }
+
+        return redirect('/dashboard/patient/edit/' . $user->id)->with('Error', 'Patient could not be updated');
+        
     }
 
     /**
