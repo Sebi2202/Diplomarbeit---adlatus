@@ -190,6 +190,7 @@
             font-family:Verdana;
             font-size:12px;
             font-style:italic;
+            font-weight:bold;
 
             padding-top:5px;
             padding-bottom:5px;
@@ -308,7 +309,9 @@
         ::-moz-placeholder { color:lightgray; }
         :-ms-input-placeholder { color:lightgray; }
         :-moz-placeholder { color:lightgray; }
+
         
+
     </style>
 </head>
 <body>
