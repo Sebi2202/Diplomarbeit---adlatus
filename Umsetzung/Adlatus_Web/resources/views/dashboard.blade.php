@@ -53,8 +53,10 @@
         section {
             margin-left:15%;
             margin-right:15%;
+            padding-right:5%;
+            padding-left:5%;
 
-            height:450px;
+            height:900px;
             padding-top:10px;
 
             background-color:white;
@@ -85,7 +87,7 @@
 
         .plus {
             position:absolute;
-            top:440px;
+            top:890px;
             right:18%;
 
             background-color:orange;
@@ -134,24 +136,24 @@
         td { padding-right:10px; }
 
         /* @media - Responsive Design */
-        @media screen and (min-width:1432px) and (max-height:661px) { footer { position:relative; } }
+        @media screen and (min-width:1432px) and (max-height:1111px) { footer { position:relative; } }
 
         @media screen and (max-width:1431px) {
-            section { height:600px; }
-            .plus { top:590px; }
-            @media screen and (max-height:811px) { footer { position:relative; } }
+            section { height:1050px; }
+            .plus { top:1040px; }
+            @media screen and (max-height:1261px) { footer { position:relative; } }
         }
 
         @media screen and (max-width:1145px) {
-            section { height:750px; }
-            .plus { top:740px; }
-            @media screen and (max-height:961px) { footer { position:relative; } }
+            section { height:1200px; }
+            .plus { top:1190px; }
+            @media screen and (max-height:1411px) { footer { position:relative; } }
         }
 
         @media screen and (max-width:859px) {
-            section { height:900px; }
-            .plus { top:890px; }
-            @media screen and (max-height:1111px) { footer { position:relative; } }
+            section { height:1350px; }
+            .plus { top:1340px; }
+            @media screen and (max-height:1561px) { footer { position:relative; } }
         }
 
         @media screen and (max-width:574px) {
@@ -161,9 +163,6 @@
         }
 
         @media screen and (max-width:350px) { section { width:230px; } }
-        /*
-        @media screen and (max-width:1145px) { body { background-repeat: no-repeat no-repeat;
-            background-size:100% 100%; } }*/
 
         .patient {
             text-align:center;
