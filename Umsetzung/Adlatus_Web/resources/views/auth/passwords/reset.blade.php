@@ -7,9 +7,11 @@
             margin:0px;
             font-family:Verdana;
             font-size:14px;
-            background-image: url("/background-image/BackgroundImage.jpg");
-            background-repeat: no-repeat;
+            background: url("/background-image/BackgroundImage.jpg") no-repeat center center fixed;
             background-size:cover;
+            -webkit-background-size: cover; 
+            -moz-background-size: cover;    
+            -o-background-size: cover;
         }
 
         a {
@@ -44,7 +46,6 @@
             top:50px;
             margin-left:15%;
             margin-right:15%;
-            margin-bottom:500px;
             padding-left:40px;
             padding-right:40px;
             padding-bottom:20px;

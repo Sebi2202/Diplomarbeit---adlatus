@@ -8,9 +8,11 @@
             margin:0px;
             font-family:Verdana;
             font-size:14px;
-            background-image: url("/background-image/BackgroundImage.jpg");
-            background-repeat: no-repeat;
+            background: url("/background-image/BackgroundImage.jpg") no-repeat center center fixed;
             background-size:cover;
+            -webkit-background-size: cover; 
+            -moz-background-size: cover;    
+            -o-background-size: cover;
         }
 
         a {
@@ -45,7 +47,6 @@
             margin-left:15%;
             margin-right:15%;
             padding-left:40px;
-            margin-bottom:500px;
             height:400px;
             background-color:white;
         }
