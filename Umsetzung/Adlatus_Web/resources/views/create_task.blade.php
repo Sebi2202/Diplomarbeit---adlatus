@@ -137,7 +137,7 @@
         .arrow-down { position:relative; bottom:4px; right:8px; padding-left:15px;}
         .full-date-icon { padding-right:2px; }
 
-        .nav-img { margin-left:auto;  }
+        .nav-img { margin-left:auto; }
 
         .section-td {
             padding-right:30px;
