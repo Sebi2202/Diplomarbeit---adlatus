@@ -29,7 +29,6 @@ Route::get('/dashboard/patient/calendar/{id}/{date}/{task_id}', 'PagesController
 
 Route::put('/password/reset', 'Auth\ForgotPasswordController@update');
 Route::put('/dashboard/patient/edit/{id}', 'PatientController@update');
-
 Route::put('/dashboard/patient/calendar/{id}/{date}/{task_id}', 'TaskController@update');
 
 Route::post('/dashboard/create_patient', 'PatientController@store');

@@ -3,7 +3,7 @@
 
 Klicken Sie auf den Knopf, damit Sie ihr *Passwort zurücksetzen* können!
 
-@component('mail::button', ['url' => 'localhost:8000/password/reset/{token}'])
+@component('mail::button', ['url' => 'http://127.0.0.1:8000/password/reset/{token}'])
 Passwort zurücksetzen
 @endcomponent
 
