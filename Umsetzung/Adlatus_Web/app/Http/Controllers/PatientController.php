@@ -94,6 +94,7 @@ class PatientController extends Controller
     public function show($id)
     {
         $user = User::find($id);
+        $auth = Auth::user();
         if(!$user || !($user->therapeut_sozNr == $auth->sozNr)) {
             return redirect('/dashboard');
         }

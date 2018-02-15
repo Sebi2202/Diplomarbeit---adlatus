@@ -15,6 +15,7 @@ class PagesController extends Controller
 
     public function index($id) {
         $user = User::find($id);
+        $auth = Auth::user();
         if(!$user || !($user->therapeut_sozNr == $auth->sozNr)) {
             return view('choice')->with('user', $user);
         }
