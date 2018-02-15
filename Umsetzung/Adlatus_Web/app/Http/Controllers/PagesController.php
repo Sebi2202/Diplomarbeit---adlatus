@@ -17,10 +17,10 @@ class PagesController extends Controller
         $user = User::find($id);
         $auth = Auth::user();
         if(!$user || !($user->therapeut_sozNr == $auth->sozNr)) {
-            return view('choice')->with('user', $user);
+            return redirect('/dashboard');
         }
         else {
-            return redirect('/dashboard');
+            return view('choice')->with('user', $user);
         }
     }
 
