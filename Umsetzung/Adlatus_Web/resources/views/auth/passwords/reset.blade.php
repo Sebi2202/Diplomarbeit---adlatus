@@ -157,6 +157,12 @@
                         {{ session('status') }}
                     </div>
                 @endif
+
+                @if(count($errors) > 0)
+                    @foreach($errors->all() as $error)
+                        <p style="color: red">{{$error}}</p>
+                    @endforeach
+                @endif
             </div>
             {!! Form::open(['action' => 'Auth\ForgotPasswordController@update', 'method' => 'POST']) !!}
                 {{ Form::token() }}
