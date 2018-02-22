@@ -8,9 +8,11 @@
         margin:0;
         font-family:Verdana;
         font-size:14px;
-        background-image: url("/background-image/BackgroundImage.jpg");
-        background-repeat: no-repeat;
-        background-size:100%;
+        background: url("/background-image/BackgroundImage.jpg") no-repeat center center fixed;
+        background-size:cover;
+        -webkit-background-size: cover; 
+        -moz-background-size: cover;    
+        -o-background-size: cover;
     }
 
     a {
@@ -158,10 +160,10 @@
         .cancel { position:relative; bottom:10px; }
         .div-cancel { text-align:center; }
 
-        @media screen and (max-height:740px) { footer { position:relative; top:64px; } }
+        @media screen and (max-height:760px) { footer { position:relative; top:64px; } }
     }
 
-    @media screen and (max-height:690px) {
+    @media screen and (max-height:710px) {
         footer { position:relative; top:65px;}
     }
 

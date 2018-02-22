@@ -47,7 +47,7 @@
             margin-left:15%;
             margin-right:15%;
             padding-left:40px;
-            height:400px;
+            height:530px;
             background-color:white;
         }
 
@@ -162,12 +162,12 @@
 
         /* @media - Responsive Design */
 
-        @media screen and (min-width:676px) and (max-height:611px) { footer { position:relative; } }
+        @media screen and (min-width:676px) and (max-height:751px) { footer { position:relative; } }
 
         @media screen and (max-width:675px) {
             .fm { width:80%; }
-            section { height:420px; }
-            @media screen and (max-height:632px) { footer { position:relative; } }
+            section { height:580px; }
+            @media screen and (max-height:805px) { footer { position:relative; } }
         }
 
         @media screen and (max-width:550px) {section, .links { margin-left:5%; margin-right:5%; } }

@@ -101,7 +101,7 @@ class PatientController extends Controller
         }
         else {
             $error = "";
-            return view('patient')->with('user', $user)->with('error', $error);
+            return view('patient')->with('user', $user)->with('er', $error);
         }
     }
 
@@ -133,6 +133,7 @@ class PatientController extends Controller
 
         $user = User::find($id);
         $cnt = strlen($request->input('password'));
+        $error = "";
 
         if($cnt == 0) {
             $user->vorname = $request->input('vorname');
@@ -154,8 +155,10 @@ class PatientController extends Controller
             return redirect('/dashboard')->with('Success', 'Patient updated');
         }
 
-        return view('patient')->with('error', 'Die Eingegeben Daten sind nicht richtig')->with('user', $user);
-        
+        if(sizeof($request->input('password')) < 6) {
+            $error = "The Password needs to be 6 characters long";
+        }
+        return view('patient')->with('er', $error)->with('user', $user);
     }
 
     /**

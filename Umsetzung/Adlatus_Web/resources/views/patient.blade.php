@@ -237,8 +237,14 @@
 
             <p>{{$user->vorname}} {{$user->nachname}}</p>
 
-            @if(count($error) > 0)
-                <p style="color: red">{{$error}}</p>
+            @if(count($errors) > 0)
+                @foreach($errors->all() as $error)
+                    <p style="color: red">{{$error}}</p>
+                @endforeach
+            @endif
+
+            @if(count($er) > 0)
+                <p style="color: red">{{$er}}</p>
             @endif
 
             <div class="">
