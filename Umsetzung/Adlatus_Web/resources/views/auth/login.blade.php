@@ -174,6 +174,9 @@
     </header>
     <section class="panel">
         <h2>Login</h2>
+        @if(count($error) > 0)
+                <p style="color: red">{{$error}}</p>
+        @endif
         <div>
             {!! Form::open(['action' => 'Auth\LoginController@login', 'method' => 'POST']) !!}
                 {{Form::token()}}

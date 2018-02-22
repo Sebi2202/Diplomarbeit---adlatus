@@ -168,6 +168,12 @@
         <div class="panel">
             <h2>Registrierung</h2>
 
+            @if(count($errors) > 0)
+                @foreach($errors->all() as $error)
+                    <p style="color: red">{{$error}}</p>
+                @endforeach
+            @endif
+
             <div>
                 {!! Form::open(['action' => 'Auth\RegisterController@register', 'method' => 'POST']) !!}
                 {{ Form::text('vorname', '', ['class' => 'fm', 'placeholder' => 'Vorname'])}}

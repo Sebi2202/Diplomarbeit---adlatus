@@ -42,10 +42,12 @@ class LoginController extends Controller
     }
 
     public function showLoginForm() {
-        return view('auth/login');
+        $error = "";
+        return view('auth/login')->with('error', $error);
     }
 
     public function login(Request $request) {
+        $error = "";
         if(Auth::attempt([
             'sozNr' => $request->input('sozNummer'), 
             'password' => $request->input('password'),
@@ -53,7 +55,8 @@ class LoginController extends Controller
         ])) {
             return redirect('/dashboard');
         } else {
-            return redirect('/login');
+            $error = "Die eingegebenen Daten sind nicht richtig";
+            return view('auth/login')->with('error', $error);
         }
     }
 

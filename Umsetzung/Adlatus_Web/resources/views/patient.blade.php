@@ -237,6 +237,10 @@
 
             <p>{{$user->vorname}} {{$user->nachname}}</p>
 
+            @if(count($error) > 0)
+                <p style="color: red">{{$error}}</p>
+            @endif
+
             <div class="">
                 {!! Form::open(['action' => ['PatientController@update', $user->id], 'method' => 'POST']) !!}
                 {{ Form::text('vorname', $user->vorname, ['class' => 'fm', 'placeholder' => 'Vorname'])}}

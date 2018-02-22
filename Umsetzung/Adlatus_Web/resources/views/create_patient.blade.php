@@ -187,6 +187,12 @@
         <section>
             <h2>Konto hinzufügen</h2>
 
+            @if(count($errors) > 0)
+                @foreach($errors->all() as $error)
+                    <p style="color: red">{{$error}}</p>
+                @endforeach
+            @endif
+            
             <div class="">
                 {!! Form::open(['action' => 'PatientController@store', 'method' => 'POST']) !!}
                 {{ Form::text('vorname', '', ['class' => 'fm', 'placeholder' => 'Vorname'])}}

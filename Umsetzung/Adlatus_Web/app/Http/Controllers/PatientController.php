@@ -100,7 +100,8 @@ class PatientController extends Controller
             return redirect('/dashboard');
         }
         else {
-            return view('patient')->with('user', $user);
+            $error = "";
+            return view('patient')->with('user', $user)->with('error', $error);
         }
     }
 
@@ -153,7 +154,7 @@ class PatientController extends Controller
             return redirect('/dashboard')->with('Success', 'Patient updated');
         }
 
-        return redirect('/dashboard/patient/edit/' . $user->id)->with('Error', 'Patient could not be updated');
+        return view('patient')->with('error', 'Die Eingegeben Daten sind nicht richtig')->with('user', $user);
         
     }
 
