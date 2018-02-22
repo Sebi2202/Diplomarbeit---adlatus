@@ -336,6 +336,12 @@
             echo "<p class='date'>".$vars[2] . " " . $vars[1] . " " . $vars[0]."</p>";
         ?>
 
+        @if(count($errors) > 0)
+            @foreach($errors->all() as $error)
+                <p style="color: red">{{$error}}</p>
+            @endforeach
+        @endif
+
         <div class="content">
             <nav>
                 <div onClick="dropDownNull()">
