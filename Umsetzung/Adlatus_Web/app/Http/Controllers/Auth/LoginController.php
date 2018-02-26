@@ -55,7 +55,7 @@ class LoginController extends Controller
         ])) {
             return redirect('/dashboard');
         } else {
-            $error = "The given data is not correct";
+            $error = "Die eingegebenen Daten sind entweder falsch geschrieben oder existieren nicht.";
             return view('auth/login')->with('error', $error);
         }
     }
