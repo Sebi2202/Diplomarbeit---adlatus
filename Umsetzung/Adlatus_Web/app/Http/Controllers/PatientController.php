@@ -156,7 +156,7 @@ class PatientController extends Controller
         }
 
         if(sizeof($request->input('password')) < 6) {
-            $error = "The Password needs to be 6 characters long";
+            $error = "Das Passwort muss 6 Zeichen enthalten.";
         }
         return view('patient')->with('er', $error)->with('user', $user);
     }
