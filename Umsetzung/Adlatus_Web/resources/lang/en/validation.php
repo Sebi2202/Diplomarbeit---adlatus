@@ -63,10 +63,10 @@ return [
     'mimetypes'            => 'The :attribute must be a file of type: :values.',
     'min'                  => [
         //'numeric' => 'The :attribute must be at least :min.',
-        'numeric' => 'Das Feld soll nicht kleiner als :max sein.',
+        'numeric' => 'Das Feld soll nicht kleiner als :min sein.',
         'file'    => 'The :attribute must be at least :min kilobytes.',
         //'string'  => 'The :attribute must be at least :min characters.',
-        'string'  => 'Das Feld soll nicht weniger als :max Zeichen enthalten.',
+        'string'  => 'Das Feld soll nicht weniger als :min Zeichen enthalten.',
         'array'   => 'The :attribute must have at least :min items.',
     ],
     'not_in'               => 'The selected :attribute is invalid.',
