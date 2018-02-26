@@ -55,7 +55,7 @@
             text-align:center;
             background-image: url("/background-image/mockup.png");
             background-repeat: no-repeat;
-            background-size:80%;
+            background-size:100%;
             background-position: center;
         }
 
