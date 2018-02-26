@@ -123,10 +123,11 @@
             display:flex;
             flex-direction:row;
             justify-content:flex-start;
-            padding-right:10px;
             padding-left:20px;
+            padding-right:0px;
+            padding-left:50px;
             padding-top:5px;
-            width:230px;
+            width:210px;
             height:25px;
             background-color:#eee;
             border:1px solid lightgrey;
@@ -174,7 +175,7 @@
 
         .popup {
             position:absolute;
-            top:100px;
+            top:250px;
             border:1px solid;
             background-color:white;
 
@@ -207,6 +208,17 @@
             position:relative;
             top:5px;
             width:97%;
+        }
+
+        .fm-custom {
+            position:relative;
+            margin-right:0%;
+            width:196px;
+        }
+
+        .fm-clock-custom {
+            width:234px;
+            margin-right:0%;
         }
 
         .popup-buttons {
@@ -261,7 +273,7 @@
             .content {flex-direction:column; flex-wrap:wrap;}
             nav { margin-bottom:10px; margin-left:auto; margin-right:auto; }
             .lab { width:600px; }
-            .lab-drop { width:590px; }
+            .lab-drop { width:560px; }
             .name, .date { text-align:center; }
             .section-table { margin-left:auto; margin-right:auto; }
             .section-td { padding-right:0px; }
@@ -279,16 +291,18 @@
 
         @media screen and (max-width:595px) { .section-img { width:60px; height:60px; } .task-label { bottom:23px; font-size:12px; } }
 
-        @media screen and (max-width:768px) { .lab {width:400px;} .lab-drop {width:390px;} }
+        @media screen and (max-width:768px) { .lab {width:400px;} .lab-drop {width:360px;} }
 
         @media screen and (max-width:515px) {
             .lab {width:300px;}
-            .lab-drop {width:290px;}
+            .lab-drop {width:260px;}
             .section-img { width:50px; height:50px; }
             .task-label { font-size:11px; }
         }
 
-        @media screen and (max-width:460px) { .popup {width:250px;} .section-img { width:40px; height:40px; } .task-label { bottom:15px; left: 5px; font-size:10px; } }
+        @media screen and (max-width:460px) { .popup {width:250px;} .section-img { width:40px; height:40px; } .task-label { bottom:15px; left: 5px; font-size:10px; } 
+            .fm-custom, .fm-clock-custom { width:97%; }
+        }
 
         @media screen and (max-width:395px) {
             .popup {top:850px; font-size:10px;}
@@ -299,11 +313,11 @@
         }
 
 
-        @media screen and (max-width:390px) { .lab {width:250px;} .lab-drop {width:240px;} }
+        @media screen and (max-width:390px) { .lab {width:250px;} .lab-drop {width:210px;} }
 
-        @media screen and (max-width:375px) { .lab {width:286px;} .lab-drop {width:276px;} }
+        @media screen and (max-width:375px) { .lab {width:286px;} .lab-drop {width:246px;} }
 
-        @media screen and (max-width:360px) { .lab {width:274px;} .lab-drop {width:264px;} }
+        @media screen and (max-width:360px) { .lab {width:274px;} .lab-drop {width:234px;} }
 
         ::-webkit-input-placeholder { color:lightgray; }
         ::-moz-placeholder { color:lightgray; }
@@ -1438,6 +1452,7 @@
                         </tr>
                         <tr>
                             <td class="section-td"><a onClick="brain()"><img class="section-img" src="/icons/gedaechtnis.png" width="80px" height="80px"></a><label class="task-label">Gedächtnistraining</label></td>
+                            <td class="section-td"><a onClick="custom()"><img class="section-img" src="/icons/custom.png" width="80px" height="80px"></a><label class="task-label">Benutzerdefiniert</label></td>
                         </tr>
                     </table>
                 </div>
@@ -1765,6 +1780,28 @@
                     </div>
                 </div>
 
+                <div class="popup" id="custom" style="display:none">
+                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    <img src="" width="80px" height="80px"> <br>
+                    <br>
+                    <div class="custom">
+                        Bezeichnung {{ Form::text('title', '', ['class' => 'fm-clock fm-custom', 'placeholder' => 'Bezeichnung der Aktivität'])}}
+                    </div>
+                    {{ Form::hidden('activitynr', '18') }}
+                    {{ Form::hidden('link', '/icons/custom.png') }}
+                    <div class="">
+                        
+                        Uhrzeit {{Form::text('date', '', ['class' => 'fm-clock fm-clock-custom', 'placeholder' => '15:30'])}}
+                        Persönliche Nachricht (Optional)
+                        {{ Form::text('message', '', ['class' => 'fm-clock fm-msg', 'placeholder' => ''])}}
+                        <div class="popup-buttons">
+                            {{ Form::submit('Speichern', ['class' => 'save']) }}
+                        {!! Form::close() !!}
+                            <a class="cancel" onClick="custom()">Abbrechen</a>
+                        </div>
+                    </div>
+                </div>
+
                 <script>
                     function pflege() {
                         var x = document.getElementById("pfl");
@@ -1928,6 +1965,16 @@
 
                     function brain() {
                         var x = document.getElementById("brai");
+                        if(x.style.display === "none") {
+                            x.style.display = "block";
+                        }
+                        else {
+                            x.style.display = "none";
+                        }
+                    }
+
+                    function custom() {
+                        var x = document.getElementById("custom");
                         if(x.style.display === "none") {
                             x.style.display = "block";
                         }
