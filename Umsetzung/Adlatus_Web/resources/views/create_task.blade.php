@@ -123,7 +123,6 @@
             display:flex;
             flex-direction:row;
             justify-content:flex-start;
-            padding-left:20px;
             padding-right:0px;
             padding-left:50px;
             padding-top:5px;
