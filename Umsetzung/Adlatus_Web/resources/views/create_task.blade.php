@@ -350,9 +350,7 @@
         <p class="name">{{$user->vorname}} {{$user->nachname}}</p>
         <p>{{$date}}</p>
         @if(count($errors) > 0)
-            @foreach($errors->all() as $error)
-                <p style="color: red">{{$error}}</p>
-            @endforeach
+            <p style="color: red">Die angegebene Uhrzeit ist inkorrekt.</p>
         @endif
         
         @if(count($er) > 0)

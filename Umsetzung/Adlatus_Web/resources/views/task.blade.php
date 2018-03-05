@@ -198,7 +198,7 @@
                 <img src="{{$task->link}}" width="120px" height="120px">
                 @if(count($errors) > 0)
                     @foreach($errors->all() as $error)
-                        <p style="color: red">{{$error}}</p>
+                        <p style="color: red">Die angegebene Uhrzeit ist inkorrekt.</p>
                     @endforeach
                 @endif
                 <h2><label id="label1">{{$task->title}}</label></h2>
@@ -240,9 +240,7 @@
                 {!! Form::open(['action' => ['TaskController@update', $user->id, $date, $task->id], 'method' => 'POST']) !!}
                 <img src="{{$task->link}}" width="120px" height="120px">
                 @if(count($errors) > 0)
-                    @foreach($errors->all() as $error)
-                        <p style="color: red">{{$error}}</p>
-                    @endforeach
+                    <p style="color: red">Die angegebene Uhrzeit ist inkorrekt.</p>
                 @endif
                 <br><br>
                 Bezeichnung
