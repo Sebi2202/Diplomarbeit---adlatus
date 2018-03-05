@@ -65,7 +65,7 @@
             margin-left:15%;
             margin-right:15%;
             padding-left:40px;
-            height:400px;
+            height:450px;
             background-color:white;
         }
 
@@ -201,13 +201,13 @@
 
         /* @media - Responsive Design */
 
-        @media screen and (min-width:731px) and (max-height:611px) { footer { position:relative; } }
+        @media screen and (min-width:731px) and (max-height:661px) { footer { position:relative; } }
 
         @media screen and (max-width:730px) {
             #really:target .sure { bottom:297px; }
             .fm { width:80%; }
-            section { height:450px; }
-            @media screen and (max-height:661px) { footer { position:relative; } }
+            section { height:500px; }
+            @media screen and (max-height:711px) { footer { position:relative; } }
         }
 
         @media screen and (max-width:470px) { section, .links { margin-left:5%; margin-right:5%; } }
