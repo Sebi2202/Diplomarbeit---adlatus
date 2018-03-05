@@ -150,6 +150,10 @@
         margin-bottom:25px;
     }
 
+    .fm-title {
+        font-weight:bold;
+    }
+
     /* @media - Responsive Design */
     @media screen and (max-width:790px) { section { margin-left:15%; margin-right:15%; } }
     @media screen and (max-width:540px) { section { margin-left:10%; margin-right:10%; } }
@@ -242,7 +246,7 @@
                 @endif
                 <br><br>
                 Bezeichnung
-                {{ Form::text('title', $task->title, ['class' => 'fm-clock fm-msg', 'placeholder' => 'Bezeichnung']) }}
+                {{ Form::text('title', $task->title, ['class' => 'fm-clock fm-msg fm-title', 'placeholder' => 'Bezeichnung']) }}
                 {{ Form::hidden('activitynr', $task->fk_activityid) }}
                 {{ Form::hidden('link', $task->link) }}
                 <div class="">
