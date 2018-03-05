@@ -123,10 +123,10 @@
             display:flex;
             flex-direction:row;
             justify-content:flex-start;
-            padding-right:0px;
+            padding-right:10px;
             padding-left:50px;
             padding-top:5px;
-            width:210px;
+            width:200px;
             height:25px;
             background-color:#eee;
             border:1px solid lightgrey;
