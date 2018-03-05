@@ -133,6 +133,10 @@
             border-bottom-style:none;
         }
 
+        #lab-last {
+            border-bottom:1px solid lightgray;
+        }
+
         .arrow-right { position:relative; bottom:1px; }
         .arrow-down { position:relative; bottom:4px; right:8px; padding-left:15px;}
         .full-date-icon { padding-right:2px; }
@@ -1370,7 +1374,7 @@
                 </div>
 
                 <div onClick="dropDownTwentyThree()">
-                <div class="lab">23:00
+                <div class="lab" id="lab-last">23:00
                     <div class="lab-icons">
                         @foreach($tasks as $task)
                             @if($task->start == $date . " " . "23:00:00" || $task->start == $date . " " . "23:15:00" || $task->start == $date . " " . "23:30:00" || $task->start == $date . " " . "23:45:00")
@@ -1404,7 +1408,7 @@
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">23:45
+                    <div class="lab-drop" style="border-bottom:1px solid lightgray;">23:45
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "23:45:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
@@ -2331,14 +2335,17 @@
 
                     function dropDownTwentyThree() {
                         var x = document.getElementById("twentythree");
+                        var lablast = document.getElementById("lab-last");
                         if(x.style.display === "none") {
                             document.getElementById("right-twentythree").style.display = "none";
                             document.getElementById("down-twentythree").style.display = "block";
+                            lablast.style.borderBottomStyle = "none";
                             x.style.display = "block";
                         }
                         else {
                             document.getElementById("right-twentythree").style.display = "block";
                             document.getElementById("down-twentythree").style.display = "none";
+                            lablast.style.borderBottomStyle = "solid";
                             x.style.display = "none";
                         }
                     }
