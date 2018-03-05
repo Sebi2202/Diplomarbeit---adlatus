@@ -348,7 +348,7 @@
             $date = $pieces[sizeof($pieces)-1];
         ?>
         <p class="name">{{$user->vorname}} {{$user->nachname}}</p>
-
+        <p>{{$date}}</p>
         @if(count($errors) > 0)
             @foreach($errors->all() as $error)
                 <p style="color: red">{{$error}}</p>
@@ -1460,7 +1460,7 @@
                 </div>
 
                 <div class="popup" id="ter" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/arzt.png" width="80px" height="80px">
                     <h2><label id="label1">Arzttermin</label></h2>
                     {{ Form::hidden('title', 'Arzttermin')}}
@@ -1479,7 +1479,7 @@
                 </div>
 
                 <div class="popup" id="pfl" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/waschen.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Körperpflege</label></h2>
                     {{ Form::hidden('title', 'Koerperpflege')}}
@@ -1498,7 +1498,7 @@
                 </div>
 
                 <div class="popup" id="eink" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/einkaufen.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Einkaufen</label></h2>
                     {{ Form::hidden('title', 'Einkaufen')}}
@@ -1517,7 +1517,7 @@
                 </div>
 
                 <div class="popup" id="anr" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/anruf.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Anrufe</label></h2>
                     {{ Form::hidden('title', 'Anrufe')}}
@@ -1536,7 +1536,7 @@
                 </div>
 
                 <div class="popup" id="trin" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/trinken.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Trinken</label></h2>
                     {{ Form::hidden('title', 'Trinken')}}
@@ -1555,7 +1555,7 @@
                 </div>
 
                 <div class="popup" id="blut" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/blutdruck.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Blutdruckmessen</label></h2>
                     {{ Form::hidden('title', 'Blutdruckmessen')}}
@@ -1574,7 +1574,7 @@
                 </div>
 
                 <div class="popup" id="med" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/medic.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Medikamente</label></h2>
                     {{ Form::hidden('title', 'Medikamente')}}
@@ -1593,7 +1593,7 @@
                 </div>
 
                 <div class="popup" id="blum" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/blumen.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Blumen gießen</label></h2>
                     {{ Form::hidden('title', 'Blumen gießen')}}
@@ -1612,7 +1612,7 @@
                 </div>
 
                 <div class="popup" id="ess" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/essen.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Essen</label></h2>
                     {{ Form::hidden('title', 'Essen')}}
@@ -1631,7 +1631,7 @@
                 </div>
 
                 <div class="popup" id="wasch" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/waesche_waschen.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Wäsche waschen</label></h2>
                     {{ Form::hidden('title', 'Waesche waschen')}}
@@ -1650,7 +1650,7 @@
                 </div>
 
                 <div class="popup" id="bew" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/bewegung.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Bewegung</label></h2>
                     {{ Form::hidden('title', 'Bewegung')}}
@@ -1669,7 +1669,7 @@
                 </div>
 
                 <div class="popup" id="auf" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/wecker.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Aufstehen</label></h2>
                     {{ Form::hidden('title', 'Aufstehen')}}
@@ -1688,7 +1688,7 @@
                 </div>
 
                 <div class="popup" id="schlaf" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/schlafen.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Schlafenszeit</label></h2>
                     {{ Form::hidden('title', 'Schlafenszeit')}}
@@ -1707,7 +1707,7 @@
                 </div>
 
                 <div class="popup" id="erh" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/entspannung.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Erholungszeit</label></h2>
                     {{ Form::hidden('title', 'Erholungszeit')}}
@@ -1726,7 +1726,7 @@
                 </div>
 
                 <div class="popup" id="ani" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/haustier.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Haustiere versorgen</label></h2>
                     {{ Form::hidden('title', 'Haustiere versorgen')}}
@@ -1745,7 +1745,7 @@
                 </div>
 
                 <div class="popup" id="tee" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/zahn.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Zähneputzen</label></h2>
                     {{ Form::hidden('title', 'Zaehneputzen')}}
@@ -1764,7 +1764,7 @@
                 </div>
 
                 <div class="popup" id="brai" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/gedaechtnis.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Gedächtnistraining</label></h2>
                     {{ Form::hidden('title', 'Gedaechtnistraining')}}
@@ -1783,7 +1783,7 @@
                 </div>
 
                 <div class="popup" id="custom" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="" width="80px" height="80px"> <br>
                     <br>
                     <div class="custom">

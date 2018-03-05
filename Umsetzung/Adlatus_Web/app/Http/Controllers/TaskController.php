@@ -36,7 +36,7 @@ class TaskController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(Request $request, $id, $date)
     {
         $this->validate($request, [
             'title' => 'required',
@@ -47,6 +47,7 @@ class TaskController extends Controller
             ),
             'link' => 'required'
         ]);
+
         $user = User::find($id);
         $tasks = Task::all()->where('fk_userid', $user->id);
 

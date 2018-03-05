@@ -42,7 +42,7 @@ class PagesController extends Controller
         $tasks = Task::all()->where('fk_userid', $user->id);
         $error = "";
 
-        $pieces = explode("/", url()->previous()->previous());
+        $pieces = explode("/", url()->previous());
         $date = $pieces[sizeof($pieces)-1];
         
         if(!$user || !($user->therapeut_sozNr == $auth->sozNr)) {
