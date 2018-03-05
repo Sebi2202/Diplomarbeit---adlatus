@@ -40,11 +40,15 @@ class PagesController extends Controller
         $user = User::find($id);
         $auth = Auth::user();
         $tasks = Task::all()->where('fk_userid', $user->id);
+        $error = "";
+
+        $pieces = explode("/", url()->previous()->previous());
+        $date = $pieces[sizeof($pieces)-1];
         
         if(!$user || !($user->therapeut_sozNr == $auth->sozNr)) {
             return redirect('/dashboard');
         }
-        return view('create_task')->with('user', $user)->with('tasks', $tasks);
+        return view('create_task')->with('user', $user)->with('tasks', $tasks)->with('er', $error)->with('date', $date);
     }
 
     public function showTask($id, $date, $task_id) {

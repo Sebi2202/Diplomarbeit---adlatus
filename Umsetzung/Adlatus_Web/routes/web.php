@@ -24,7 +24,7 @@ Route::get('/dashboard/patient/{id}', 'PagesController@index');
 Route::get('/dashboard/patient/edit/{id}', 'PatientController@show');
 Route::get('/dashboard/patient/calendar/{id}', 'PagesController@show');
 Route::get('/dashboard/patient/calendar/tasks/{id}', 'TaskController@index');
-Route::get('/dashboard/patient/calendar/{id}/{start}', 'PagesController@task');
+Route::get('/dashboard/patient/calendar/{id}/{date}', 'PagesController@task');
 Route::get('/dashboard/patient/calendar/{id}/{date}/{task_id}', 'PagesController@showTask');
 
 Route::put('/password/reset', 'Auth\ForgotPasswordController@update');
