@@ -148,7 +148,7 @@ class TaskController extends Controller
                     ->where('start', '>', $time)
                     ->take(4)
                     ->orderBy('start', 'asc')
-                    ->get(['title', 'start', 'link']);
+                    ->get(['title', 'start', 'link', 'nachricht']);
         
         return $tasks;
         /*
