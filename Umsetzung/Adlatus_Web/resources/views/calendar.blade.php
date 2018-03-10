@@ -26,7 +26,7 @@
 
     .text { margin-left:5%; margin-right:5%; }
 
-    .name { margin-left:15%; margin-right:15%; font-weight:bold; }
+    .name { margin-left:14%; margin-right:15%; font-weight:bold; }
 
     .header-container {
         background-color: lightblue;
@@ -68,6 +68,10 @@
     }
 
     .fc-day-number { pointer-events:none; cursor:default; text-decoration:none; }
+
+    .fc-day { background-color:#fafafa; }
+    .fc-day-header { background-color:#fafafa; }
+    .fc-day-header > span { color:black; font-weight:normal; }
 
     .fc-past { cursor:pointer; }
 
