@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Task;
 use Carbon\Carbon;
+use App\User;
 
 class TaskController extends Controller
 {
@@ -35,7 +36,7 @@ class TaskController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(Request $request, $id, $date)
     {
         $this->validate($request, [
             'title' => 'required',
@@ -46,15 +47,26 @@ class TaskController extends Controller
             ),
             'link' => 'required'
         ]);
-            
+
+        
+
+        $user = User::find($id);
+        $tasks = Task::all()->where('fk_userid', $user->id);
+
         $pieces = explode("/", url()->previous());
         $date = $pieces[sizeof($pieces)-1];
 
         $tsks = Task::all()->where('fk_userid', $id);
 
+        if($request->input('title') == "") {
+            $error == "Es wurde keine Bezeichnung angegeben.";
+            return view('create_task')->with('user', $user)->with('tasks', $tasks)->with('er', $error)->with('date', $date);
+        }
+
         foreach ($tsks as $tsk) {
             if($tsk->start == $date . " " . $request->input('date') . ":00") {
-                return redirect('/dashboard/patient/calendar/' . $id . '/' . $date)->with('Fail', 'Task already exist on this time');
+                $error = "Dieser Eintrag existiert bereits.";
+                return view('create_task')->with('user', $user)->with('tasks', $tasks)->with('er', $error)->with('date', $date);
             }
         }
         

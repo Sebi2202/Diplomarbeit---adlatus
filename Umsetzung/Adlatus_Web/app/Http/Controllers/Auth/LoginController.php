@@ -55,7 +55,12 @@ class LoginController extends Controller
         ])) {
             return redirect('/dashboard');
         } else {
-            $error = "The given data is not correct";
+            if($request->input('sozNummer') == "" && $request->input('password') == "") {
+                $error = "Es wurden keine Daten eingetragen.";
+            }
+            else {
+                $error = "Die eingegebenen Daten sind entweder falsch geschrieben oder existieren nicht.";
+            }   
             return view('auth/login')->with('error', $error);
         }
     }

@@ -33,7 +33,7 @@ Route::put('/dashboard/patient/calendar/{id}/{date}/{task_id}', 'TaskController@
 
 Route::post('/dashboard/create_patient', 'PatientController@store');
 Route::post('/dashboard', 'Auth\LoginController@logout');
-Route::post('/dashboard/patient/calendar/{id}/date', 'TaskController@store');
+Route::post('/dashboard/patient/calendar/{id}/{date}', 'TaskController@store');
 
 Route::delete('/dashboard/patient/calendar/{id}/{date}/{task_id}', 'TaskController@destroy');
 Route::delete('/dashboard/patient/edit/{id}', 'PatientController@destroy');

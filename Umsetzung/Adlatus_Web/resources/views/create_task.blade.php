@@ -124,13 +124,17 @@
             flex-direction:row;
             justify-content:flex-start;
             padding-right:10px;
-            padding-left:20px;
+            padding-left:35px;
             padding-top:5px;
-            width:230px;
+            width:215px;
             height:25px;
-            background-color:#eee;
+            background-color:#f9f9f9;
             border:1px solid lightgrey;
             border-bottom-style:none;
+        }
+
+        #lab-last {
+            border-bottom:1px solid lightgray;
         }
 
         .arrow-right { position:relative; bottom:1px; }
@@ -174,7 +178,7 @@
 
         .popup {
             position:absolute;
-            top:100px;
+            top:250px;
             border:1px solid;
             background-color:white;
 
@@ -207,6 +211,17 @@
             position:relative;
             top:5px;
             width:97%;
+        }
+
+        .fm-custom {
+            position:relative;
+            margin-right:0%;
+            width:196px;
+        }
+
+        .fm-clock-custom {
+            width:234px;
+            margin-right:0%;
         }
 
         .popup-buttons {
@@ -261,7 +276,7 @@
             .content {flex-direction:column; flex-wrap:wrap;}
             nav { margin-bottom:10px; margin-left:auto; margin-right:auto; }
             .lab { width:600px; }
-            .lab-drop { width:590px; }
+            .lab-drop { width:560px; }
             .name, .date { text-align:center; }
             .section-table { margin-left:auto; margin-right:auto; }
             .section-td { padding-right:0px; }
@@ -279,16 +294,18 @@
 
         @media screen and (max-width:595px) { .section-img { width:60px; height:60px; } .task-label { bottom:23px; font-size:12px; } }
 
-        @media screen and (max-width:768px) { .lab {width:400px;} .lab-drop {width:390px;} }
+        @media screen and (max-width:768px) { .lab {width:400px;} .lab-drop {width:360px;} }
 
         @media screen and (max-width:515px) {
             .lab {width:300px;}
-            .lab-drop {width:290px;}
+            .lab-drop {width:260px;}
             .section-img { width:50px; height:50px; }
             .task-label { font-size:11px; }
         }
 
-        @media screen and (max-width:460px) { .popup {width:250px;} .section-img { width:40px; height:40px; } .task-label { bottom:15px; left: 5px; font-size:10px; } }
+        @media screen and (max-width:460px) { .popup {width:250px;} .section-img { width:40px; height:40px; } .task-label { bottom:15px; left: 5px; font-size:10px; } 
+            .fm-custom, .fm-clock-custom { width:97%; }
+        }
 
         @media screen and (max-width:395px) {
             .popup {top:850px; font-size:10px;}
@@ -299,11 +316,11 @@
         }
 
 
-        @media screen and (max-width:390px) { .lab {width:250px;} .lab-drop {width:240px;} }
+        @media screen and (max-width:390px) { .lab {width:250px;} .lab-drop {width:210px;} }
 
-        @media screen and (max-width:375px) { .lab {width:286px;} .lab-drop {width:276px;} }
+        @media screen and (max-width:375px) { .lab {width:286px;} .lab-drop {width:246px;} }
 
-        @media screen and (max-width:360px) { .lab {width:274px;} .lab-drop {width:264px;} }
+        @media screen and (max-width:360px) { .lab {width:274px;} .lab-drop {width:234px;} }
 
         ::-webkit-input-placeholder { color:lightgray; }
         ::-moz-placeholder { color:lightgray; }
@@ -331,21 +348,18 @@
             $date = $pieces[sizeof($pieces)-1];
         ?>
         <p class="name">{{$user->vorname}} {{$user->nachname}}</p>
-        <?php
-            $vars = explode("-", $date);
-            echo "<p class='date'>".$vars[2] . " " . $vars[1] . " " . $vars[0]."</p>";
-        ?>
-
+        <p>{{$date}}</p>
         @if(count($errors) > 0)
-            @foreach($errors->all() as $error)
-                <p style="color: red">{{$error}}</p>
-            @endforeach
+            <p style="color: red">Die angegebene Uhrzeit ist inkorrekt.</p>
         @endif
-
+        
+        @if(count($er) > 0)
+            <p style="color: red">{{$er}}</p>
+        @endif
         <div class="content">
             <nav>
                 <div onClick="dropDownNull()">
-                    <div class="lab">0:00
+                    <div class="lab">00:00
                         <div class="lab-icons">
                         @foreach($tasks as $task)
                             @if($task->start == $date . " " . "00:00:00" || $task->start == $date . " " . "00:15:00" || $task->start == $date . " " . "00:30:00" || $task->start == $date . " " . "00:45:00")
@@ -358,28 +372,28 @@
                     </div>
                 </div>
                 <div id="null" style="display:none">
-                    <div class="lab-drop">0:00
+                    <div class="lab-drop">00:00
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "00:00:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">0:15
+                    <div class="lab-drop">00:15
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "00:15:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">0:30
+                    <div class="lab-drop">00:30
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "00:30:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">0:45
+                    <div class="lab-drop">00:45
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "00:45:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
@@ -389,7 +403,7 @@
                 </div>
 
                 <div onClick="dropDownOne()">
-                    <div class="lab">1:00
+                    <div class="lab">01:00
                         <div class="lab-icons">
                             @foreach($tasks as $task)
                                 @if($task->start == $date . " " . "01:00:00" || $task->start == $date . " " . "01:15:00" || $task->start == $date . " " . "01:30:00" || $task->start == $date . " " . "01:45:00")
@@ -402,28 +416,28 @@
                     </div>
                 </div>
                 <div id="one" style="display:none">
-                    <div class="lab-drop">1:00
+                    <div class="lab-drop">01:00
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "01:00:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">1:15
+                    <div class="lab-drop">01:15
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "01:15:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">1:30
+                    <div class="lab-drop">01:30
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "01:30:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">1:45
+                    <div class="lab-drop">01:45
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "01:45:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
@@ -433,7 +447,7 @@
                 </div>
 
                 <div onClick="dropDownTwo()">
-                <div class="lab">2:00
+                <div class="lab">02:00
                     <div class="lab-icons">
                         @foreach($tasks as $task)
                             @if($task->start == $date . " " . "02:00:00" || $task->start == $date . " " . "02:15:00" || $task->start == $date . " " . "02:30:00" || $task->start == $date . " " . "02:45:00")
@@ -446,28 +460,28 @@
                 </div>
                 </div>
                 <div id="two" style="display:none">
-                    <div class="lab-drop">2:00
+                    <div class="lab-drop">02:00
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "02:00:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">2:15
+                    <div class="lab-drop">02:15
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "02:15:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">2:30
+                    <div class="lab-drop">02:30
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "02:30:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">2:45
+                    <div class="lab-drop">02:45
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "02:45:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
@@ -477,7 +491,7 @@
                 </div>
 
                 <div onClick="dropDownThree()">
-                <div class="lab">3:00
+                <div class="lab">03:00
                     <div class="lab-icons">
                         @foreach($tasks as $task)
                             @if($task->start == $date . " " . "03:00:00" || $task->start == $date . " " . "03:15:00" || $task->start == $date . " " . "03:30:00" || $task->start == $date . " " . "03:45:00")
@@ -490,28 +504,28 @@
                 </div>
                 </div>
                 <div id="three" style="display:none">
-                    <div class="lab-drop">3:00
+                    <div class="lab-drop">03:00
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "03:00:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">3:15
+                    <div class="lab-drop">03:15
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "03:15:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">3:30
+                    <div class="lab-drop">03:30
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "03:30:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">3:45
+                    <div class="lab-drop">03:45
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "03:45:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
@@ -521,7 +535,7 @@
                 </div>
 
                 <div onClick="dropDownFour()">
-                <div class="lab">4:00
+                <div class="lab">04:00
                     <div class="lab-icons">
                         @foreach($tasks as $task)
                             @if($task->start == $date . " " . "04:00:00" || $task->start == $date . " " . "04:15:00" || $task->start == $date . " " . "04:30:00" || $task->start == $date . " " . "04:45:00")
@@ -534,28 +548,28 @@
                 </div>
                 </div>
                 <div id="four" style="display:none">
-                    <div class="lab-drop">4:00
+                    <div class="lab-drop">04:00
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "04:00:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">4:15
+                    <div class="lab-drop">04:15
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "04:15:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">4:30
+                    <div class="lab-drop">04:30
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "04:30:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">4:45
+                    <div class="lab-drop">04:45
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "04:45:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
@@ -565,7 +579,7 @@
                 </div>
 
                 <div onClick="dropDownFive()">
-                <div class="lab">5:00
+                <div class="lab">05:00
                     <div class="lab-icons">
                         @foreach($tasks as $task)
                             @if($task->start == $date . " " . "05:00:00" || $task->start == $date . " " . "05:15:00" || $task->start == $date . " " . "05:30:00" || $task->start == $date . " " . "05:45:00")
@@ -578,28 +592,28 @@
                 </div>
                 </div>
                 <div id="five" style="display:none">
-                    <div class="lab-drop">5:00
+                    <div class="lab-drop">05:00
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "05:00:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">5:15
+                    <div class="lab-drop">05:15
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "05:15:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">5:30
+                    <div class="lab-drop">05:30
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "05:30:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">5:45
+                    <div class="lab-drop">05:45
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "05:45:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
@@ -609,7 +623,7 @@
                 </div>
 
                 <div onClick="dropDownSix()">
-                <div class="lab">6:00
+                <div class="lab">06:00
                     <div class="lab-icons">
                         @foreach($tasks as $task)
                             @if($task->start == $date . " " . "06:00:00" || $task->start == $date . " " . "06:15:00" || $task->start == $date . " " . "06:30:00" || $task->start == $date . " " . "06:45:00")
@@ -622,28 +636,28 @@
                 </div>
                 </div>
                 <div id="six" style="display:none">
-                    <div class="lab-drop">6:00
+                    <div class="lab-drop">06:00
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "06:00:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">6:15
+                    <div class="lab-drop">06:15
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "06:15:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">6:30
+                    <div class="lab-drop">06:30
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "06:30:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">6:45
+                    <div class="lab-drop">06:45
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "06:45:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
@@ -653,7 +667,7 @@
                 </div>
 
                 <div onClick="dropDownSeven()">
-                <div class="lab">7:00
+                <div class="lab">07:00
                     <div class="lab-icons">
                         @foreach($tasks as $task)
                             @if($task->start == $date . " " . "07:00:00" || $task->start == $date . " " . "07:15:00" || $task->start == $date . " " . "07:30:00" || $task->start == $date . " " . "07:45:00")
@@ -666,28 +680,28 @@
                 </div>
                 </div>
                 <div id="seven" style="display:none">
-                    <div class="lab-drop">7:00
+                    <div class="lab-drop">07:00
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "07:00:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">7:15
+                    <div class="lab-drop">07:15
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "07:15:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">7:30
+                    <div class="lab-drop">07:30
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "07:30:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">7:45
+                    <div class="lab-drop">07:45
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "07:45:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
@@ -697,7 +711,7 @@
                 </div>
 
                 <div onClick="dropDownEight()">
-                <div class="lab">8:00
+                <div class="lab">08:00
                     <div class="lab-icons">
                         @foreach($tasks as $task)
                             @if($task->start == $date . " " . "08:00:00" || $task->start == $date . " " . "08:15:00" || $task->start == $date . " " . "08:30:00" || $task->start == $date . " " . "08:45:00")
@@ -710,28 +724,28 @@
                 </div>
                 </div>
                 <div id="eight" style="display:none">
-                    <div class="lab-drop">8:00
+                    <div class="lab-drop">08:00
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "08:00:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">8:15
+                    <div class="lab-drop">08:15
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "08:15:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">8:30
+                    <div class="lab-drop">08:30
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "08:30:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">8:45
+                    <div class="lab-drop">08:45
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "08:45:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
@@ -741,7 +755,7 @@
                 </div>
 
                 <div onClick="dropDownNine()">
-                <div class="lab">9:00
+                <div class="lab">09:00
                     <div class="lab-icons">
                         @foreach($tasks as $task)
                             @if($task->start == $date . " " . "09:00:00" || $task->start == $date . " " . "09:15:00" || $task->start == $date . " " . "09:30:00" || $task->start == $date . " " . "09:45:00")
@@ -754,28 +768,28 @@
                 </div>
                 </div>
                 <div id="nine" style="display:none">
-                    <div class="lab-drop">9:00
+                    <div class="lab-drop">09:00
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "09:00:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">9:15
+                    <div class="lab-drop">09:15
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "09:15:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">9:30
+                    <div class="lab-drop">09:30
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "09:30:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">9:45
+                    <div class="lab-drop">09:45
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "09:45:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
@@ -1357,7 +1371,7 @@
                 </div>
 
                 <div onClick="dropDownTwentyThree()">
-                <div class="lab">23:00
+                <div class="lab" id="lab-last">23:00
                     <div class="lab-icons">
                         @foreach($tasks as $task)
                             @if($task->start == $date . " " . "23:00:00" || $task->start == $date . " " . "23:15:00" || $task->start == $date . " " . "23:30:00" || $task->start == $date . " " . "23:45:00")
@@ -1391,7 +1405,7 @@
                         @endif
                     @endforeach
                     </div>
-                    <div class="lab-drop">23:45
+                    <div class="lab-drop" style="border-bottom:1px solid lightgray;">23:45
                     @foreach($tasks as $task)
                         @if($task->start == $date . " " . "23:45:00")
                             <a class="nav-img" href="/dashboard/patient/calendar/{{$user->id}}/{{$date}}/{{$task->id}}"><img src="{{$task->link}}" width="20px" height="20px"></a>
@@ -1438,12 +1452,13 @@
                         </tr>
                         <tr>
                             <td class="section-td"><a onClick="brain()"><img class="section-img" src="/icons/gedaechtnis.png" width="80px" height="80px"></a><label class="task-label">Gedächtnistraining</label></td>
+                            <td class="section-td"><a onClick="custom()"><img class="section-img" src="/icons/custom.png" width="80px" height="80px"></a><label class="task-label">Benutzerdefiniert</label></td>
                         </tr>
                     </table>
                 </div>
 
                 <div class="popup" id="ter" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/arzt.png" width="80px" height="80px">
                     <h2><label id="label1">Arzttermin</label></h2>
                     {{ Form::hidden('title', 'Arzttermin')}}
@@ -1462,7 +1477,7 @@
                 </div>
 
                 <div class="popup" id="pfl" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/waschen.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Körperpflege</label></h2>
                     {{ Form::hidden('title', 'Koerperpflege')}}
@@ -1481,7 +1496,7 @@
                 </div>
 
                 <div class="popup" id="eink" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/einkaufen.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Einkaufen</label></h2>
                     {{ Form::hidden('title', 'Einkaufen')}}
@@ -1500,7 +1515,7 @@
                 </div>
 
                 <div class="popup" id="anr" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/anruf.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Anrufe</label></h2>
                     {{ Form::hidden('title', 'Anrufe')}}
@@ -1519,7 +1534,7 @@
                 </div>
 
                 <div class="popup" id="trin" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/trinken.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Trinken</label></h2>
                     {{ Form::hidden('title', 'Trinken')}}
@@ -1538,7 +1553,7 @@
                 </div>
 
                 <div class="popup" id="blut" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/blutdruck.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Blutdruckmessen</label></h2>
                     {{ Form::hidden('title', 'Blutdruckmessen')}}
@@ -1557,7 +1572,7 @@
                 </div>
 
                 <div class="popup" id="med" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/medic.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Medikamente</label></h2>
                     {{ Form::hidden('title', 'Medikamente')}}
@@ -1576,7 +1591,7 @@
                 </div>
 
                 <div class="popup" id="blum" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/blumen.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Blumen gießen</label></h2>
                     {{ Form::hidden('title', 'Blumen gießen')}}
@@ -1595,7 +1610,7 @@
                 </div>
 
                 <div class="popup" id="ess" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/essen.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Essen</label></h2>
                     {{ Form::hidden('title', 'Essen')}}
@@ -1614,7 +1629,7 @@
                 </div>
 
                 <div class="popup" id="wasch" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/waesche_waschen.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Wäsche waschen</label></h2>
                     {{ Form::hidden('title', 'Waesche waschen')}}
@@ -1633,7 +1648,7 @@
                 </div>
 
                 <div class="popup" id="bew" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/bewegung.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Bewegung</label></h2>
                     {{ Form::hidden('title', 'Bewegung')}}
@@ -1652,7 +1667,7 @@
                 </div>
 
                 <div class="popup" id="auf" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/wecker.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Aufstehen</label></h2>
                     {{ Form::hidden('title', 'Aufstehen')}}
@@ -1671,7 +1686,7 @@
                 </div>
 
                 <div class="popup" id="schlaf" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/schlafen.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Schlafenszeit</label></h2>
                     {{ Form::hidden('title', 'Schlafenszeit')}}
@@ -1690,7 +1705,7 @@
                 </div>
 
                 <div class="popup" id="erh" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/entspannung.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Erholungszeit</label></h2>
                     {{ Form::hidden('title', 'Erholungszeit')}}
@@ -1709,7 +1724,7 @@
                 </div>
 
                 <div class="popup" id="ani" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/haustier.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Haustiere versorgen</label></h2>
                     {{ Form::hidden('title', 'Haustiere versorgen')}}
@@ -1728,7 +1743,7 @@
                 </div>
 
                 <div class="popup" id="tee" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/zahn.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Zähneputzen</label></h2>
                     {{ Form::hidden('title', 'Zaehneputzen')}}
@@ -1747,7 +1762,7 @@
                 </div>
 
                 <div class="popup" id="brai" style="display:none">
-                    {!! Form::open(['action' => ['TaskController@store', $user->id], 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
                     <img src="/icons/gedaechtnis.png" width="80px" height="80px"> <br>
                     <h2><label id="label1">Gedächtnistraining</label></h2>
                     {{ Form::hidden('title', 'Gedaechtnistraining')}}
@@ -1761,6 +1776,28 @@
                             {{ Form::submit('Speichern', ['class' => 'save']) }}
                         {!! Form::close() !!}
                             <a class="cancel" onClick="brain()">Abbrechen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popup" id="custom" style="display:none">
+                    {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
+                    <img src="" width="80px" height="80px"> <br>
+                    <br>
+                    <div class="custom">
+                        Bezeichnung {{ Form::text('title', '', ['class' => 'fm-clock fm-custom', 'placeholder' => 'Bezeichnung der Aktivität'])}}
+                    </div>
+                    {{ Form::hidden('activitynr', '18') }}
+                    {{ Form::hidden('link', '/icons/custom.png') }}
+                    <div class="">
+                        
+                        Uhrzeit {{Form::text('date', '', ['class' => 'fm-clock fm-clock-custom', 'placeholder' => '15:30'])}}
+                        Persönliche Nachricht (Optional)
+                        {{ Form::text('message', '', ['class' => 'fm-clock fm-msg', 'placeholder' => ''])}}
+                        <div class="popup-buttons">
+                            {{ Form::submit('Speichern', ['class' => 'save']) }}
+                        {!! Form::close() !!}
+                            <a class="cancel" onClick="custom()">Abbrechen</a>
                         </div>
                     </div>
                 </div>
@@ -1928,6 +1965,16 @@
 
                     function brain() {
                         var x = document.getElementById("brai");
+                        if(x.style.display === "none") {
+                            x.style.display = "block";
+                        }
+                        else {
+                            x.style.display = "none";
+                        }
+                    }
+
+                    function custom() {
+                        var x = document.getElementById("custom");
                         if(x.style.display === "none") {
                             x.style.display = "block";
                         }
@@ -2285,14 +2332,17 @@
 
                     function dropDownTwentyThree() {
                         var x = document.getElementById("twentythree");
+                        var lablast = document.getElementById("lab-last");
                         if(x.style.display === "none") {
                             document.getElementById("right-twentythree").style.display = "none";
                             document.getElementById("down-twentythree").style.display = "block";
+                            lablast.style.borderBottomStyle = "none";
                             x.style.display = "block";
                         }
                         else {
                             document.getElementById("right-twentythree").style.display = "block";
                             document.getElementById("down-twentythree").style.display = "none";
+                            lablast.style.borderBottomStyle = "solid";
                             x.style.display = "none";
                         }
                     }

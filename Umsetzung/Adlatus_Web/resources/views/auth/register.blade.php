@@ -40,9 +40,9 @@
         color:white;
     }
 
-    .panel {
+    section {
         position:relative;
-        top:50px;
+        top:20px;
         margin-left:15%;
         margin-right:15%;
         padding-left:40px;
@@ -61,6 +61,7 @@
         font-style:italic;
         font-size:12px;
         padding-bottom:50px;
+        margin-right:10%;
     }
 
     .to_login {
@@ -140,13 +141,13 @@
 
     /* @media - Responsive Design */
 
-    @media screen and (max-height:720px) { footer { position:relative; top:113px; } }
-    @media screen and (max-height:775px) and (max-width:870px) { footer { position:relative; top:136px; } }
+    @media screen and (max-height:680px) { footer { position:relative; top:45px; } }
+    @media screen and (max-height:730px) and (max-width:870px) { footer { position:relative; top:63px; } }
     @media screen and (max-width:450px) {
         .fm { width:80%; }
-        .panel { width:250px;}
+        .section { width:250px;}
 
-        @media screen and (max-height:775px) { footer { position:relative; top:85px; } }
+        @media screen and (max-height:765px) { footer { position:relative; top:36px; } }
     }
     @media screen and (max-width:870px) { .rg { float:none; } }
 
@@ -165,7 +166,7 @@
             </div>
         </header>
 
-        <div class="panel">
+        <section>
             <h2>Registrierung</h2>
 
             @if(count($errors) > 0)
@@ -176,46 +177,46 @@
 
             <div>
                 {!! Form::open(['action' => 'Auth\RegisterController@register', 'method' => 'POST']) !!}
-                {{ Form::text('vorname', '', ['class' => 'fm', 'placeholder' => 'Vorname'])}}
-                {{ Form::text('nachname', '', ['class' => 'fm', 'placeholder' => 'Nachname'])}}
+                {{ Form::text('vorname', '', ['class' => 'fm', 'placeholder' => 'Vorname*'])}}
+                {{ Form::text('nachname', '', ['class' => 'fm', 'placeholder' => 'Nachname*'])}}
                 <br>
-                {{ Form::email('email', '', ['class' => 'fm', 'placeholder' => 'E-Mail'])}}
+                {{ Form::email('email', '', ['class' => 'fm', 'placeholder' => 'E-Mail*'])}}
                 <br>
-                {{ Form::text('sozNummer', '', ['class' => 'fm', 'placeholder' => 'Soz. Versicherungsnummer'])}}
+                {{ Form::text('sozNummer', '', ['class' => 'fm', 'placeholder' => 'Soz. Versicherungsnummer*'])}}
                 <br>
-                {{ Form::password('password', ['class' => 'fm', 'placeholder' => 'Passwort'])}}
+                {{ Form::password('password', ['class' => 'fm', 'placeholder' => 'Passwort*'])}}
                 <br>
-                {{ Form::password('again', ['class' => 'fm', 'placeholder' => 'Passwort wiederholen'])}}
+                {{ Form::password('again', ['class' => 'fm', 'placeholder' => 'Passwort wiederholen*'])}}
                 <br>
             	{{Form::submit('Registrieren', ['class' => 'rg'])}}
            	    {!! Form::close() !!}
-
-                <p class="text_link">Ich habe bereits einen Account - <a class="to_login" href="/login">Login</a></p>
+                <p class="text_link">Felder mit einem Stern(*) müssen ausgefüllt werden.<br><br>
+                Ich habe bereits einen Account - <a class="to_login" href="/login">Login</a></p>
             </div>
-        </div>
-    <footer>
-        <table>
-            <tr>
-                <th>Kontakt</th>
-                <th>Links</th>
-            </tr>
-            <tr>
-                <td><a href="http://www.project-adlatus.at">www.project-adlatus.at</a></td>
-                <td><a href="/">Home</a></td>
-            </tr>
-            <tr>
-                <td>Diplomarbeitsprojekt HTL3R</td>
-                <td><a href="/registrierung">Registrieren</a></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><a href="/login">Login</a></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><a href="/help">Hilfe</a></td>
-            </tr>
-        </table>
-    </footer>
+        </section>
+        <footer>
+            <table>
+                <tr>
+                    <th>Kontakt</th>
+                    <th>Links</th>
+                </tr>
+                <tr>
+                    <td><a href="http://www.project-adlatus.at">www.project-adlatus.at</a></td>
+                    <td><a href="/">Home</a></td>
+                </tr>
+                <tr>
+                    <td>Diplomarbeitsprojekt HTL3R</td>
+                    <td><a href="/registrierung">Registrieren</a></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><a href="/login">Login</a></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><a href="/help">Hilfe</a></td>
+                </tr>
+            </table>
+        </footer>
     @endif
 @endsection
