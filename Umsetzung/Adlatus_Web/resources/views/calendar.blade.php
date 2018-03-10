@@ -11,7 +11,11 @@
         margin:0px;
         font-family:Verdana;
         font-size:14px;
-        
+        background: url("/background-image/BackgroundImage.jpg") no-repeat center center fixed;
+        background-size:cover;
+        -webkit-background-size: cover; 
+        -moz-background-size: cover;    
+        -o-background-size: cover;
     }
 
     a {
@@ -46,7 +50,7 @@
 
     .links_header {
         position:relative;
-        top:40px;
+        top:35px;
         font-weight:bold;
         color:white;
     }
@@ -55,10 +59,12 @@
 
     
 
-    section { position:relative; top:50px; }
+    section { position:relative; top:50px; background-color:white; margin-left:4%; margin-right:5%; padding-top:50px; padding-bottom:50px;}
+
+    .container {  }
 
     #calendar {
-        margin-left:15%; margin-right:15%; text-align:center;
+        margin-left:14%; margin-right:15%; text-align:center;
     }
 
     .fc-day-number { pointer-events:none; cursor:default; text-decoration:none; }
@@ -99,15 +105,15 @@
     .table-d { padding-right:10px; }
 
     /* @media - Responsive Design */
-    @media screen and (min-width:1200px) and (max-height:980px) { footer { position:relative; top:97px; } }
+    @media screen and (min-width:1200px) and (max-height:1080px) { footer { position:relative; top:97px; } }
 
-    @media screen and (max-width:1200px) and (min-width:992px) and (max-height:877px)  { footer { position:relative; top:97px; } }
-    @media screen and (max-width:991px) and (min-width:748px) and (max-height:763px)  { footer { position:relative; top:97px; } }
-    @media screen and (max-width:747px) and (min-width:735px) and (max-height:761px)  { footer { position:relative; top:97px; } }
-    @media screen and (max-width:734px) and (min-width:650px) and (max-height:755px)  { footer { position:relative; top:139px; } }
-    @media screen and (max-width:649px) and (min-width:530px) and (max-height:660px)  { footer { position:relative; top:108px; } }
-    @media screen and (max-width:530px) and (min-width:460px) and (max-height:650px)  { footer { position:relative; top:108px; } }
-    @media screen and (max-width:459px) and (min-width:350px) and (max-height:595px)  { footer { position:relative; top:108px; } }
+    @media screen and (max-width:1200px) and (min-width:992px) and (max-height:977px)  { footer { position:relative; top:97px; } }
+    @media screen and (max-width:991px) and (min-width:748px) and (max-height:863px)  { footer { position:relative; top:97px; } }
+    @media screen and (max-width:747px) and (min-width:735px) and (max-height:861px)  { footer { position:relative; top:97px; } }
+    @media screen and (max-width:734px) and (min-width:650px) and (max-height:855px)  { footer { position:relative; top:139px; } }
+    @media screen and (max-width:649px) and (min-width:530px) and (max-height:760px)  { footer { position:relative; top:108px; } }
+    @media screen and (max-width:530px) and (min-width:460px) and (max-height:750px)  { footer { position:relative; top:108px; } }
+    @media screen and (max-width:459px) and (min-width:350px) and (max-height:695px)  { footer { position:relative; top:108px; } }
     
     /* Header Buttons */
 
@@ -145,6 +151,7 @@
     </header>
 
     <section>
+        <div class="bg-white"></div>
         <div class="container">
         <p class="name">{{$user->vorname}} {{$user->nachname}}</p>
             <div id="calendar">
