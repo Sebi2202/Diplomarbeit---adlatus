@@ -1782,7 +1782,7 @@
 
                 <div class="popup" id="custom" style="display:none">
                     {!! Form::open(['action' => ['TaskController@store', $user->id, $date], 'method' => 'POST']) !!}
-                    <img src="" width="80px" height="80px"> <br>
+                    <img src="/icons/custom.png" width="80px" height="80px"> <br>
                     <br>
                     <div class="custom">
                         Bezeichnung {{ Form::text('title', '', ['class' => 'fm-clock fm-custom', 'placeholder' => 'Bezeichnung der Aktivität'])}}
