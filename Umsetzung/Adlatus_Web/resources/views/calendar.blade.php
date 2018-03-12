@@ -70,8 +70,8 @@
     .fc-day-number { pointer-events:none; cursor:default; text-decoration:none; }
 
     .fc-day { background-color:#fafafa; }
-    .fc-day-header { background-color:#fafafa; }
-    .fc-day-header > span { color:black; font-weight:normal; }
+    .fc-day-header { background-color:rgb(0,176,189); opacity:0.8; }
+    .fc-day-header > span { color:white; font-weight:normal; }
 
     .fc-past { cursor:pointer; }
 
