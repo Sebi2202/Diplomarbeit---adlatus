@@ -38,7 +38,6 @@
 
     .fc-header-toolbar { text-align:center; font-family:Verdana; }
     .fc-day-number { color:darkblue; }
-    .fc-today { background:rgb(0,176,189) !important; }
 
     .logo { position:absolute; margin-left:15%; width:150px; top:6px; }
 
