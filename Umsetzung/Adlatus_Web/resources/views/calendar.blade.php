@@ -59,7 +59,7 @@
 
     
 
-    section { position:relative; top:50px; background-color:white; margin-left:4%; margin-right:5%; padding-top:50px; padding-bottom:50px;}
+    section { background-color:white; margin-left:4%; margin-right:5%; padding-top:50px; padding-bottom:50px;}
 
     .container {  }
 
@@ -109,15 +109,15 @@
     .table-d { padding-right:10px; }
 
     /* @media - Responsive Design */
-    @media screen and (min-width:1200px) and (max-height:1080px) { footer { position:relative; top:97px; } }
+    @media screen and (min-width:1200px) and (max-height:998px) { footer { position:relative; } }
 
-    @media screen and (max-width:1200px) and (min-width:992px) and (max-height:977px)  { footer { position:relative; top:97px; } }
-    @media screen and (max-width:991px) and (min-width:748px) and (max-height:863px)  { footer { position:relative; top:97px; } }
-    @media screen and (max-width:747px) and (min-width:735px) and (max-height:861px)  { footer { position:relative; top:97px; } }
-    @media screen and (max-width:734px) and (min-width:650px) and (max-height:855px)  { footer { position:relative; top:139px; } }
-    @media screen and (max-width:649px) and (min-width:530px) and (max-height:760px)  { footer { position:relative; top:108px; } }
-    @media screen and (max-width:530px) and (min-width:460px) and (max-height:750px)  { footer { position:relative; top:108px; } }
-    @media screen and (max-width:459px) and (min-width:350px) and (max-height:695px)  { footer { position:relative; top:108px; } }
+    @media screen and (max-width:1200px) and (min-width:992px) and (max-height:890px)  { footer { position:relative; } }
+    @media screen and (max-width:991px) and (min-width:748px) and (max-height:776px)  { footer { position:relative; } }
+    @media screen and (max-width:747px) and (min-width:735px) and (max-height:732px)  { footer { position:relative; } }
+    @media screen and (max-width:734px) and (min-width:650px) and (max-height:731px)  { footer { position:relative; } }
+    @media screen and (max-width:649px) and (min-width:531px) and (max-height:691px)  { footer { position:relative; } }
+    @media screen and (max-width:530px) and (min-width:460px) and (max-height:634px)  { footer { position:relative; } }
+    @media screen and (max-width:459px) and (min-width:350px) and (max-height:629px)  { footer { position:relative; } }
     
     /* Header Buttons */
 
