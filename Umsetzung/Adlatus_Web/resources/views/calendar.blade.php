@@ -38,6 +38,7 @@
 
     .fc-header-toolbar { text-align:center; font-family:Verdana; }
     .fc-day-number { color:darkblue; }
+    .fc-today { background:rgb(0,176,189) !important; }
 
     .logo { position:absolute; margin-left:15%; width:150px; top:6px; }
 
@@ -60,8 +61,6 @@
     
 
     section { background-color:white; margin-left:4%; margin-right:5%; padding-top:50px; padding-bottom:50px;}
-
-    .container {  }
 
     #calendar {
         margin-left:14%; margin-right:15%; text-align:center;
