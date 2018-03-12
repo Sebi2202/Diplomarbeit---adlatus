@@ -194,7 +194,7 @@
     {!! Html::script('vendor/calendar/fullcalendar/lib/jquery.min.js') !!}
     {!! Html::script('vendor/calendar/fullcalendar/lib/moment.min.js') !!}
     {!! Html::script('vendor/calendar/fullcalendar/fullcalendar.min.js') !!}
-    {!! Html::script('vendor/calendar/fullcalendar/locale/de-at.js') !!}
+    {!! Html::script('vendor/calendar/fullcalendar/locale/de.js') !!}
 
     <script>
         var BASEURL = "{{ url('/dashboard/patient/calendar') }}";
@@ -202,6 +202,7 @@
         var id = "<?php echo $user->id; ?>"
         $(document).ready(function() {
         $('#calendar').fullCalendar({
+            dayNamesShort: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
             header: {
                 left: 'prev,next today',
                 center: 'title',
@@ -222,6 +223,8 @@
             });
 
         });
+
+        
             
     </script>
 
