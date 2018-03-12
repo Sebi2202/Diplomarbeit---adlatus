@@ -130,7 +130,7 @@
 
     /* @media - Responsive Design */
 
-    @media screen and (max-height:615px) { footer { position:relative; top:103px; } }
+    @media screen and (max-height:583px) { footer { position:relative; top:103px; } }
 
     @media screen and (max-width:1000px) {
         .button-tagesplan { width:100%;}
