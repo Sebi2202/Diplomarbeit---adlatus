@@ -58,9 +58,14 @@ class ForgotPasswordController extends Controller
             ),
             'again' => 'required'
         ]);
+        
+        if(!(User::where('sozNr', $request->input('sozNummer'))->first())) {
+            return redirect('password/reset/{token}');
+        }
 
         $user = User::where('sozNr', $request->input('sozNummer'))->first();
-        if($user->email == $request->input('email') and $request->input('password') == $request->input('again')) {
+
+        if($user->email == $request->input('email') and $user->sozNr == $request->input('sozNummer') and $request->input('password') == $request->input('again')) {
             $user->password = Hash::make($request->input('password'));
             $user->save();
             return redirect('/login');

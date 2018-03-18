@@ -79,7 +79,7 @@ class RegisterController extends Controller
     }
 
     public function register(Request $request) {
-        $this->validate($request, [
+        $validate = $this->validate($request, [
             'sozNummer' => array(
                 'required',
                 'min:10',
@@ -96,6 +96,10 @@ class RegisterController extends Controller
             'again' => 'required'
         ]);
         
+        if($validate->fails()) {
+            return Redirect::back()->withErrors($validate);
+        }
+
         $users = User::all();
         foreach($users as $user) {
             if($user->sozNr == $request->input('sozNummer')) {

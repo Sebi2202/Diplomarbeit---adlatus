@@ -39,7 +39,7 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $validate = $this->validate($request, [
             'sozNummer' => array(
                 'required',
                 'min:10',
@@ -55,6 +55,10 @@ class PatientController extends Controller
             ),
             'again' => 'required'
         ]); 
+
+        if($validate->fails()) {
+            return Redirect::back()->withErrors($validate);
+        }
 
         $users = User::all();
         //User::where('sozNr', $request->input('sozNummer'));
@@ -125,11 +129,15 @@ class PatientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
+        $validate = $this->validate($request, [
             'vorname' => 'required',
             'nachname' => 'required',
             'email' => 'required',
         ]); 
+
+        if($validate->fails()) {
+            return Redirect::back()->withErrors($validate);
+        }
 
         $user = User::find($id);
         $cnt = strlen($request->input('password'));

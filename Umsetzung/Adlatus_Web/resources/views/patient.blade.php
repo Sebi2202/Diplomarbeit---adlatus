@@ -237,21 +237,24 @@
 
             <p>{{$user->vorname}} {{$user->nachname}}</p>
 
-            @if(count($errors) > 0)
-                @foreach($errors->all() as $error)
-                    <p style="color: red">{{$error}}</p>
-                @endforeach
+            @if(count($er)>0)
+                <p style="color:red">{{$er}}</p>
             @endif
-
-            @if(count($er) > 0)
-                <p style="color: red">{{$er}}</p>
-            @endif
-
+            
             <div class="">
                 {!! Form::open(['action' => ['PatientController@update', $user->id], 'method' => 'POST']) !!}
+                    @if($errors->has('vorname'))
+                        <p style="color:red"> {{ $errors->first('vorname') }} </p>
+                    @endif
                 {{ Form::text('vorname', $user->vorname, ['class' => 'fm', 'placeholder' => 'Vorname'])}}
+                    @if($errors->has('nachname'))
+                        <p style="color:red"> {{ $errors->first('nachname') }} </p>
+                    @endif
                 {{ Form::text('nachname', $user->nachname, ['class' => 'fm', 'placeholder' => 'Nachname'])}}
                 <br>
+                    @if($errors->has('email'))
+                        <p style="color:red"> {{ $errors->first('email') }} </p>
+                    @endif
                 {{ Form::email('email', $user->email, ['class' => 'fm', 'placeholder' => 'E-Mail'])}}
                 <br>
                 {{ Form::password('password', ['class' => 'fm', 'placeholder' => 'neues Passwort'])}}

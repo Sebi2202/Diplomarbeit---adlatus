@@ -186,22 +186,31 @@
 
         <section>
             <h2>Konto hinzufügen</h2>
-
-            @if(count($errors) > 0)
-                @foreach($errors->all() as $error)
-                    <p style="color: red">{{$error}}</p>
-                @endforeach
-            @endif
             
             <div class="">
                 {!! Form::open(['action' => 'PatientController@store', 'method' => 'POST']) !!}
+                    @if($errors->has('vorname'))
+                        <p style="color:red"> {{ $errors->first('vorname') }} </p>
+                    @endif
                 {{ Form::text('vorname', '', ['class' => 'fm', 'placeholder' => 'Vorname'])}}
+                    @if($errors->has('nachname'))
+                        <p style="color:red"> {{ $errors->first('nachname') }} </p>
+                    @endif
                 {{ Form::text('nachname', '', ['class' => 'fm', 'placeholder' => 'Nachname'])}}
                 <br>
+                    @if($errors->has('email'))
+                        <p style="color:red"> {{ $errors->first('email') }} </p>
+                    @endif
                 {{ Form::email('email', '', ['class' => 'fm', 'placeholder' => 'E-Mail'])}}
                 <br>
+                    @if($errors->has('sozNummer'))
+                        <p style="color:red"> {{ $errors->first('sozNummer') }} </p>
+                    @endif
                 {{ Form::text('sozNummer', '', ['class' => 'fm', 'placeholder' => 'Soz. Versicherungsnummer'])}}
                 <br>
+                    @if($errors->has('password'))
+                        <p style="color:red"> {{ $errors->first('password') }} </p>
+                    @endif
                 {{ Form::password('password', ['class' => 'fm', 'placeholder' => 'Passwort'])}}
                 <br>
                 {{ Form::password('again', ['class' => 'fm', 'placeholder' => 'Passwort wiederholen'])}}
