@@ -95,10 +95,6 @@ class RegisterController extends Controller
             ),
             'again' => 'required'
         ]);
-        
-        if($validate->fails()) {
-            return Redirect::back()->withErrors($validate);
-        }
 
         $users = User::all();
         foreach($users as $user) {

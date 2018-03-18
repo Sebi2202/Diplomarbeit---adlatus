@@ -152,24 +152,22 @@
         <section>
             <div class="">
                 <h2>Passwort zurücksetzen</h2>
-                @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                @endif
-
-                @if(count($errors) > 0)
-                    @foreach($errors->all() as $error)
-                        <p style="color: red">{{$error}}</p>
-                    @endforeach
-                @endif
             </div>
             {!! Form::open(['action' => 'Auth\ForgotPasswordController@update', 'method' => 'POST']) !!}
                 {{ Form::token() }}
+                    @if($errors->has('sozNummer'))
+                        <p style="color:red"> {{ $errors->first('sozNummer') }} </p>
+                    @endif
                 {{ Form::text('sozNummer', '', ['class' => 'fm', 'placeholder' => 'Soz. Versicherungsnummer']) }}
                 <br>
+                    @if($errors->has('email'))
+                        <p style="color:red"> {{ $errors->first('email') }} </p>
+                    @endif
                 {{ Form::email('email', '', ['class' => 'fm', 'placeholder' => 'E-Mail'])}}
                 <br>
+                    @if($errors->has('password'))
+                        <p style="color:red"> {{ $errors->first('password') }} </p>
+                    @endif
                 {{ Form::password('password', ['class' => 'fm', 'placeholder' => 'Passwort eingeben'])}}
                 <br>
                 {{ Form::password('again', ['class' => 'fm', 'placeholder' => 'Passwort wiederholen'])}}

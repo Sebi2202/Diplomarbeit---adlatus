@@ -56,10 +56,6 @@ class PatientController extends Controller
             'again' => 'required'
         ]); 
 
-        if($validate->fails()) {
-            return Redirect::back()->withErrors($validate);
-        }
-
         $users = User::all();
         //User::where('sozNr', $request->input('sozNummer'));
         foreach($users as $user) {
@@ -134,10 +130,6 @@ class PatientController extends Controller
             'nachname' => 'required',
             'email' => 'required',
         ]); 
-
-        if($validate->fails()) {
-            return Redirect::back()->withErrors($validate);
-        }
 
         $user = User::find($id);
         $cnt = strlen($request->input('password'));
