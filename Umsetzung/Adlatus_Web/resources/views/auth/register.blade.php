@@ -139,6 +139,8 @@
 
     td { padding-right:10px; }
 
+    .error-message { margin:2px; }
+
     /* @media - Responsive Design */
 
     @media screen and (max-height:680px) { footer { position:relative; top:45px; } }
@@ -171,26 +173,26 @@
             <div>
                 {!! Form::open(['action' => 'Auth\RegisterController@register', 'method' => 'POST']) !!}
                     @if($errors->has('vorname'))
-                        <p style="color:red"> {{ $errors->first('vorname') }} </p>
+                        <p class="error-message" style="color:red"> {{ $errors->first('vorname') }} </p>
                     @endif
                 {{ Form::text('vorname', '', ['class' => 'fm', 'placeholder' => 'Vorname*'])}}
                     @if($errors->has('nachname'))
-                        <p style="color:red"> {{ $errors->first('nachname') }} </p>
+                        <p class="error-message" style="color:red"> {{ $errors->first('nachname') }} </p>
                     @endif
                 {{ Form::text('nachname', '', ['class' => 'fm', 'placeholder' => 'Nachname*'])}}
                 <br>
                     @if($errors->has('email'))
-                        <p style="color:red"> {{ $errors->first('email') }} </p>
+                        <p class="error-message" style="color:red"> {{ $errors->first('email') }} </p>
                     @endif
                 {{ Form::email('email', '', ['class' => 'fm', 'placeholder' => 'E-Mail*'])}}
                 <br>
                     @if($errors->has('sozNummer'))
-                        <p style="color:red"> {{ $errors->first('sozNummer') }} </p>
+                        <p class="error-message" style="color:red"> {{ $errors->first('sozNummer') }} </p>
                     @endif
                 {{ Form::text('sozNummer', '', ['class' => 'fm', 'placeholder' => 'Soz. Versicherungsnummer*'])}}
                 <br>
                     @if($errors->has('password'))
-                        <p style="color:red"> {{ $errors->first('password') }} </p>
+                        <p class="error-message" style="color:red"> {{ $errors->first('password') }} </p>
                     @endif
                 {{ Form::password('password', ['class' => 'fm', 'placeholder' => 'Passwort*'])}}
                 <br>
