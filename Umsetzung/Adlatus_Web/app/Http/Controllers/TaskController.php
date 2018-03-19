@@ -48,8 +48,6 @@ class TaskController extends Controller
             'link' => 'required'
         ]);
 
-        
-
         $user = User::find($id);
         $tasks = Task::all()->where('fk_userid', $user->id);
 
@@ -58,14 +56,9 @@ class TaskController extends Controller
 
         $tsks = Task::all()->where('fk_userid', $id);
 
-        if($request->input('title') == "") {
-            $error == "Es wurde keine Bezeichnung angegeben.";
-            return view('create_task')->with('user', $user)->with('tasks', $tasks)->with('er', $error)->with('date', $date);
-        }
-
         foreach ($tsks as $tsk) {
             if($tsk->start == $date . " " . $request->input('date') . ":00") {
-                $error = "Dieser Eintrag existiert bereits.";
+                $error = "Ein Eintrag zu der Uhrzeit existiert bereits.";
                 return view('create_task')->with('user', $user)->with('tasks', $tasks)->with('er', $error)->with('date', $date);
             }
         }
