@@ -199,6 +199,8 @@
 
         td { padding-right:10px; }
 
+        .error-message { position:relative; bottom:10px; margin:0px; }
+
         /* @media - Responsive Design */
 
         @media screen and (min-width:731px) and (max-height:661px) { footer { position:relative; } }
@@ -244,16 +246,16 @@
             <div class="">
                 {!! Form::open(['action' => ['PatientController@update', $user->id], 'method' => 'POST']) !!}
                     @if($errors->has('vorname'))
-                        <p style="color:red"> {{ $errors->first('vorname') }} </p>
+                        <p class="error-message" style="color:red"> {{ $errors->first('vorname') }} </p>
                     @endif
                 {{ Form::text('vorname', $user->vorname, ['class' => 'fm', 'placeholder' => 'Vorname'])}}
                     @if($errors->has('nachname'))
-                        <p style="color:red"> {{ $errors->first('nachname') }} </p>
+                        <p class="error-message" style="color:red"> {{ $errors->first('nachname') }} </p>
                     @endif
                 {{ Form::text('nachname', $user->nachname, ['class' => 'fm', 'placeholder' => 'Nachname'])}}
                 <br>
                     @if($errors->has('email'))
-                        <p style="color:red"> {{ $errors->first('email') }} </p>
+                        <p class="error-message" style="color:red"> {{ $errors->first('email') }} </p>
                     @endif
                 {{ Form::email('email', $user->email, ['class' => 'fm', 'placeholder' => 'E-Mail'])}}
                 <br>

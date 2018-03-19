@@ -120,6 +120,8 @@
             text-align:left;
         }
 
+        .error-message { position:relative; bottom:5px; margin:0px; }
+
         /* @media - Responsive Design */
         @media screen and (min-width:801px) and (max-height:580px) { footer { position:relative; top:100px; } }
         @media screen and (max-width:402px) and (max-height:635px) { footer { position:relative; top:99px; } }
@@ -156,17 +158,17 @@
             {!! Form::open(['action' => 'Auth\ForgotPasswordController@update', 'method' => 'POST']) !!}
                 {{ Form::token() }}
                     @if($errors->has('sozNummer'))
-                        <p style="color:red"> {{ $errors->first('sozNummer') }} </p>
+                        <p class="error-message" style="color:red"> {{ $errors->first('sozNummer') }} </p>
                     @endif
                 {{ Form::text('sozNummer', '', ['class' => 'fm', 'placeholder' => 'Soz. Versicherungsnummer']) }}
                 <br>
                     @if($errors->has('email'))
-                        <p style="color:red"> {{ $errors->first('email') }} </p>
+                        <p class="error-message" style="color:red"> {{ $errors->first('email') }} </p>
                     @endif
                 {{ Form::email('email', '', ['class' => 'fm', 'placeholder' => 'E-Mail'])}}
                 <br>
                     @if($errors->has('password'))
-                        <p style="color:red"> {{ $errors->first('password') }} </p>
+                        <p class="error-message" style="color:red"> {{ $errors->first('password') }} </p>
                     @endif
                 {{ Form::password('password', ['class' => 'fm', 'placeholder' => 'Passwort eingeben'])}}
                 <br>

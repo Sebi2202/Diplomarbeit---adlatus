@@ -263,7 +263,10 @@
             box-shadow: 3px 5px 5px gray;
         }
 
-
+        ::-webkit-input-placeholder { color:lightgray; }
+        ::-moz-placeholder { color:lightgray; }
+        :-ms-input-placeholder { color:lightgray; }
+        :-moz-placeholder { color:lightgray; }
 
         /* @media - Responsive Design */
         @media screen and (max-width:1625px) {.all {margin-left:15%; margin-right:15%;} }
@@ -321,13 +324,6 @@
         @media screen and (max-width:375px) { .lab {width:286px;} .lab-drop {width:246px;} }
 
         @media screen and (max-width:360px) { .lab {width:274px;} .lab-drop {width:234px;} }
-
-        ::-webkit-input-placeholder { color:lightgray; }
-        ::-moz-placeholder { color:lightgray; }
-        :-ms-input-placeholder { color:lightgray; }
-        :-moz-placeholder { color:lightgray; }
-
-        
 
     </style>
 </head>

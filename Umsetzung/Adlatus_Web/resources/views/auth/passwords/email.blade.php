@@ -146,6 +146,10 @@
                         {{ session('status') }}
                     </div>
                 @endif
+
+                @if(count($error) > 0)
+                    <p style="color: red">{{$error}}</p>
+                @endif
             </div>
             {!! Form::open(['action' => 'DashboardController@email', 'method' => 'POST']) !!}
                 {{ Form::token() }}

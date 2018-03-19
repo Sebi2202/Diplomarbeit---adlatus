@@ -139,7 +139,7 @@
 
     td { padding-right:10px; }
 
-    .error-message { margin:2px; }
+    .error-message { position:relative; bottom:5px; margin:0px; }
 
     /* @media - Responsive Design */
 

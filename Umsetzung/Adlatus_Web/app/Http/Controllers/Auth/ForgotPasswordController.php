@@ -41,17 +41,23 @@ class ForgotPasswordController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function showLinkRequestForm() {
-        return view('auth/passwords/email');
+        return view('auth/passwords/email')->with('error', '');
     }
 
     public function sendResetLinkEmail(Request $request) {
-        Mail::to($request->input('email'))->send(new PasswordRecoveryLink());
-        return redirect('/password/reset');
+        if($request->input('email') != null) {
+            Mail::to($request->input('email'))->send(new PasswordRecoveryLink());
+            return redirect('/password/reset');
+        }
+        else {
+            return view('auth/passwords/email')->with('error', 'Es wurde keine E-Mail eingegeben.');
+        }
     }
 
     public function update(Request $request) {
         $this->validate($request, [
             'sozNummer' => 'required',
+            'email' => 'required',
             'password' => array(
                 'required',
                 'min:6'
