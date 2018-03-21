@@ -35,6 +35,7 @@
                 <h2><label id="label1">{{$task->title}}</label></h2>
                 {{ Form::hidden('title', $task->title) }}
                 {{ Form::hidden('link', $task->link) }}
+                {{ Form::hidden('activitynr', $task->fk_activityid) }}
                 <div class="">
                     Uhrzeit {{Form::text('date', $time, ['class' => 'fm-clock', 'placeholder' => '15:30'])}} <br>
                     Persönliche Nachricht (Optional) <br>
