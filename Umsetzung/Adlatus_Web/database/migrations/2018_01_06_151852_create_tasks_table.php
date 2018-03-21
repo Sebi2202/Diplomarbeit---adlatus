@@ -16,7 +16,6 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function(Blueprint $table) {
             $table->increments('id');
             $table->integer('fk_userid');
-            $table->integer('fk_activityid');
             $table->dateTime('start');
             $table->char('title', 40);
             $table->boolean('confirmed');
@@ -24,7 +23,6 @@ class CreateTasksTable extends Migration
             $table->char('link');
             $table->timestamps();
             //$table->foreign('fk_userid')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            //$table->foreign('fk_activityid')->references('pk_activityid')->on('activities')->onUpdate('cascade')->onDelete('cascade');
         });
 
         Schema::enableForeignKeyConstraints();
