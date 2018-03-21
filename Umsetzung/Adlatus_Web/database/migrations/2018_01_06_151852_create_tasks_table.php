@@ -23,7 +23,7 @@ class CreateTasksTable extends Migration
             $table->char('nachricht', 200)->nullable();
             $table->char('link');
             $table->timestamps();
-            //$table->foreign('fk_userid')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('fk_userid')->references('id')->on('users')->onDelete('cascade');
         });
 
         Schema::enableForeignKeyConstraints();
