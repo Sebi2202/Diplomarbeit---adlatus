@@ -49,7 +49,7 @@
                     {!! Form::close() !!}
                     <a class="cancel" href="/dashboard">Abbrechen</a>
                 </div>
-                @if(Auth::user()->id != $user->id)
+                
                     <br>
                     <div id="really">
                         <div class="btns">
@@ -68,7 +68,7 @@
                             </div>
                         </div>
                     </div>
-                @endif
+                
             </div>
         </section>
 
